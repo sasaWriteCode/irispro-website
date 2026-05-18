@@ -71,14 +71,15 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: auto; /* GSAP handles scrolling */
+  scroll-behavior: auto;
+  /* GSAP handles scrolling */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   font-family: var(--font-body);
-  background: var(--iris-black);
+  background: var(--iris-cream);
   color: var(--iris-white);
   line-height: 1.6;
   overflow-x: hidden;
@@ -265,18 +266,17 @@ button {
 .glass-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 10, 10, 0.7) 0%,
-    rgba(10, 10, 10, 0.3) 40%,
-    rgba(200, 150, 62, 0.05) 70%,
-    rgba(10, 10, 10, 0.6) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(10, 10, 10, 0.7) 0%,
+      rgba(10, 10, 10, 0.3) 40%,
+      rgba(200, 150, 62, 0.05) 70%,
+      rgba(10, 10, 10, 0.6) 100%);
   pointer-events: none;
 }
 
 /* ── Reduced Motion ── */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
