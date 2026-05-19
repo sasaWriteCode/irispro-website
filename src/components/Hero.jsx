@@ -83,9 +83,13 @@ export default function Hero() {
         opacity: 0,
       });
 
+      // Prevent GSAP's lag compensation from adding stutter on the heavy final frame
+      gsap.ticker.lagSmoothing(0);
+
       const tl = gsap.timeline({
         defaults: {
           ease: 'none',
+          force3D: true,
         },
       });
 
@@ -196,6 +200,7 @@ export default function Hero() {
               scale: 1.66,
               duration: 4,
               ease: 'power4.out',
+              force3D: true,
             },
             time
           );
@@ -211,7 +216,8 @@ export default function Hero() {
             {
               scale: 1.02,
               duration: 1.6,
-              ease: 'power3.inOut',
+              ease: 'power2.out',
+              force3D: true,
             },
             time
           );
