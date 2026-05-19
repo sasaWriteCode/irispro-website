@@ -116,58 +116,54 @@ export default function Hero() {
         '>'
       );
 
-      /* First BAIKAL-style cover frame appears right after IRISPRO settles */
-      tl.set('.hero', {
-        '--hero-flash-color': '#f26a00',
-      });
+      // This is the exact timing when the IRISPRO settle animation ends.
+      const firstFrameStart = 1.8;
 
-      tl.to('.hero__flash', {
-        opacity: 1,
-        duration: 0.04,
-        ease: 'none',
-      });
+      tl.set(
+        frames,
+        {
+          opacity: 0,
+          zIndex: 1,
+        },
+        firstFrameStart
+      );
 
-      tl.to('.hero__flash', {
-        opacity: 0,
-        duration: 0.04,
-        ease: 'none',
-      });
+      tl.set(
+        frames[0],
+        {
+          opacity: 1,
+          zIndex: 5,
+          scale: 1,
+        },
+        firstFrameStart
+      );
 
-      tl.set(frames, {
-        opacity: 0,
-        zIndex: 1,
-      });
-
-      tl.set(frames[0], {
-        opacity: 1,
-        zIndex: 5,
-        scale: 1,
-      });
-
-      tl.set(storyItems, {
-        opacity: 0,
-        y: 16,
-      });
+      tl.set(
+        storyItems,
+        {
+          opacity: 0,
+          y: 16,
+        },
+        firstFrameStart
+      );
 
       tl.to(
         storyItems[0],
         {
           opacity: 1,
           y: 0,
-          duration: 0.22,
+          duration: 0.16,
           ease: 'power2.out',
         },
-        '<'
+        firstFrameStart + 0.05
       );
 
+      // Hold first frame briefly before moving to frame 2
       tl.to(
-        frames[0],
+        {},
         {
-          scale: 1.045,
-          duration: 1.05,
-          ease: 'none',
-        },
-        '<'
+          duration: 0.55,
+        }
       );
 
       HERO_FRAMES.slice(1).forEach((_, slicedIndex) => {
@@ -175,26 +171,7 @@ export default function Hero() {
         const frame = frames[index];
         const story = storyItems[index];
 
-        tl.set('.hero', {
-          '--hero-flash-color': index % 2 === 0 ? '#f26a00' : '#fff4df',
-        });
-
-        tl.to(
-          '.hero__flash',
-          {
-            opacity: 1,
-            duration: 0.05,
-            ease: 'none',
-          },
-          index === 0 ? '>-0.1' : '>'
-        );
-
-        tl.to('.hero__flash', {
-          opacity: 0,
-          duration: 0.05,
-          ease: 'none',
-        });
-
+        // Hard cut to next frame
         tl.set(frames, {
           opacity: 0,
           zIndex: 1,
@@ -203,8 +180,10 @@ export default function Hero() {
         tl.set(frame, {
           opacity: 1,
           zIndex: 5,
+          scale: 1,
         });
 
+        // Hard cut story text
         tl.set(storyItems, {
           opacity: 0,
           y: 16,
@@ -215,23 +194,22 @@ export default function Hero() {
           {
             opacity: 1,
             y: 0,
-            duration: 0.22,
+            duration: 0.16,
             ease: 'power2.out',
           },
           '<'
         );
 
+        // Faster frame timing
         if (index < HERO_FRAMES.length - 1) {
           tl.to(
-            frame,
+            {},
             {
-              scale: 1.06,
-              duration: 0.82,
-              ease: 'none',
-            },
-            '<'
+              duration: 0.42,
+            }
           );
         } else {
+          // Only final frame has zoom-out effect
           tl.fromTo(
             frame,
             {
@@ -245,6 +223,7 @@ export default function Hero() {
             '<'
           );
 
+          // IRISPRO slowly zooms in only on final frame
           tl.to(
             '.hero__mega-word',
             {
