@@ -80,7 +80,7 @@ html {
 body {
   font-family: var(--font-body);
   background: var(--iris-cream);
-  color: var(--iris-white);
+  color: var(--iris-black);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -139,13 +139,13 @@ button {
 .body-lg {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
   line-height: 1.7;
-  color: var(--iris-light);
+  color: var(--iris-charcoal);
 }
 
 .body-md {
   font-size: clamp(0.9rem, 1.2vw, 1.05rem);
   line-height: 1.7;
-  color: var(--iris-light);
+  color: var(--iris-charcoal);
 }
 
 .label {
