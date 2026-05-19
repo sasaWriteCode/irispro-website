@@ -2,187 +2,268 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import '../styles/hero.css';
 
-const HERO_STATS = [
+const imagePath = (fileName) => `${import.meta.env.BASE_URL}images/${fileName}`;
+
+const HERO_FRAMES = [
   {
-    label: 'UV Filter',
-    value: 'Protection',
+    className: 'hero__frame--center',
+    src: imagePath('hero-sunlight.png'),
+    label: 'Protection begins with the sun.',
   },
   {
-    label: 'Heat Control',
-    value: 'Comfort',
+    className: 'hero__frame--left',
+    src: imagePath('commercial-building-panel.png'),
+    label: 'For every drive.',
   },
   {
-    label: 'Glare Reduction',
-    value: 'Clarity',
+    className: 'hero__frame--right-bottom',
+    src: imagePath('residential-glass-panel.png'),
+    label: 'For the people inside.',
   },
   {
-    label: 'Optical Film',
-    value: 'Iris',
+    className: 'hero__frame--right-top',
+    src: imagePath('residential-glass.png'),
+    label: 'For the spaces we live in.',
+  },
+  {
+    className: 'hero__frame--left-bottom',
+    src: imagePath('commercial-building.png'),
+    label: 'For the glass around us.',
+  },
+  {
+    className: 'hero__frame--final',
+    src: imagePath('hero-family-car.png'),
+    label: 'Protection you live with.',
   },
 ];
 
 export default function Hero() {
   const heroRef = useRef(null);
-  const heroImage = `${import.meta.env.BASE_URL}images/hero-sunlight.png`;
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const ctx = gsap.context(() => {
-      if (prefersReduced) {
-        gsap.set(
-          [
-            '.hero__bg-img',
-            '.hero__glass',
-            '.hero__flare',
-            '.hero__eyebrow',
-            '.hero__title',
-            '.hero__subtitle',
-            '.hero__actions',
-            '.hero__stat',
-            '.hero__scroll',
-          ],
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-          }
-        );
+      if (prefersReducedMotion) {
+        gsap.set('.hero__brand, .hero__mega-word, .hero__frame--final, .hero__story, .hero__scroll', {
+          opacity: 1,
+          scale: 1,
+          x: 0,
+          y: 0,
+        });
         return;
       }
 
-      const tl = gsap.timeline({
-        defaults: {
-          ease: 'power3.out',
-        },
-        delay: 0.2,
+      const frames = gsap.utils.toArray('.hero__frame');
+      const storyItems = gsap.utils.toArray('.hero__story-item');
+
+      gsap.set(frames, {
+        opacity: 0,
+        scale: 1,
       });
 
-      tl.fromTo(
-        '.hero__bg-img',
-        {
-          scale: 1.08,
-          opacity: 0,
-        },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 1.6,
-          ease: 'power2.out',
-        },
-        0
-      );
+      gsap.set(storyItems, {
+        opacity: 0,
+        y: 16,
+      });
 
-      tl.fromTo(
-        '.hero__glass',
-        {
-          opacity: 0,
-          y: 40,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.2,
-        },
-        0.25
-      );
+      gsap.set('.hero__brand', {
+        opacity: 0,
+        y: -16,
+      });
 
-      tl.fromTo(
-        '.hero__flare',
-        {
-          opacity: 0,
-          scale: 0.8,
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 1.4,
-        },
-        0.45
-      );
+      gsap.set('.hero__mega-word', {
+        opacity: 0,
+        scale: 0.72,
+        y: 70,
+      });
 
-      tl.fromTo(
-        '.hero__eyebrow',
-        {
-          opacity: 0,
-          y: 18,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-        },
-        0.75
-      );
+      gsap.set('.hero__scroll', {
+        opacity: 0,
+      });
 
-      tl.fromTo(
-        '.hero__title span',
-        {
-          opacity: 0,
-          y: 42,
+      const tl = gsap.timeline({
+        defaults: {
+          ease: 'power4.out',
         },
+      });
+
+      tl.to('.hero__brand', {
+        opacity: 1,
+        y: 0,
+        duration: 0.55,
+      });
+
+      tl.to(
+        '.hero__mega-word',
         {
           opacity: 1,
+          scale: 1.06,
           y: 0,
           duration: 0.9,
-          stagger: 0.08,
+          ease: 'power4.out',
         },
-        0.95
+        0.15
       );
 
-      tl.fromTo(
-        '.hero__subtitle',
+      tl.to(
+        '.hero__mega-word',
         {
-          opacity: 0,
-          y: 24,
+          scale: 1,
+          duration: 0.75,
+          ease: 'power3.out',
         },
+        '>'
+      );
+
+      /* First BAIKAL-style cover frame appears right after IRISPRO settles */
+      tl.set('.hero', {
+        '--hero-flash-color': '#f26a00',
+      });
+
+      tl.to('.hero__flash', {
+        opacity: 1,
+        duration: 0.04,
+        ease: 'none',
+      });
+
+      tl.to('.hero__flash', {
+        opacity: 0,
+        duration: 0.04,
+        ease: 'none',
+      });
+
+      tl.set(frames, {
+        opacity: 0,
+        zIndex: 1,
+      });
+
+      tl.set(frames[0], {
+        opacity: 1,
+        zIndex: 5,
+        scale: 1,
+      });
+
+      tl.set(storyItems, {
+        opacity: 0,
+        y: 16,
+      });
+
+      tl.to(
+        storyItems[0],
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.22,
+          ease: 'power2.out',
         },
-        1.35
+        '<'
       );
 
-      tl.fromTo(
-        '.hero__actions',
+      tl.to(
+        frames[0],
         {
+          scale: 1.045,
+          duration: 1.05,
+          ease: 'none',
+        },
+        '<'
+      );
+
+      HERO_FRAMES.slice(1).forEach((_, slicedIndex) => {
+        const index = slicedIndex + 1;
+        const frame = frames[index];
+        const story = storyItems[index];
+
+        tl.set('.hero', {
+          '--hero-flash-color': index % 2 === 0 ? '#f26a00' : '#fff4df',
+        });
+
+        tl.to(
+          '.hero__flash',
+          {
+            opacity: 1,
+            duration: 0.05,
+            ease: 'none',
+          },
+          index === 0 ? '>-0.1' : '>'
+        );
+
+        tl.to('.hero__flash', {
           opacity: 0,
-          y: 18,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-        },
-        1.55
-      );
+          duration: 0.05,
+          ease: 'none',
+        });
 
-      tl.fromTo(
-        '.hero__stat',
-        {
+        tl.set(frames, {
           opacity: 0,
-          y: 18,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.08,
-          duration: 0.6,
-        },
-        1.65
-      );
+          zIndex: 1,
+        });
 
-      tl.fromTo(
+        tl.set(frame, {
+          opacity: 1,
+          zIndex: 5,
+        });
+
+        tl.set(storyItems, {
+          opacity: 0,
+          y: 16,
+        });
+
+        tl.to(
+          story,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.22,
+            ease: 'power2.out',
+          },
+          '<'
+        );
+
+        if (index < HERO_FRAMES.length - 1) {
+          tl.to(
+            frame,
+            {
+              scale: 1.06,
+              duration: 0.82,
+              ease: 'none',
+            },
+            '<'
+          );
+        } else {
+          tl.fromTo(
+            frame,
+            {
+              scale: 1,
+            },
+            {
+              scale: 0.9,
+              duration: 1.15,
+              ease: 'power2.out',
+            },
+            '<'
+          );
+
+          tl.to(
+            '.hero__mega-word',
+            {
+              scale: 1.1,
+              duration: 1.15,
+              ease: 'power2.out',
+            },
+            '<'
+          );
+        }
+      });
+
+      tl.to(
         '.hero__scroll',
         {
-          opacity: 0,
-        },
-        {
           opacity: 1,
-          duration: 0.5,
+          duration: 0.45,
         },
-        2
+        '>-0.2'
       );
     }, heroRef);
 
@@ -190,58 +271,42 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={heroRef} className="hero" id="hero" aria-label="Iris hero section">
-      <div className="hero__bg" aria-hidden="true">
-        <img
-          className="hero__bg-img"
-          src={heroImage}
-          alt=""
-          loading="eager"
-        />
+    <section ref={heroRef} className="hero" id="hero" aria-label="IrisPro protection hero">
+      <div className="hero__flash" aria-hidden="true" />
+
+      <div className="hero__top-pill" aria-hidden="true">
+        <span />
+        <span />
       </div>
 
-      <div className="hero__warmth" aria-hidden="true" />
-      <div className="hero__glass" aria-hidden="true" />
-      <div className="hero__flare" aria-hidden="true" />
+      <div className="hero__brand">
+        <strong>IRISPRO</strong>
+        <span>Malaysia Made Protection</span>
+      </div>
 
-      <div className="hero__inner">
-        <div className="hero__content">
-          <span className="hero__eyebrow">Iris Window Film</span>
+      <div className="hero__stage" aria-hidden="true">
+        {HERO_FRAMES.map((frame) => (
+          <figure className={`hero__frame ${frame.className}`} key={frame.src}>
+            <img src={frame.src} alt="" />
+          </figure>
+        ))}
+      </div>
 
-          <h1 className="hero__title">
-            <span>The Film</span>
-            <span>Between You</span>
-            <span>and the Sun.</span>
-          </h1>
+      <div className="hero__mega-word" aria-hidden="true">
+        IRISPRO
+      </div>
 
-          <p className="hero__subtitle">
-            A protective layer for heat, glare and everyday sunlight exposure —
-            designed to make glass feel calmer, clearer and more comfortable.
+      <div className="hero__story" aria-live="polite">
+        {HERO_FRAMES.map((frame) => (
+          <p className="hero__story-item" key={frame.label}>
+            {frame.label}
           </p>
-
-          <div className="hero__actions" aria-label="Hero actions">
-            <a className="btn-primary hero__btn-primary" href="#problem">
-              <span>Explore the Story</span>
-            </a>
-            <a className="btn-outline hero__btn-outline" href="#contact">
-              Get Consultation
-            </a>
-          </div>
-        </div>
-
-        <div className="hero__data" aria-label="Iris protection highlights">
-          {HERO_STATS.map((item) => (
-            <div className="hero__stat" key={item.label}>
-              <span>{item.label}</span>
-              <strong>{item.value}</strong>
-            </div>
-          ))}
-        </div>
+        ))}
       </div>
 
-      <a className="hero__scroll" href="#problem" aria-label="Scroll to begin story">
-        <span className="hero__scroll-text">Begin the sunlight story</span>
-        <span className="hero__scroll-line" />
+      <a className="hero__scroll" href="#problem" aria-label="Scroll to begin the protection story">
+        <span>Begin the protection story</span>
+        <i />
       </a>
     </section>
   );

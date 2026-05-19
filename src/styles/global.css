@@ -79,7 +79,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: var(--iris-cream);
+  background: var(--iris-white);
   color: var(--iris-black);
   line-height: 1.6;
   overflow-x: hidden;
@@ -223,8 +223,8 @@ button {
 
 .btn-outline:hover {
   border-color: var(--iris-gold);
-  color: var(--iris-gold);
-  background: var(--iris-gold-glow);
+  color: var(--iris-black);
+  background: rgba(200, 150, 62, 0.14);
 }
 
 /* ── Container ── */
