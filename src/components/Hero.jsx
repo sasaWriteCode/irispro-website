@@ -73,9 +73,10 @@ export default function Hero() {
       });
 
       gsap.set('.hero__mega-word', {
-        opacity: 0,
-        scale: 0.72,
-        y: 70,
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transformOrigin: 'center center',
       });
 
       gsap.set('.hero__scroll', {
@@ -84,48 +85,29 @@ export default function Hero() {
 
       const tl = gsap.timeline({
         defaults: {
-          ease: 'power4.out',
+          ease: 'none',
         },
       });
 
       tl.to('.hero__brand', {
         opacity: 1,
         y: 0,
-        duration: 0.55,
+        duration: 0.35,
+        ease: 'power2.out',
       });
 
-      tl.to(
-        '.hero__mega-word',
-        {
-          opacity: 1,
-          scale: 1.06,
-          y: 0,
-          duration: 0.9,
-          ease: 'power4.out',
-        },
-        0.15
-      );
+      // Frame 1 starts after 0.5s
+      const frameStart = 0.5;
+      const frameInterval = 0.5;
 
-      tl.to(
-        '.hero__mega-word',
-        {
-          scale: 1,
-          duration: 0.75,
-          ease: 'power3.out',
-        },
-        '>'
-      );
-
-      // This is the exact timing when the IRISPRO settle animation ends.
-      const firstFrameStart = 1.8;
-
+      // Show Frame 1 at 0.5s
       tl.set(
         frames,
         {
           opacity: 0,
           zIndex: 1,
         },
-        firstFrameStart
+        frameStart
       );
 
       tl.set(
@@ -135,7 +117,7 @@ export default function Hero() {
           zIndex: 5,
           scale: 1,
         },
-        firstFrameStart
+        frameStart
       );
 
       tl.set(
@@ -144,7 +126,7 @@ export default function Hero() {
           opacity: 0,
           y: 16,
         },
-        firstFrameStart
+        frameStart
       );
 
       tl.to(
@@ -152,86 +134,86 @@ export default function Hero() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.16,
+          duration: 0.12,
           ease: 'power2.out',
         },
-        firstFrameStart + 0.05
+        frameStart + 0.02
       );
 
-      // Hold first frame briefly before moving to frame 2
-      tl.to(
-        {},
-        {
-          duration: 0.55,
-        }
-      );
-
+      // Frame 2 onwards
       HERO_FRAMES.slice(1).forEach((_, slicedIndex) => {
         const index = slicedIndex + 1;
         const frame = frames[index];
         const story = storyItems[index];
+        const time = frameStart + index * frameInterval;
 
-        // Hard cut to next frame
-        tl.set(frames, {
-          opacity: 0,
-          zIndex: 1,
-        });
+        // Hard cut to next frame every 0.5s
+        tl.set(
+          frames,
+          {
+            opacity: 0,
+            zIndex: 1,
+          },
+          time
+        );
 
-        tl.set(frame, {
-          opacity: 1,
-          zIndex: 5,
-          scale: 1,
-        });
+        tl.set(
+          frame,
+          {
+            opacity: 1,
+            zIndex: 5,
+            scale: 1,
+          },
+          time
+        );
 
-        // Hard cut story text
-        tl.set(storyItems, {
-          opacity: 0,
-          y: 16,
-        });
+        tl.set(
+          storyItems,
+          {
+            opacity: 0,
+            y: 16,
+          },
+          time
+        );
 
         tl.to(
           story,
           {
             opacity: 1,
             y: 0,
-            duration: 0.16,
+            duration: 0.12,
             ease: 'power2.out',
           },
-          '<'
+          time + 0.02
         );
 
-        // Faster frame timing
-        if (index < HERO_FRAMES.length - 1) {
-          tl.to(
-            {},
-            {
-              duration: 0.42,
-            }
-          );
-        } else {
-          // Only final frame has zoom-out effect
-          tl.fromTo(
-            frame,
-            {
-              scale: 1,
-            },
-            {
-              scale: 0.9,
-              duration: 1.15,
-              ease: 'power2.out',
-            },
-            '<'
-          );
-
-          // IRISPRO slowly zooms in only on final frame
+        // Start IRISPRO word animation from Frame 3
+        // In array terms: index 3 = fourth frame
+        if (index === 3) {
           tl.to(
             '.hero__mega-word',
             {
-              scale: 1.1,
-              duration: 1.15,
-              ease: 'power2.out',
+              scale: 1.66,
+              duration: 4,
+              ease: 'power4.out',
             },
-            '<'
+            time
+          );
+        }
+
+        // Only final frame image zooms out
+        if (index === HERO_FRAMES.length - 1) {
+          tl.fromTo(
+            frame,
+            {
+              scale: 1.12,
+            },
+            {
+              scale: 1.02,
+              duration: 1.6,
+              ease: 'power3.inOut',
+            },
+            time
           );
         }
       });
