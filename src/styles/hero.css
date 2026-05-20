@@ -265,7 +265,7 @@
   .hero__mega-word {
     /* 70svh anchors the top edge of the word just above the story label
        on any phone height (svh = small viewport height, ignores browser chrome) */
-    top: 70svh;
+    top: 64svh;
     font-size: clamp(4.2rem, 23vw, 10rem);
   }
 
@@ -346,7 +346,7 @@
   }
 
   .hero__mega-word {
-    top: 70svh;
+    top: 64svh;
     font-size: clamp(3.75rem, 22vw, 7rem);
   }
 
@@ -403,7 +403,7 @@
   }
 
   .hero__mega-word {
-    top: 70svh;
+    top: 66svh;
     font-size: clamp(3.2rem, 21vw, 5.5rem);
   }
 
