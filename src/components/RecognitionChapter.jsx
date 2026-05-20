@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -6,21 +6,81 @@ gsap.registerPlugin(ScrollTrigger);
 
 const RECOGNITION_IMAGES = [
   {
-    src: `${import.meta.env.BASE_URL}images/hot-car-exterior.png`,
-    alt: 'Vehicle exposed to strong tropical sunlight',
+    src: `${import.meta.env.BASE_URL}images/problem-child-heat.png`,
+    alt: 'Child in car squinting from sun glare',
     marker: '01',
     type: 'image',
   },
   {
-    alt: 'IRISPRO window film — real world demonstration',
+    src: `${import.meta.env.BASE_URL}videos/recognition-demo.mp4`,
+    poster: `${import.meta.env.BASE_URL}images/recognition-squint.png`,
+    alt: 'IRISPRO window film real-world demonstration',
     marker: '02',
     type: 'video',
-    youtubeId: 'fDMOpe9da7E',
   },
 ];
 
 export default function RecognitionChapter() {
   const sectionRef = useRef(null);
+  const videoRef = useRef(null);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
+  const toggleVideo = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      video.play();
+      setIsVideoPlaying(true);
+    } else {
+      video.pause();
+      setIsVideoPlaying(false);
+    }
+  };
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const video = videoRef.current;
+
+    if (!section || !video) return;
+
+    video.muted = true;
+    video.playsInline = true;
+
+    const playVideo = async () => {
+      try {
+        await video.play();
+        setIsVideoPlaying(true);
+      } catch (error) {
+        setIsVideoPlaying(false);
+      }
+    };
+
+    const pauseVideo = () => {
+      video.pause();
+      setIsVideoPlaying(false);
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          playVideo();
+        } else {
+          pauseVideo();
+        }
+      },
+      {
+        threshold: 0.45,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => {
+      observer.disconnect();
+      pauseVideo();
+    };
+  }, []);
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -35,6 +95,11 @@ export default function RecognitionChapter() {
             clipPath: 'inset(0% 0% 0% 0%)',
           }
         );
+
+        gsap.set('.recognition__media img, .recognition__media video', {
+          scale: 1,
+        });
+
         return;
       }
 
@@ -64,19 +129,17 @@ export default function RecognitionChapter() {
           opacity: 1,
           y: 0,
           clipPath: 'inset(0% 0% 0% 0%)',
-          duration: 0.45,
-          stagger: 0.08,
+          duration: 0.5,
           ease: 'power3.out',
         },
         0.12
       );
 
       tl.to(
-        '.recognition__media img',
+        '.recognition__media img, .recognition__media video',
         {
           scale: 1,
           duration: 0.7,
-          stagger: 0.08,
           ease: 'none',
         },
         0.12
@@ -90,7 +153,7 @@ export default function RecognitionChapter() {
           duration: 0.22,
           ease: 'power2.out',
         },
-        0.40
+        0.4
       );
     }, sectionRef);
 
@@ -111,18 +174,42 @@ export default function RecognitionChapter() {
               className={`recognition__item recognition__item--${index + 1}`}
               key={image.alt}
             >
-              <div className={`recognition__media${image.type === 'video' ? ' recognition__media--video' : ''}`}>
+              <div
+                className={`recognition__media${image.type === 'video' ? ' recognition__media--video' : ''
+                  }`}
+              >
                 {image.type === 'video' ? (
-                  <iframe
-                    src={`https://www.youtube.com/embed/${image.youtubeId}?rel=0&modestbranding=1`}
-                    title={image.alt}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                  />
+                  <>
+                    <video
+                      ref={videoRef}
+                      className="recognition__video"
+                      src={image.src}
+                      poster={image.poster}
+                      muted
+                      defaultMuted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      aria-label={image.alt}
+                      onClick={toggleVideo}
+                      onPlay={() => setIsVideoPlaying(true)}
+                      onPause={() => setIsVideoPlaying(false)}
+                    />
+
+                    <button
+                      className={`recognition__play ${isVideoPlaying ? 'recognition__play--hidden' : ''
+                        }`}
+                      type="button"
+                      aria-label={isVideoPlaying ? 'Pause video' : 'Play video'}
+                      onClick={toggleVideo}
+                    >
+                      <span className="recognition__play-icon" />
+                    </button>
+                  </>
                 ) : (
                   <img src={image.src} alt={image.alt} loading="lazy" />
                 )}
+
                 <span className="recognition__marker">{image.marker}</span>
               </div>
 
@@ -135,6 +222,7 @@ export default function RecognitionChapter() {
             </figure>
           ))}
         </div>
+
         <div className="recognition__intro">
           <p className="recognition__label">Recognition</p>
           <p className="recognition__statement">
