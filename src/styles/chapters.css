@@ -164,73 +164,141 @@
 /* Recognition Chapter */
 .recognition {
   position: relative;
-  background: var(--iris-charcoal);
-  padding: var(--space-3xl) 0;
+  background: #f7f5f0;
+  color: #151515;
+  padding: clamp(5rem, 10vw, 9rem) clamp(1.5rem, 3vw, 3rem);
   overflow: hidden;
 }
 
-.recognition__panels {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+.recognition__inner {
+  width: min(100%, 1500px);
+  margin: 0 auto;
 }
 
-.recognition__panel {
+.recognition__intro {
+  max-width: 100vw;
+  margin: 0 0 clamp(2.5rem, 5vw, 5rem);
+  padding-top: clamp(2.1rem, 6vw, 5.2rem);
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.recognition__label {
+  margin: 0 0 1rem;
+  font-family: 'Montserrat', var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(21, 21, 21, 0.42);
+}
+
+.recognition__statement {
+  margin: 0;
+  font-family: 'Montserrat', var(--font-body);
+  font-size: clamp(1.25rem, 2.1vw, 2rem);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+  color: #151515;
+}
+
+.recognition__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 1.7vw, 2rem);
+  align-items: start;
+}
+
+.recognition__item {
+  margin: 0;
+}
+
+.recognition__item--1 {
+  padding-top: 0;
+}
+
+.recognition__media {
   position: relative;
-  height: 100vh;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
+  width: 100%;
+  aspect-ratio: 1.28 / 1;
   overflow: hidden;
+  background: #dedbd2;
+  opacity: 0;
+  transform: translateY(46px);
+  clip-path: inset(12% 0% 0% 0%);
+  will-change: opacity, transform, clip-path;
 }
 
-.recognition__panel-bg {
-  position: absolute;
-  inset: 0;
-}
-
-.recognition__panel-bg img {
+.recognition__media img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
+  transform: scale(1.08);
+  will-change: transform;
 }
 
-.recognition__panel-overlay {
+/* YouTube embed variant — iframe fills the aspect-ratio box */
+.recognition__media--video {
+  /* Override the default aspect-ratio to match 16:9 YouTube */
+  aspect-ratio: 16 / 9;
+}
+
+.recognition__media--video iframe {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(10, 10, 10, 0.8) 0%, rgba(10, 10, 10, 0.3) 100%);
-}
-
-.recognition__panel-text {
-  position: relative;
-  z-index: 5;
-  padding: var(--space-lg) var(--space-md);
-  max-width: 600px;
-}
-
-.recognition__panel-quote {
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.3;
-  color: var(--iris-white);
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-.recognition__panel-quote::before {
-  content: '"';
+  width: 100%;
+  height: 100%;
+  border: 0;
   display: block;
-  font-size: 3rem;
-  color: var(--iris-gold);
-  line-height: 1;
-  margin-bottom: 0.5rem;
 }
 
-@media (min-width: 768px) {
-  .recognition__panel-text {
-    padding: var(--space-xl) var(--space-2xl);
+.recognition__marker {
+  position: absolute;
+  right: clamp(1rem, 1.5vw, 1.4rem);
+  bottom: clamp(1rem, 1.5vw, 1.4rem);
+  font-family: 'Montserrat', var(--font-body);
+  font-size: clamp(0.85rem, 1vw, 1.05rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.9);
+  mix-blend-mode: difference;
+}
+
+.recognition__caption {
+  max-width: 720px;
+  margin: clamp(1.1rem, 1.8vw, 1.6rem) 0 0;
+  font-family: 'Montserrat', var(--font-body);
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.015em;
+  color: rgba(21, 21, 21, 0.72);
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+@media (max-width: 900px) {
+  .recognition {
+    padding: clamp(4rem, 12vw, 6rem) clamp(1rem, 5vw, 1.5rem);
+  }
+
+  .recognition__grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .recognition__item--1 {
+    padding-top: 0;
+  }
+
+  .recognition__media {
+    aspect-ratio: 1.22 / 1;
+  }
+
+  .recognition__caption {
+    max-width: 100%;
   }
 }
 
