@@ -261,9 +261,8 @@ export default function Hero() {
     <section ref={heroRef} className="hero" id="hero" aria-label="IrisPro protection hero">
       <div className="hero__flash" aria-hidden="true" />
 
-
       <div className="hero__brand">
-        <strong>IRISPRO</strong>
+        <strong>IRIS<span style={{ color: 'var(--irispro-red)' }}>P</span>RO</strong>
         <span>Malaysia Made Protection</span>
       </div>
 

@@ -1,5 +1,5 @@
 .hero {
-  --iris-hero-bg: #dbb06a;
+  --iris-hero-bg: var(--iris-black);
   --hero-flash-color: var(--iris-hero-bg);
 
   position: relative;
@@ -76,7 +76,7 @@
   letter-spacing: 0.08em;
 }
 
-.hero__brand span {
+.hero__brand>span {
   color: rgba(25, 23, 21, 0.64);
   font-size: clamp(0.9rem, 1.35vw, 1.16rem);
   font-weight: 400;
@@ -256,8 +256,10 @@
 }
 
 @media (max-width: 980px) {
-  .hero__brand span {
-    display: none;
+  .hero__brand {
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: center;
   }
 
   .hero__mega-word {

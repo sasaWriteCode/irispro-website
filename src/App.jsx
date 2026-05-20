@@ -24,7 +24,13 @@ export default function App() {
         <FinalCTA />
       </main>
       <footer className="footer">
-        <div className="footer__logo">Iris</div>
+        <div className="footer__logo">
+          <img
+            src={`${import.meta.env.BASE_URL}irispro-logo.png`}
+            alt="IrisPro"
+            className="footer__logo-img"
+          />
+        </div>
         <p className="footer__copy">
           © 2026 Iris Window Film. All rights reserved.
         </p>

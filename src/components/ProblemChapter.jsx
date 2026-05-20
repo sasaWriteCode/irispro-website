@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, Fragment } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -11,17 +11,17 @@ const PARAGRAPHS = [
     type: 'body',
   },
   {
-    text: 'IRISPRO was created with one simple purpose.',
+    text: 'IRISPRO was created with only ONE simple purpose.',
     type: 'hero',
   },
   {
     text: 'Made for people. Built for protection.',
     type: 'body',
   },
-  {
-    text: 'Not just to make glass look darker, but to build a product that truly care. For daily drivers. For families. For anyone who wants to feel safer, cooler, and more protected every time behind a window.',
-    type: 'body',
-  },
+  // {
+  //   text: 'Not just to make glass look darker, but to build a product that truly care. For daily drivers. For families. For anyone who wants to feel safer, cooler, and more protected every time behind a window.',
+  //   type: 'body',
+  // },
 
 ];
 
@@ -107,11 +107,22 @@ export default function ProblemChapter() {
                 className={`problem__paragraph ${para.type === 'hero' ? 'problem__paragraph--hero' : ''
                   }`}
               >
-                {para.text.split(' ').map((word, wIdx) => (
-                  <span key={`${pIdx}-${wIdx}`} className="problem__word">
-                    {word}{' '}
-                  </span>
-                ))}
+                {para.text.split(' ').map((word, wIdx) => {
+                  const cleanWord = word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+                  const isRed = cleanWord === 'ONE';
+                  return (
+                    <Fragment key={`${pIdx}-${wIdx}`}>
+                      {isRed && <br />}
+                      <span
+                        className="problem__word"
+                        style={isRed ? { color: 'var(--irispro-red)' } : undefined}
+                      >
+                        {word}{' '}
+                      </span>
+                      {isRed && <br />}
+                    </Fragment>
+                  );
+                })}
               </p>
             ))}
           </div>

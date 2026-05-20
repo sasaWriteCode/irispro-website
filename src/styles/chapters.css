@@ -26,7 +26,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(10.4s) brightness(1.55);
+  filter: saturate(5.4s) brightness(0.55);
 }
 
 /* Dark uniform overlay — readable from center */
@@ -40,7 +40,7 @@
 .problem__content {
   position: relative;
   z-index: 5;
-  max-width: 780px;
+  max-width: 980px;
   width: 100%;
   margin: 0 auto;
   padding: clamp(2rem, 6vw, 5rem) clamp(2rem, 4vw, 3rem);
@@ -55,7 +55,7 @@
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--iris-gold);
+  color: var(--iris-white);
   opacity: 0;
 }
 
@@ -63,7 +63,7 @@
 .problem__divider {
   width: 48px;
   height: 1px;
-  background: var(--iris-gold);
+  background: var(--iris-white);
   margin: 1.2rem auto clamp(2rem, 4vh, 3.5rem);
   transform-origin: center center;
   opacity: 0;
@@ -770,13 +770,23 @@
 }
 
 .footer__logo {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--iris-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: var(--space-sm);
+}
+
+.footer__logo-img {
+  display: block;
+  width: auto;
+  height: clamp(30px, 3vw, 44px);
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .footer__logo-img {
+    height: 30px;
+  }
 }
 
 .footer__copy {
