@@ -144,6 +144,26 @@ export default function Hero() {
         frameStart + 0.02
       );
 
+      // ── Responsive mega-word final scale ──────────────────────────────────
+      // On desktop (≥ 980px) keep the original 1.66.
+      // On mobile, measure the actual rendered font size and compute the scale
+      // that makes "IRISPRO" fill exactly the viewport width without overflowing.
+      //   • "IRISPRO" = 7 chars
+      //   • Inter Black + letter-spacing -0.105em → effective advance ≈ 0.495em per char
+      //   → target: fontSize × 7 × 0.495 × scale = vw
+      let megaWordScale = 1.66;
+      const viewportWidth = window.innerWidth;
+      if (viewportWidth < 980) {
+        const megaEl = heroRef.current?.querySelector('.hero__mega-word');
+        if (megaEl) {
+          const fs = parseFloat(getComputedStyle(megaEl).fontSize);
+          const estimatedWordWidth = fs * 7 * 0.495;
+          megaWordScale = viewportWidth / estimatedWordWidth;
+          // Floor at 1.1 (always animate upward) and cap at 1.66 (never exceed desktop)
+          megaWordScale = Math.min(1.66, Math.max(1.1, megaWordScale));
+        }
+      }
+
       // Frame 2 onwards
       HERO_FRAMES.slice(1).forEach((_, slicedIndex) => {
         const index = slicedIndex + 1;
@@ -197,7 +217,7 @@ export default function Hero() {
           tl.to(
             '.hero__mega-word',
             {
-              scale: 1.66,
+              scale: megaWordScale,
               duration: 4,
               ease: 'power4.out',
               force3D: true,
