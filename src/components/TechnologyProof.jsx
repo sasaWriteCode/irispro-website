@@ -70,10 +70,10 @@ export default function TechnologyProof() {
     <section ref={sectionRef} className="technology" id="technology" aria-label="Iris film technology">
       <div className="technology__header">
         <span className="chapter-label">Chapter Four — Technology</span>
-        <h2 className="display-md" style={{ color: 'var(--iris-white)', marginBottom: '1rem' }}>
+        <h2 className="display-md" style={{ color: 'var(--iris-black)', marginBottom: '1rem' }}>
           Engineered Protection
         </h2>
-        <p className="body-lg" style={{ maxWidth: 560, margin: '0 auto' }}>
+        <p className="body-lg" style={{ maxWidth: 560, margin: '0 auto', color: 'rgba(10, 10, 10, 0.7)' }}>
           Every Iris film is precision-engineered to perform. Here is what
           it means for you, every day.
         </p>

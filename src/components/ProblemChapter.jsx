@@ -6,23 +6,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PARAGRAPHS = [
   {
-    // text: 'Our founder had seen enough of poor-quality tint products in the market — films that looked good at first, but failed when real protection was needed.',
-    text: 'After seeing too many poor-quality tint products in the market, our founder knew the market needed something better.',
-    type: 'body',
-  },
-  {
-    text: 'IRISPRO was created with only ONE simple purpose.',
+    text: (
+      <>
+        IRISPRO was created with <br />
+        only <span style={{ color: 'var(--irispro-red)' }}>ONE</span> simple purpose.
+      </>
+    ),
     type: 'hero',
   },
   {
     text: 'Made for people. Built for protection.',
     type: 'body',
   },
-  // {
-  //   text: 'Not just to make glass look darker, but to build a product that truly care. For daily drivers. For families. For anyone who wants to feel safer, cooler, and more protected every time behind a window.',
-  //   type: 'body',
-  // },
-
 ];
 
 export default function ProblemChapter() {
@@ -32,18 +27,17 @@ export default function ProblemChapter() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const ctx = gsap.context(() => {
       if (prefersReduced) {
-        gsap.set('.problem__word', { opacity: 1, y: 0 });
+        gsap.set('.problem__paragraph', { opacity: 1, y: 0 });
         gsap.set('.problem__label, .problem__divider', { opacity: 1 });
         return;
       }
 
-      const words = gsap.utils.toArray('.problem__word');
-      const totalWords = words.length;
+      const paragraphs = gsap.utils.toArray('.problem__paragraph');
 
-      // Set initial state — words are ghost-visible (dim) for a teaser effect
-      gsap.set(words, { opacity: 0.1, y: 8 });
+      // Set initial states
       gsap.set('.problem__label', { opacity: 0, y: -10 });
       gsap.set('.problem__divider', { opacity: 0, scaleX: 0 });
+      gsap.set(paragraphs, { opacity: 0, y: 20 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -57,28 +51,32 @@ export default function ProblemChapter() {
 
       // Label + divider fade in first
       tl.to('.problem__label', {
-        opacity: 1, y: 0, duration: 0.04, ease: 'power2.out',
+        opacity: 1, y: 0, duration: 0.15, ease: 'power2.out',
       }, 0);
 
       tl.to('.problem__divider', {
-        opacity: 1, scaleX: 1, duration: 0.04, ease: 'power2.out',
-      }, 0.02);
+        opacity: 1, scaleX: 1, duration: 0.15, ease: 'power2.out',
+      }, 0.05);
 
-      // Each word reveals sequentially across the total scroll
-      // Reserve 0.08 of the timeline for the intro (label + divider)
-      const wordStart = 0.08;
-      const wordEnd = 0.95;
-      const wordDuration = (wordEnd - wordStart) / totalWords;
-
-      words.forEach((word, i) => {
-        const start = wordStart + i * wordDuration;
-        tl.to(word, {
+      // Paragraph 1 (the hero statement) fades in next
+      if (paragraphs[0]) {
+        tl.to(paragraphs[0], {
           opacity: 1,
           y: 0,
-          duration: wordDuration * 0.7,
+          duration: 0.35,
           ease: 'power2.out',
-        }, start);
-      });
+        }, 0.2);
+      }
+
+      // Paragraph 2 (the body statement) fades in last
+      if (paragraphs[1]) {
+        tl.to(paragraphs[1], {
+          opacity: 1,
+          y: 0,
+          duration: 0.35,
+          ease: 'power2.out',
+        }, 0.55);
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -104,25 +102,11 @@ export default function ProblemChapter() {
             {PARAGRAPHS.map((para, pIdx) => (
               <p
                 key={pIdx}
-                className={`problem__paragraph ${para.type === 'hero' ? 'problem__paragraph--hero' : ''
-                  }`}
+                className={`problem__paragraph ${
+                  para.type === 'hero' ? 'problem__paragraph--hero' : ''
+                }`}
               >
-                {para.text.split(' ').map((word, wIdx) => {
-                  const cleanWord = word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
-                  const isRed = cleanWord === 'ONE';
-                  return (
-                    <Fragment key={`${pIdx}-${wIdx}`}>
-                      {isRed && <br />}
-                      <span
-                        className="problem__word"
-                        style={isRed ? { color: 'var(--irispro-red)' } : undefined}
-                      >
-                        {word}{' '}
-                      </span>
-                      {isRed && <br />}
-                    </Fragment>
-                  );
-                })}
+                {para.text}
               </p>
             ))}
           </div>

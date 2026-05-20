@@ -64,10 +64,10 @@ export default function ProductWorlds() {
     <section ref={sectionRef} className="product-worlds" id="products" aria-label="Iris product categories">
       <div className="product-worlds__header">
         <span className="chapter-label">Chapter Five — Product Worlds</span>
-        <h2 className="display-md" style={{ color: 'var(--iris-white)', marginBottom: '1rem' }}>
+        <h2 className="display-md" style={{ color: 'var(--iris-black)', marginBottom: '1rem' }}>
           Protection, Everywhere.
         </h2>
-        <p className="body-lg" style={{ maxWidth: 520, margin: '0 auto' }}>
+        <p className="body-lg" style={{ maxWidth: 520, margin: '0 auto', color: 'rgba(10, 10, 10, 0.7)' }}>
           From your car to your home to the buildings that shape your city —
           Iris works wherever glass meets sun.
         </p>

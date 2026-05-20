@@ -47,7 +47,7 @@ export default function TrustSection() {
     <section ref={sectionRef} className="trust" id="trust" aria-label="Trust and certifications">
       <div className="trust__header">
         <span className="chapter-label">Chapter Six — Trust</span>
-        <h2 className="display-md" style={{ color: 'var(--iris-white)' }}>
+        <h2 className="display-md" style={{ color: 'var(--iris-black)' }}>
           Built on Performance.
         </h2>
       </div>

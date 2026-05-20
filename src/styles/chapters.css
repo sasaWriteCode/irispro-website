@@ -3,7 +3,7 @@
 /* Problem Chapter — Mammut-inspired narrative section */
 .problem {
   position: relative;
-  min-height: 500vh;
+  min-height: 250vh;
   background: var(--iris-black);
 }
 
@@ -111,7 +111,7 @@
 /* ── Problem Chapter responsive ── */
 @media (max-width: 768px) {
   .problem {
-    min-height: 400vh;
+    min-height: 200vh;
   }
 
   .problem__sticky {
@@ -425,7 +425,7 @@
 /* Technology Chapter */
 .technology {
   position: relative;
-  background: var(--iris-charcoal);
+  background: var(--iris-white);
   padding: var(--space-3xl) 0;
   overflow: hidden;
 }
@@ -447,18 +447,20 @@
 
 .tech-card {
   position: relative;
-  background: var(--iris-dark);
+  background: #ffffff;
   padding: var(--space-lg);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
   overflow: hidden;
   opacity: 0;
   transform: translateY(30px);
-  transition: background 0.4s ease, border-color 0.4s ease;
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .tech-card:hover {
-  background: var(--iris-graphite);
-  border-color: rgba(200, 150, 62, 0.15);
+  background: #ffffff;
+  border-color: var(--iris-gold);
+  box-shadow: 0 10px 30px rgba(200, 150, 62, 0.08);
 }
 
 .tech-card__icon {
@@ -468,7 +470,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: var(--space-md);
-  border: 1px solid rgba(200, 150, 62, 0.25);
+  border: 1px solid rgba(200, 150, 62, 0.35);
   color: var(--iris-gold);
   font-size: 1.2rem;
 }
@@ -477,7 +479,7 @@
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--iris-white);
+  color: var(--iris-black);
   margin-bottom: 0.5rem;
   letter-spacing: 0.02em;
 }
@@ -485,7 +487,7 @@
 .tech-card__desc {
   font-size: 0.85rem;
   line-height: 1.6;
-  color: var(--iris-mid);
+  color: rgba(10, 10, 10, 0.7);
 }
 
 .tech-card__line {
@@ -517,7 +519,7 @@
 /* Product Worlds */
 .product-worlds {
   position: relative;
-  background: var(--iris-black);
+  background: var(--iris-white);
   padding: var(--space-3xl) 0;
 }
 
@@ -634,7 +636,7 @@
 /* Trust Section */
 .trust {
   position: relative;
-  background: var(--iris-charcoal);
+  background: var(--iris-white);
   padding: var(--space-3xl) var(--space-md);
   overflow: hidden;
 }
@@ -672,7 +674,7 @@
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--iris-mid);
+  color: rgba(10, 10, 10, 0.65);
 }
 
 @media (min-width: 768px) {
@@ -745,8 +747,8 @@
 
 /* Footer */
 .footer {
-  background: var(--iris-black);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--iris-white);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
   padding: var(--space-xl) var(--space-md);
   text-align: center;
 }
@@ -773,5 +775,5 @@
 
 .footer__copy {
   font-size: 0.75rem;
-  color: var(--iris-steel);
+  color: rgba(10, 10, 10, 0.65);
 }
