@@ -67,8 +67,8 @@ export default function IrisLayer() {
         ['.iris-layer__before img', '.iris-layer__after img'],
         { scale: 1.22, yPercent: -8 },
         {
-          scale: 1.0,
-          yPercent: 8,
+          scale: 1.22,
+          yPercent: 16,
           ease: 'none',
           scrollTrigger: {
             trigger: sectionRef.current,

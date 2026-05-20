@@ -93,12 +93,6 @@ export default function Hero() {
         },
       });
 
-      tl.to('.hero__brand', {
-        opacity: 1,
-        y: 0,
-        duration: 0.35,
-        ease: 'power2.out',
-      });
 
       // Frame 1 starts after 0.5s
       const frameStart = 0.5;
@@ -226,7 +220,7 @@ export default function Hero() {
           );
         }
 
-        // Only final frame image zooms out
+        // Only final frame image zooms out + brand appears together
         if (index === HERO_FRAMES.length - 1) {
           tl.fromTo(
             frame,
@@ -238,6 +232,17 @@ export default function Hero() {
               duration: 1.6,
               ease: 'power2.out',
               force3D: true,
+            },
+            time
+          );
+
+          tl.to(
+            '.hero__brand',
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.45,
+              ease: 'power2.out',
             },
             time
           );
@@ -262,7 +267,6 @@ export default function Hero() {
       <div className="hero__flash" aria-hidden="true" />
 
       <div className="hero__brand">
-        <strong>IRIS<span style={{ color: 'var(--irispro-red)' }}>P</span>RO</strong>
         <span>Malaysia Made Protection</span>
       </div>
 
@@ -275,7 +279,7 @@ export default function Hero() {
       </div>
 
       <div className="hero__mega-word" aria-hidden="true">
-        IRISPRO
+        IRIS<span className="hero__mega-word-red">P</span>RO
       </div>
 
       <div className="hero__story" aria-live="polite">
