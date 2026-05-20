@@ -6,17 +6,23 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PARAGRAPHS = [
   {
-    text: 'Our founder had seen enough of poor-quality tint products in the market — films that looked good at first, but failed when real protection was needed.',
+    // text: 'Our founder had seen enough of poor-quality tint products in the market — films that looked good at first, but failed when real protection was needed.',
+    text: 'After seeing too many poor-quality tint products in the market, our founder knew the market needed something better.',
     type: 'body',
   },
   {
-    text: 'IRISPRO was created to change that.',
+    text: 'IRISPRO was created with one simple purpose.',
     type: 'hero',
   },
   {
-    text: 'Not just to make glass look darker, but to build a product made for people. For daily drivers. For families. For anyone who wants to feel safer, cooler, and more protected every time they step into a car.',
+    text: 'Made for people. Built for protection.',
     type: 'body',
   },
+  {
+    text: 'Not just to make glass look darker, but to build a product that truly care. For daily drivers. For families. For anyone who wants to feel safer, cooler, and more protected every time behind a window.',
+    type: 'body',
+  },
+
 ];
 
 export default function ProblemChapter() {
@@ -90,16 +96,16 @@ export default function ProblemChapter() {
         </div>
         <div className="problem__overlay" />
         <div className="problem__content">
-          <span className="problem__label">The Origin</span>
+          <span className="problem__label">Our founder wanted better.
+          </span>
           <div className="problem__divider" />
 
           <div className="problem__narrative">
             {PARAGRAPHS.map((para, pIdx) => (
               <p
                 key={pIdx}
-                className={`problem__paragraph ${
-                  para.type === 'hero' ? 'problem__paragraph--hero' : ''
-                }`}
+                className={`problem__paragraph ${para.type === 'hero' ? 'problem__paragraph--hero' : ''
+                  }`}
               >
                 {para.text.split(' ').map((word, wIdx) => (
                   <span key={`${pIdx}-${wIdx}`} className="problem__word">
