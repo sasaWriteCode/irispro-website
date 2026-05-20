@@ -12,41 +12,72 @@ export default function IrisLayer() {
     const ctx = gsap.context(() => {
       if (prefersReduced) {
         gsap.set('.iris-layer__after', { clipPath: 'inset(0 0% 0 0)' });
-        gsap.set('.iris-layer__film', { opacity: 0 });
-        gsap.set('.iris-layer__headline, .iris-layer__sub, .iris-layer__label-before, .iris-layer__label-after', {
-          opacity: 1, y: 0,
-        });
+        gsap.set('.iris-layer__content', { y: 0 });
         return;
       }
 
-      const tl = gsap.timeline({
+      // Initial state for text (starts below viewport)
+      gsap.set('.iris-layer__content', { y: '90vh' });
+
+      // ── 1. PINNING TIMELINE ──
+      // Pins the viewport while the sweep reveal and text scroll-to-center occur.
+      // Releases once the text reaches the vertical center (y: '0').
+      const pinTl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top top',
-          end: 'bottom bottom',
-          scrub: 0.8,
-          pin: false,
+          end: '+=150%', // Pin locked for 1.5x viewport height of scrolling
+          scrub: 1,
+          pin: '.iris-layer__sticky',
         },
       });
 
-      // Film sweep
-      tl.to('.iris-layer__film', { opacity: 1, duration: 0.05 }, 0);
-      tl.to('.iris-layer__after', {
+      // A. Background sweep transition (from unprotected to comfortable family)
+      pinTl.to('.iris-layer__after', {
         clipPath: 'inset(0 0% 0 0)',
-        duration: 0.6,
+        duration: 0.5,
         ease: 'none',
       }, 0);
 
-      // Labels
-      tl.to('.iris-layer__label-before', { opacity: 1, duration: 0.1 }, 0.05);
-      tl.to('.iris-layer__label-after', { opacity: 1, duration: 0.1 }, 0.4);
+      // B. Cinematic credits scroll UP to vertical center (y: 0)
+      pinTl.fromTo(
+        '.iris-layer__content',
+        { y: '90vh' },
+        { y: '0', duration: 0.5, ease: 'none' },
+        0.5
+      );
 
-      // Text
-      tl.to('.iris-layer__headline', { opacity: 1, y: 0, duration: 0.15 }, 0.65);
-      tl.to('.iris-layer__sub', { opacity: 1, y: 0, duration: 0.15 }, 0.75);
+      // C. Smooth background dimming (dim "before" completely to 0, "after" to 0.15)
+      pinTl.to(
+        '.iris-layer__before',
+        { opacity: 0, duration: 0.5, ease: 'power1.inOut' },
+        0.5
+      );
+      pinTl.to(
+        '.iris-layer__after',
+        { opacity: 0.15, duration: 0.5, ease: 'power1.inOut' },
+        0.5
+      );
 
-      // Film fades at end
-      tl.to('.iris-layer__film', { opacity: 0, duration: 0.1 }, 0.9);
+      // ── 2. CONTINUOUS PARALLAX ──
+      // Only starts when the pin releases (when text reaches the center at top+=150vh scroll)
+      // keeping background images static during the background sweep and text-scrolling transitions,
+      // then giving the background a distinct slower speed relative to the scrolling page.
+      gsap.fromTo(
+        ['.iris-layer__before img', '.iris-layer__after img'],
+        { scale: 1.22, yPercent: -8 },
+        {
+          scale: 1.0,
+          yPercent: 8,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: () => `top+=${window.innerHeight * 1.5} top`,
+            end: 'bottom bottom',
+            scrub: true,
+          },
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -61,22 +92,15 @@ export default function IrisLayer() {
         </div>
         {/* After (protected) */}
         <div className="iris-layer__after">
-          <img src={`${import.meta.env.BASE_URL}images/iris-comfort.png`} alt="Comfortable interior with Iris film protection" loading="lazy" />
+          <img src={`${import.meta.env.BASE_URL}images/happy-family.png`} alt="Comfortable interior with Iris film protection" loading="lazy" />
         </div>
-        {/* Film line */}
-        <div className="iris-layer__film" aria-hidden="true" />
-        {/* Labels */}
-        <span className="iris-layer__label-before">Unprotected</span>
-        <span className="iris-layer__label-after">With Iris</span>
         {/* Text overlay */}
         <div className="iris-layer__content">
           <h2 className="iris-layer__headline">
-            Less heat. Less glare.<br />More comfort.
+            We know whats comfort and what's <br /><span style={{ color: 'var(--irispro-red)' }}>NOT</span>
           </h2>
           <p className="iris-layer__sub">
-            Iris adds a protective layer between your space and the sun.
-            Protection that works quietly, every day.
-          </p>
+            By understanding the sun <br /> IrisPro help humans to test all the solution <br /> to find the best <span style={{ color: 'var(--irispro-red)' }}>ONE</span>          </p>
         </div>
       </div>
     </section>

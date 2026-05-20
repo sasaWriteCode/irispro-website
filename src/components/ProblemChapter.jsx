@@ -89,7 +89,7 @@ export default function ProblemChapter() {
       <div className="problem__sticky">
         <div className="problem__bg">
           <img
-            src={`${import.meta.env.BASE_URL}images/problem-heat.png`}
+            src={`${import.meta.env.BASE_URL}images/commercial-building-panel.png`}
             alt="Harsh sunlight through car windshield"
             loading="lazy"
           />
