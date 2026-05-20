@@ -261,10 +261,6 @@ export default function Hero() {
     <section ref={heroRef} className="hero" id="hero" aria-label="IrisPro protection hero">
       <div className="hero__flash" aria-hidden="true" />
 
-      <div className="hero__top-pill" aria-hidden="true">
-        <span />
-        <span />
-      </div>
 
       <div className="hero__brand">
         <strong>IRISPRO</strong>

@@ -1,44 +1,59 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import '../styles/navbar.css';
 
 export default function Navbar() {
-  const navRef = useRef(null);
-  const [visible, setVisible] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const closeTimer = useRef(null);
 
-  useEffect(() => {
-    // Show navbar after hero reveal
-    const showTimer = setTimeout(() => setVisible(true), 2200);
+  const handleEnter = () => {
+    clearTimeout(closeTimer.current);
+    setOpen(true);
+  };
 
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      clearTimeout(showTimer);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const cls = `navbar${visible ? ' visible' : ''}${scrolled ? ' scrolled' : ''}`;
+  const handleLeave = () => {
+    closeTimer.current = setTimeout(() => setOpen(false), 120);
+  };
 
   return (
-    <nav ref={navRef} className={cls} aria-label="Main navigation">
+    <nav
+      className={`navbar${open ? ' open' : ''}`}
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+      aria-label="Main navigation"
+    >
       <a href="#" className="navbar__logo">
-        Iris<span className="navbar__logo-dot"></span>
+        Iris<span className="navbar__logo-dot" />
       </a>
+
       <ul className="navbar__links">
-        <li><a href="#problem" className="navbar__link">The Problem</a></li>
-        <li><a href="#iris-layer" className="navbar__link">Protection</a></li>
-        <li><a href="#technology" className="navbar__link">Technology</a></li>
-        <li><a href="#products" className="navbar__link">Products</a></li>
+        <li><a href="#problem"      className="navbar__link">The Problem</a></li>
+        <li><a href="#iris-layer"   className="navbar__link">Protection</a></li>
+        <li><a href="#technology"   className="navbar__link">Technology</a></li>
+        <li><a href="#products"     className="navbar__link">Products</a></li>
         <li>
           <a href="#consultation" className="navbar__cta" role="button">
             Get Consultation
           </a>
         </li>
       </ul>
+
+      {/*
+        Lid — hangs below the nav via absolute positioning.
+        Because it's INSIDE <nav>, it slides down with the nav on hover.
+        pointer-events: all ensures it's hoverable even when nav is above viewport.
+      */}
+      <div
+        className="nav-lid"
+        onMouseEnter={handleEnter}
+        aria-label="Open navigation"
+        role="button"
+        tabIndex={0}
+        onFocus={handleEnter}
+        onBlur={handleLeave}
+      >
+        <span />
+        <span />
+      </div>
     </nav>
   );
 }

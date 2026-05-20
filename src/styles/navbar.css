@@ -1,42 +1,102 @@
 /* ═══════════════════════════════════════════════════
-   NAVBAR — Floating Premium Navigation
+   NAVBAR — Hover Drawer (white, lid attached below)
    ═══════════════════════════════════════════════════ */
 
+/* ── The navbar panel ── */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: var(--z-nav);
-  padding: 1.25rem var(--space-md);
+  z-index: 200;
+  padding: 1.1rem var(--space-md);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 0.6s var(--ease-out-expo),
-    transform 0.6s var(--ease-out-expo),
-    background 0.4s ease;
+
+  /* White — matching the lid pill colour */
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+  /* Overflow visible so the lid can peek below */
+  overflow: visible;
+
+  /* Slide completely above the viewport by default */
+  transform: translateY(-100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Non-interactive when hidden — but lid overrides this below */
   pointer-events: none;
 }
 
-.navbar.visible {
-  opacity: 1;
+/* Slide into view on hover */
+.navbar.open {
   transform: translateY(0);
   pointer-events: all;
 }
 
-.navbar.scrolled {
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 0.85rem var(--space-md);
+/* ── Lid — hangs below the nav, slides with it ── */
+.nav-lid {
+  position: absolute;
+  /* Sit at the bottom edge of the nav, then translate 100% downward */
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+
+  width: 84px;
+  height: 48px;
+
+  /* Same white as the nav for a seamless connected look */
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+
+  /* ALWAYS interactive so the hover trigger works even when nav is hidden */
+  pointer-events: all;
+
+  transition: box-shadow 0.3s ease, height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.nav-lid:hover {
+  height: 56px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+/* Hamburger lines — dark on white background */
+.nav-lid span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: #1a1815;
+  border-radius: 2px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.3s ease;
+}
+
+/* X when open */
+.navbar.open .nav-lid span:first-child {
+  transform: translateY(3.25px) rotate(45deg);
+}
+.navbar.open .nav-lid span:last-child {
+  transform: translateY(-3.25px) rotate(-45deg);
+}
+
+/* ── Logo — dark on white ── */
 .navbar__logo {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: var(--iris-black);
@@ -53,6 +113,7 @@
   vertical-align: super;
 }
 
+/* ── Links — dark on white ── */
 .navbar__links {
   display: none;
   list-style: none;
@@ -65,7 +126,7 @@
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--iris-dark);
+  color: rgba(30, 28, 26, 0.65);
   transition: color 0.3s ease;
   position: relative;
 }
@@ -82,36 +143,35 @@
 }
 
 .navbar__link:hover {
-  color: var(--iris-mid);
+  color: var(--iris-black);
 }
 
 .navbar__link:hover::after {
   width: 100%;
 }
 
+/* ── CTA — gold outline on white ── */
 .navbar__cta {
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--iris-gold);
-  border: 1px solid var(--iris-gold);
-  padding: 0.6rem 1.25rem;
+  border: 1px solid rgba(200, 150, 62, 0.6);
+  padding: 0.55rem 1.25rem;
   transition: all 0.3s var(--ease-out-expo);
 }
 
 .navbar__cta:hover {
   background: var(--iris-gold);
-  color: var(--iris-black);
+  color: var(--iris-white);
+  border-color: var(--iris-gold);
 }
 
+/* ── Desktop ── */
 @media (min-width: 768px) {
   .navbar {
-    padding: 1.5rem var(--space-lg);
-  }
-
-  .navbar.scrolled {
-    padding: 1rem var(--space-lg);
+    padding: 1.35rem var(--space-lg);
   }
 
   .navbar__links {

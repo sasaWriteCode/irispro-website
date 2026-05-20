@@ -1,9 +1,9 @@
 /* ═══ Chapter Styles ═══ */
 
-/* Problem Chapter */
+/* Problem Chapter — Mammut-inspired narrative section */
 .problem {
   position: relative;
-  min-height: 300vh;
+  min-height: 500vh;
   background: var(--iris-black);
 }
 
@@ -26,101 +26,139 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.6) brightness(0.5);
+  filter: saturate(0.5) brightness(0.35);
 }
 
+/* Dark uniform overlay — readable from center */
 .problem__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 10, 10, 0.6);
+  background: rgba(10, 10, 10, 0.75);
 }
 
+/* Centered editorial content */
 .problem__content {
   position: relative;
   z-index: 5;
+  max-width: 780px;
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 5rem) clamp(2rem, 4vw, 3rem);
   text-align: center;
-  padding: var(--space-md);
 }
 
-.problem__intro {
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  font-style: italic;
-  color: var(--iris-light);
-  margin-bottom: var(--space-xl);
-  opacity: 0;
-}
-
-.problem__words {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem 2rem;
-}
-
-.problem__word {
+/* Chapter label */
+.problem__label {
+  display: inline-block;
   font-family: var(--font-body);
-  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-size: 0.65rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  opacity: 0;
-  transform: translateY(30px);
-  will-change: opacity, transform;
-}
-
-.problem__word--heat {
-  color: var(--iris-heat);
-}
-
-.problem__word--glare {
-  color: var(--iris-glare);
-}
-
-.problem__word--uv {
-  color: var(--iris-uv);
-}
-
-.problem__word--blue {
-  color: var(--iris-blue-light);
-}
-
-.problem__word--fade {
-  color: var(--iris-warm);
-}
-
-.problem__word--skin {
-  color: var(--iris-orange);
-}
-
-.problem__data-strip {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem 2.5rem;
-  margin-top: var(--space-xl);
-}
-
-.problem__data-item {
-  text-align: center;
-  opacity: 0;
-}
-
-.problem__data-value {
-  font-family: var(--font-body);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 300;
   color: var(--iris-gold);
-  letter-spacing: 0.02em;
+  opacity: 0;
 }
 
-.problem__data-label {
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--iris-mid);
-  margin-top: 0.25rem;
+/* Thin gold rule — centered under label */
+.problem__divider {
+  width: 48px;
+  height: 1px;
+  background: var(--iris-gold);
+  margin: 1.2rem auto clamp(2rem, 4vh, 3.5rem);
+  transform-origin: center center;
+  opacity: 0;
+}
+
+/* Narrative container */
+.problem__narrative {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.8rem, 3.5vh, 3rem);
+}
+
+/* Default paragraph — Montserrat, clean and readable */
+.problem__paragraph {
+  font-family: 'Montserrat', var(--font-body);
+  font-size: clamp(1.1rem, 2.2vw, 1.55rem);
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.75;
+  color: rgba(245, 243, 240, 0.88);
+  margin: 0;
+}
+
+/* Hero statement — Montserrat ExtraBold, punchy */
+.problem__paragraph--hero {
+  font-family: 'Montserrat', var(--font-body);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 800;
+  font-style: normal;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--iris-white);
+}
+
+/* Individual word span — starts dim (ghost text teaser) */
+.problem__word {
+  display: inline;
+  opacity: 0.1;
+  transform: translateY(8px);
+  will-change: opacity, transform;
+  transition: none;
+  /* GSAP handles transitions */
+}
+
+/* ── Problem Chapter responsive ── */
+@media (max-width: 768px) {
+  .problem {
+    min-height: 400vh;
+  }
+
+  .problem__sticky {
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-bottom: clamp(3rem, 8vh, 5rem);
+  }
+
+  .problem__content {
+    max-width: 100%;
+    margin: 0;
+    padding: clamp(1.5rem, 5vw, 2.5rem);
+    text-align: left;
+  }
+
+  .problem__divider {
+    margin-left: 0;
+    transform-origin: left center;
+  }
+
+  .problem__paragraph {
+    font-size: clamp(1rem, 4.5vw, 1.3rem);
+  }
+
+  .problem__paragraph--hero {
+    font-size: clamp(1.4rem, 6.5vw, 2.2rem);
+  }
+
+  .problem__narrative {
+    gap: clamp(1.4rem, 3vh, 2rem);
+  }
+
+  .problem__divider {
+    width: 36px;
+    margin-top: 1rem;
+    margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
+  }
+}
+
+@media (max-width: 390px) {
+  .problem__paragraph {
+    font-size: clamp(0.95rem, 4.5vw, 1.15rem);
+  }
+
+  .problem__paragraph--hero {
+    font-size: clamp(1.25rem, 6.5vw, 1.75rem);
+  }
 }
 
 /* Recognition Chapter */
