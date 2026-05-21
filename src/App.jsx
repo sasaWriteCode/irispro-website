@@ -4,8 +4,8 @@ import ProblemChapter from './components/ProblemChapter';
 import RecognitionChapter from './components/RecognitionChapter';
 import IrisLayer from './components/IrisLayer';
 import TechnologyProof from './components/TechnologyProof';
-import ProductWorlds from './components/ProductWorlds';
-import TrustSection from './components/TrustSection';
+import SplitMedia from './components/SplitMedia';
+import TestimonialCarousel from './components/TestimonialCarousel';
 import FinalCTA from './components/FinalCTA';
 import './styles/chapters.css';
 
@@ -19,8 +19,8 @@ export default function App() {
         <RecognitionChapter />
         <IrisLayer />
         <TechnologyProof />
-        <ProductWorlds />
-        <TrustSection />
+        <SplitMedia />
+        <TestimonialCarousel />
         <FinalCTA />
       </main>
       <footer className="footer">
@@ -38,3 +38,4 @@ export default function App() {
     </>
   );
 }
+

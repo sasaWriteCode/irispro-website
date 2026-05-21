@@ -214,6 +214,45 @@ button {
   color: var(--iris-black);
 }
 
+.btn-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: var(--irispro-red);
+  color: var(--iris-white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-red::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--iris-white);
+  transform: translateX(-101%);
+  transition: transform 0.4s var(--ease-out-expo);
+}
+
+.btn-red:hover::before {
+  transform: translateX(0);
+}
+
+.btn-red span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-red:hover {
+  color: var(--irispro-red);
+}
+
 .btn-outline {
   display: inline-flex;
   align-items: center;
