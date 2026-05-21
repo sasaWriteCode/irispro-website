@@ -100,7 +100,8 @@ export default function TechnologyProof() {
 
     const ctx = gsap.context(() => {
       const layers = gsap.utils.toArray('.technology-layer__png');
-      const labels = gsap.utils.toArray('.technology-layer__label');
+      const desktopLabels = gsap.utils.toArray('.technology-layer__label-desktop');
+      const mobileLabels = gsap.utils.toArray('.technology-layer__label-mobile');
 
       if (prefersReduced) {
         gsap.set('.technology-layer__content-side', {
@@ -116,7 +117,7 @@ export default function TechnologyProof() {
           z: (index) => index * -70,
         });
 
-        gsap.set(labels, {
+        gsap.set('.technology-layer__label-desktop, .technology-layer__label-mobile', {
           opacity: 1,
           x: 0,
         });
@@ -151,7 +152,7 @@ export default function TechnologyProof() {
           transformOrigin: 'center center',
         });
 
-        gsap.set(labels, {
+        gsap.set(desktopLabels, {
           opacity: 0,
           x: 0,
         });
@@ -199,52 +200,56 @@ export default function TechnologyProof() {
         );
 
         // Step 2: Explode product layers
+        // Same spreading logic as ai_studio_code.html
         layers.forEach((layer, index) => {
+          const layerNumber = index + 1;
+
           tl.to(
             layer,
             {
-              x: (index - 3.5) * 88,
-              z: index * -118,
-              opacity: 1 - index * 0.045,
-              duration: 2.0,
+              x: (layerNumber - 5) * 90,
+              z: (layerNumber - 1) * -120,
+              opacity: 1 - layerNumber * 0.05,
+              duration: 2,
               ease: 'power2.out',
             },
-            1.5 // begins when product reaches center
+            1.5
           );
         });
 
-        // Rotate stage in 3D space
+        // Rotate the whole stage after it reaches center
         tl.to(
           '.technology-layer__stage',
           {
-            rotateY: -34,
+            rotateY: -35,
             rotateX: 15,
-            duration: 2.0,
-            ease: 'power2.out',
+            x: -200,
+            duration: 4,
+            ease: 'none',
           },
           1.5
         );
 
         // Step 3: Animate technical labels in
-        labels.forEach((label, index) => {
-          const direction = index % 2 === 0 ? -26 : 26;
+        desktopLabels.forEach((label, index) => {
+          const layerNumber = index + 1;
+          const labelDirection = layerNumber % 2 === 0 ? 30 : -30;
 
           tl.to(
             label,
             {
               opacity: 1,
-              x: direction,
-              duration: 0.8,
+              x: labelDirection,
+              duration: 1,
               ease: 'power2.out',
             },
-            2.0 + index * 0.15
+            1.5 + layerNumber * 0.4
           );
         });
       });
 
-      // Mobile layout: stage starts centered at 50%, content-side at bottom fades out
+      // Mobile layout — vertical spread, labels track each layer on the left
       mm.add('(max-width: 980px)', () => {
-        // Initial setup for mobile
         gsap.set('.technology-layer__content-side', {
           opacity: 1,
           xPercent: -50,
@@ -254,23 +259,23 @@ export default function TechnologyProof() {
 
         gsap.set(layers, {
           x: 0,
+          y: 0,
           z: 0,
           opacity: 0.78,
           transformOrigin: 'center center',
         });
 
-        gsap.set(labels, {
-          opacity: 0,
-          x: 0,
-        });
+        // Mobile labels start invisible at the container center
+        gsap.set(mobileLabels, { opacity: 0, y: 0 });
 
         gsap.set('.technology-layer__stage', {
-          left: '50%', // already centered
+          left: '50%',
+          top: '50%',
           xPercent: -50,
           yPercent: -50,
-          rotateX: 10,
-          rotateY: -10,
-          transformPerspective: 2000,
+          rotateX: 6,
+          rotateY: 0,
+          transformPerspective: 1800,
           transformStyle: 'preserve-3d',
         });
 
@@ -284,60 +289,60 @@ export default function TechnologyProof() {
           },
         });
 
-        // Step 1: Slide down / fade out content side
+        // Step 1: Fade out caption
         tl.to(
           '.technology-layer__content-side',
-          {
-            y: 40,
-            opacity: 0,
-            duration: 1.2,
-            ease: 'power2.inOut',
-          },
+          { y: 40, opacity: 0, duration: 1.2, ease: 'power2.inOut' },
           0
         );
 
-        // Step 2: Explode product layers (compact for mobile)
+        // Step 2: Fan layers vertically + move each label to the same y
+        const FAN_SPACING = 38;
+
         layers.forEach((layer, index) => {
+          const layerNumber = index + 1;
+          const targetY = (layerNumber - 4.5) * FAN_SPACING;
+
+          // Fan the layer
           tl.to(
             layer,
             {
-              x: (index - 3.5) * 44, // reduced mobile spacing
-              z: index * -60,
-              opacity: 1 - index * 0.045,
+              x: 0,
+              y: targetY,
+              z: (layerNumber - 1) * -52,
+              opacity: 1 - layerNumber * 0.05,
               duration: 2.0,
               ease: 'power2.out',
             },
             1.0
           );
+
+          // Move its label to the same y and fade it in
+          if (mobileLabels[index]) {
+            tl.to(
+              mobileLabels[index],
+              {
+                y: targetY,
+                opacity: 1,
+                duration: 1.6,
+                ease: 'power2.out',
+              },
+              1.0
+            );
+          }
         });
 
-        // Rotate stage
+        // Tilt the stage forward to reveal the vertical fan
         tl.to(
           '.technology-layer__stage',
           {
-            rotateY: -24,
-            rotateX: 12,
+            rotateX: 32,
+            rotateY: -8,
             duration: 2.0,
             ease: 'power2.out',
           },
           1.0
         );
-
-        // Step 3: Animate labels
-        labels.forEach((label, index) => {
-          const direction = index % 2 === 0 ? -12 : 12;
-
-          tl.to(
-            label,
-            {
-              opacity: 1,
-              x: direction,
-              duration: 0.8,
-              ease: 'power2.out',
-            },
-            1.4 + index * 0.15
-          );
-        });
       });
     }, sectionRef);
 
@@ -370,14 +375,27 @@ export default function TechnologyProof() {
             />
           ))}
 
+          {/* Desktop Labels (nested inside stage to rotate in 3D) */}
           {TECH_LABELS.map((label, index) => (
             <div
-              key={label.title}
-              className={`technology-layer__label ${label.className}`}
+              key={`desktop-${label.title}`}
+              className={`technology-layer__label technology-layer__label-desktop ${label.className}`}
             >
               <b>{label.title}</b>
               <span>{label.desc}</span>
               <em>{String(index + 1).padStart(2, '0')}</em>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Labels (positioned flat outside the 3D stage to avoid rotation and distortion) */}
+        <div className="technology-layer__mobile-labels" aria-hidden="true">
+          {TECH_LABELS.map((label, index) => (
+            <div
+              key={`mobile-${label.title}`}
+              className="technology-layer__label-mobile"
+            >
+              <span>{label.desc}</span>
             </div>
           ))}
         </div>

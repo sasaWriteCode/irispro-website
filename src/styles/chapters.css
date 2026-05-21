@@ -526,6 +526,11 @@
   color: var(--irispro-red, #d20f18);
 }
 
+/* Hide mobile-only labels container on desktop */
+.technology-layer__mobile-labels {
+  display: none;
+}
+
 /* Label positions */
 .technology-layer__label--1 {
   bottom: -1rem;
@@ -579,8 +584,8 @@
 .technology-layer__caption {
   margin: 0;
   font-family: 'Montserrat', var(--font-body);
-  font-size: clamp(1.55rem, 3.5vw, 2.12rem);
-  font-weight: 700;
+  font-size: clamp(1.8rem, 3vw, 2.1rem);
+  font-weight: 500;
   line-height: 1.65;
   letter-spacing: -0.015em;
   color: var(--irispro-black);
@@ -609,12 +614,12 @@
     min-height: 320vh;
   }
 
+  /* Stage centered — GSAP owns the transform matrix */
   .technology-layer__stage {
     left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%) scale(0.82);
-    width: 80vw;
-    height: 55vw;
+    top: 50%;
+    width: 74vw;
+    height: 50vw;
   }
 
   .technology-layer__content-side {
@@ -629,66 +634,68 @@
   }
 
   .technology-layer__caption {
-    font-size: clamp(0.84rem, 3vw, 0.95rem);
-    line-height: 1.55;
+    font-size: clamp(1.35rem, 4.5vw, 1.65rem);
+    line-height: 1.45;
+    letter-spacing: -0.015em;
   }
 
-  .technology-layer__label {
-    width: 110px;
-    font-size: 0.52rem;
-    padding-top: 0.5rem;
-  }
-
-  .technology-layer__label b {
-    font-size: 0.62rem;
-  }
-
-  .technology-layer__label--1 {
-    left: -12%;
-    bottom: -4.5rem;
-  }
-
-  .technology-layer__label--2 {
-    left: 14%;
-    top: -18%;
-  }
-
-  .technology-layer__label--3 {
-    right: -10%;
-    top: 68%;
-  }
-
-  .technology-layer__label--4 {
-    left: 18%;
-    bottom: -6.5rem;
-  }
-
-  .technology-layer__label--5 {
-    left: -10%;
-    top: 16%;
-  }
-
-  .technology-layer__label--6 {
-    right: -10%;
-    top: 22%;
-  }
-
-  .technology-layer__label--7,
-  .technology-layer__label--8 {
+  .technology-layer__caption br {
     display: none;
+  }
+
+  /* Hide the 3D-rotated desktop labels on mobile */
+  .technology-layer__label-desktop {
+    display: none !important;
+  }
+
+  /* Flat 2D mobile labels list outside the stage to avoid tilt and distortion */
+  .technology-layer__mobile-labels {
+    display: block;
+    position: absolute;
+    left: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 110px;
+    height: 0;
+    /* Centered layout, GSAP moves items along the Y axis */
+    z-index: 100;
+    pointer-events: none;
+  }
+
+  .technology-layer__label-mobile {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    padding-left: 8px;
+    border-left: 2px solid var(--irispro-red, #d20f18);
+    font-family: 'Montserrat', var(--font-body);
+    font-size: clamp(10px, 2.8vw, 12px);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.35;
+    color: rgba(21, 21, 21, 0.85);
+    opacity: 0;
+    will-change: transform, opacity;
   }
 }
 
 @media (max-width: 480px) {
   .technology-layer__stage {
-    width: 90vw;
-    height: 60vw;
-    transform: translate(-50%, -50%) scale(0.72);
+    width: 88vw;
+    height: 58vw;
   }
 
-  .technology-layer__label--1,
-  .technology-layer__label--4 {
-    display: none;
+  .technology-layer__mobile-labels {
+    left: 20px;
+    width: 95px;
+  }
+
+  .technology-layer__label-mobile {
+    font-size: 10px;
+    padding-left: 6px;
   }
 }
 
