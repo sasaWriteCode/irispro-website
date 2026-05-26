@@ -58,6 +58,20 @@ export default function SplitMedia() {
           toggleActions: 'play none none reverse',
         },
       });
+
+      // Subtitle transition fade in
+      gsap.from('.split-media__subtitle', {
+        opacity: 0,
+        y: 35,
+        duration: 1,
+        delay: 0.1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.split-media__subtitle',
+          start: 'top 85%',
+          toggleActions: 'play none none reverse',
+        },
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -73,12 +87,17 @@ export default function SplitMedia() {
       {/* Split media grid */}
       <div className="split-media__grid">
         <div className="split-media__media-left">
-          <img
-            src={`${BASE}images/split-media-install.png`}
-            alt="Professional IRISPRO window film installation"
-            className="split-media__img"
-            loading="lazy"
-          />
+          <div className="split-media__video-wrapper">
+            <video
+              className="split-media__video"
+              src={`${BASE}videos/split_vid_left.mp4`}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+            />
+          </div>
         </div>
         <div className="split-media__media-right">
           <img
@@ -90,10 +109,20 @@ export default function SplitMedia() {
         </div>
       </div>
 
+      {/* Transition subtitle sentence at the bottom of the video grid */}
+      <div className="split-media__subtitle-wrapper">
+        <p className="split-media__subtitle">
+          Fighting sunlight was never just about making glass darker.
+        </p>
+      </div>
+
       {/* Editorial text block */}
-      <div className="split-media__text-wrapper" style={{ backgroundColor: '#ffffff' }}>
-        <p className="split-media__text" style={{ color: '#1a1a1a' }}>
-          Sunlight is constant, unforgiving, and often underestimated. Every day, it passes through ordinary glass — bringing heat, glare, UV exposure, and the kind of discomfort that slowly builds without being noticed. The first challenge is simple: protection that actually holds up. This is where IRISPRO begins.
+      <div className="split-media__text-wrapper">
+        <p className="split-media__text">
+          Sunlight is constant, unforgiving, and often underestimated. <br />
+          We are now entering the real-world test. <br />
+          The <span className="split-media__highlight">IRISPRO</span> is no longer a promise. <br />
+          It is being observed under pressure.
         </p>
       </div>
     </section>

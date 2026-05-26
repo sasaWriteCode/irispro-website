@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import '../styles/hero.css';
 
@@ -39,8 +39,70 @@ const HERO_FRAMES = [
 
 export default function Hero() {
   const heroRef = useRef(null);
+  const [loadedProgress, setLoadedProgress] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
+  // 1. Programmatically preload and decode all frame images in parallel
   useEffect(() => {
+    let active = true;
+    let count = 0;
+
+    // Dynamically inject link rel="preload" tags to start downloading immediately
+    const links = HERO_FRAMES.map((frame) => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = frame.src;
+      document.head.appendChild(link);
+      return link;
+    });
+
+    HERO_FRAMES.forEach((frame) => {
+      const img = new Image();
+      img.src = frame.src;
+
+      const onProgress = () => {
+        if (!active) return;
+        count++;
+        const pct = Math.round((count / HERO_FRAMES.length) * 100);
+        setLoadedProgress(pct);
+        if (count === HERO_FRAMES.length) {
+          setTimeout(() => {
+            if (active) setImagesLoaded(true);
+          }, 350);
+        }
+      };
+
+      if (img.complete) {
+        onProgress();
+      } else {
+        img.onload = () => {
+          if ('decode' in img) {
+            img.decode()
+              .then(onProgress)
+              .catch(onProgress);
+          } else {
+            onProgress();
+          }
+        };
+        img.onerror = onProgress;
+      }
+    });
+
+    return () => {
+      active = false;
+      links.forEach((link) => {
+        if (link.parentNode) {
+          link.parentNode.removeChild(link);
+        }
+      });
+    };
+  }, []);
+
+  // 2. Timeline runs ONLY after all images are ready and decoded
+  useEffect(() => {
+    if (!imagesLoaded) return;
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const ctx = gsap.context(() => {
@@ -260,10 +322,18 @@ export default function Hero() {
     }, heroRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [imagesLoaded]);
 
   return (
     <section ref={heroRef} className="hero" id="hero" aria-label="IrisPro protection hero">
+      {/* Premium Minimal Preloader */}
+      <div className={`hero__loader ${imagesLoaded ? 'is-loaded' : ''}`}>
+        <span className="hero__loader-text">Loading cinematic experience</span>
+        <div className="hero__loader-line">
+          <div className="hero__loader-progress" style={{ '--progress': `${loadedProgress}%` }} />
+        </div>
+      </div>
+
       <div className="hero__flash" aria-hidden="true" />
 
       <div className="hero__brand">

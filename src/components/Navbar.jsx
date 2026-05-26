@@ -30,13 +30,14 @@ export default function Navbar() {
       </a>
 
       <ul className="navbar__links">
-        <li><a href="#problem" className="navbar__link">The Problem</a></li>
-        <li><a href="#iris-layer" className="navbar__link">Protection</a></li>
-        <li><a href="#technology" className="navbar__link">Technology</a></li>
-        <li><a href="#products" className="navbar__link">Products</a></li>
+        <li><a href="#problem" className="navbar__link">ABOUT</a></li>
+        <li><a href="#timeline" className="navbar__link">HISTORY</a></li>
+        <li><a href="#technology" className="navbar__link">TECHNOLOGY</a></li>
+        <li><a href="#testimonials" className="navbar__link">PROJECTS</a></li>
+        <li><a href="#testimonials" className="navbar__link">TESTIMONIALS</a></li>
         <li>
           <a href="#consultation" className="navbar__cta" role="button">
-            Get Consultation
+            ENQUIRE
           </a>
         </li>
       </ul>

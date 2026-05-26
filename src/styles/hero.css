@@ -10,6 +10,53 @@
   color: #191715;
 }
 
+/* ── Cinematic Loader ── */
+.hero__loader {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), pointer-events 0.8s;
+  pointer-events: all;
+}
+
+.hero__loader.is-loaded {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero__loader-line {
+  width: 160px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__loader-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--progress, 0%);
+  background: var(--irispro-red, #d20f18);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero__loader-text {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
 .hero::before {
   content: '';
   position: absolute;
@@ -95,6 +142,11 @@
     0 38px 120px rgba(91, 61, 24, 0.22),
     inset 0 1px 0 rgba(255, 255, 255, 0.65);
   will-change: transform, opacity;
+
+  /* GPU Layer Acceleration Hooks */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .hero__frame img {

@@ -10,85 +10,95 @@ const FILM_LAYERS = [
   {
     id: 'layer-1',
     src: `${BASE}images/technology/layer1.png`,
-    alt: 'IRISPRO anti-aging oxidation barrier layer',
+    alt: 'IRISPRO Hard Coating with UV and Anti-Aging protection layer',
   },
   {
     id: 'layer-2',
     src: `${BASE}images/technology/layer2.png`,
-    alt: 'IRISPRO UV420 protection layer',
+    alt: 'IRISPRO Hotmelt composite layer — Anti-Aging, UV420, Blue Light, Chip Dye, Heat Rejection',
   },
   {
     id: 'layer-3',
     src: `${BASE}images/technology/layer3.png`,
-    alt: 'IRISPRO HEV blue light filtering layer',
+    alt: 'IRISPRO Anti-Aging layer',
   },
   {
     id: 'layer-4',
     src: `${BASE}images/technology/layer4.png`,
-    alt: 'IRISPRO nano titanium heat shield core',
+    alt: 'IRISPRO Patented UV and Blue Light material',
   },
   {
     id: 'layer-5',
     src: `${BASE}images/technology/layer5.png`,
-    alt: 'IRISPRO chip dye color stability layer',
+    alt: 'IRISPRO Chip Dye Color layer',
   },
   {
     id: 'layer-6',
     src: `${BASE}images/technology/layer6.png`,
-    alt: 'IRISPRO ceramic sputter technology layer',
+    alt: 'IRISPRO Heat Rejection Material layer',
   },
   {
     id: 'layer-7',
     src: `${BASE}images/technology/layer7.png`,
-    alt: 'IRISPRO anti-scratch hard coat layer',
+    alt: 'IRISPRO Multi Layer Sputtering heat reflect layer',
   },
   {
     id: 'layer-8',
     src: `${BASE}images/technology/layer8.png`,
-    alt: 'IRISPRO release backing layer',
+    alt: 'IRISPRO Adhesive with Anti-Aging and UV Absorbant material',
+  },
+  {
+    id: 'layer-9',
+    src: `${BASE}images/technology/layer8.png`,
+    alt: 'IRISPRO Premium Quality Release Liner',
   },
 ];
 
 const TECH_LABELS = [
   {
-    title: 'Anti-Aging',
-    desc: 'Oxidation Barrier',
+    title: 'Hard Coating',
+    desc: 'UV & Anti-Aging Protection',
     className: 'technology-layer__label--1',
   },
   {
-    title: 'UV420 Protection',
-    desc: 'Total UV Block',
+    title: 'Anti-Aging',
+    desc: 'Oxidation Resistance',
     className: 'technology-layer__label--2',
   },
   {
-    title: 'HEV Blue Light',
-    desc: 'Filtering Technology',
+    title: 'UV & Blue Light',
+    desc: 'Patented Filtering Material',
     className: 'technology-layer__label--3',
   },
   {
-    title: 'Nano Titanium',
-    desc: 'Heat Shield Core',
+    title: 'Chip Dye Color',
+    desc: 'Deep Color Stability',
     className: 'technology-layer__label--4',
   },
   {
-    title: 'Chip Dye',
-    desc: 'Deep Color Stability',
+    title: 'Heat Rejection',
+    desc: 'Thermal Shield Material',
     className: 'technology-layer__label--5',
   },
   {
-    title: 'Ceramic Sputter',
-    desc: 'Multi-Layer Sputtering',
+    title: 'UV & Blue Light',
+    desc: 'Patented Filter Layer',
     className: 'technology-layer__label--6',
   },
   {
-    title: 'Anti-Scratch',
-    desc: 'Hard Coat Finish',
+    title: 'Multi Layer Sputter',
+    desc: 'Enhanced Heat Reflection',
     className: 'technology-layer__label--7',
   },
   {
-    title: 'Release Layer',
-    desc: 'Protective Backing',
+    title: 'UV Absorbant Adhesive',
+    desc: 'Anti-Aging Bonding Layer',
     className: 'technology-layer__label--8',
+  },
+  {
+    title: 'Release Liner',
+    desc: 'Premium Quality Backing',
+    className: 'technology-layer__label--9',
   },
 ];
 
@@ -248,7 +258,7 @@ export default function TechnologyProof() {
         });
       });
 
-      // Mobile layout — vertical spread, labels track each layer on the left
+      // Mobile layout — vertical spread, labels in a neat flex list on the left
       mm.add('(max-width: 980px)', () => {
         gsap.set('.technology-layer__content-side', {
           opacity: 1,
@@ -265,8 +275,9 @@ export default function TechnologyProof() {
           transformOrigin: 'center center',
         });
 
-        // Mobile labels start invisible at the container center
-        gsap.set(mobileLabels, { opacity: 0, y: 0 });
+        // Set container and label initial states
+        gsap.set('.technology-layer__mobile-labels', { opacity: 0 });
+        gsap.set(mobileLabels, { opacity: 0, x: -15 });
 
         gsap.set('.technology-layer__stage', {
           left: '50%',
@@ -289,14 +300,36 @@ export default function TechnologyProof() {
           },
         });
 
-        // Step 1: Fade out caption
+        // Step 1: Fade out caption AND move stage to the right (left: 90%)
         tl.to(
           '.technology-layer__content-side',
           { y: 40, opacity: 0, duration: 1.2, ease: 'power2.inOut' },
           0
         );
 
-        // Step 2: Fan layers vertically + move each label to the same y
+        tl.to(
+          '.technology-layer__stage',
+          {
+            left: '90%',
+            y: -120,
+            duration: 1.5,
+            ease: 'power2.inOut',
+          },
+          0
+        );
+
+        // Step 2: Fade in the mobile labels container
+        tl.to(
+          '.technology-layer__mobile-labels',
+          {
+            opacity: 1,
+            duration: 1.2,
+            ease: 'power2.out',
+          },
+          1.0
+        );
+
+        // Step 3: Fan layers vertically + stagger-fade each label
         const FAN_SPACING = 38;
 
         layers.forEach((layer, index) => {
@@ -317,17 +350,17 @@ export default function TechnologyProof() {
             1.0
           );
 
-          // Move its label to the same y and fade it in
+          // Staggered slide and fade-in for labels
           if (mobileLabels[index]) {
             tl.to(
               mobileLabels[index],
               {
-                y: targetY,
+                x: 0,
                 opacity: 1,
-                duration: 1.6,
+                duration: 1.5,
                 ease: 'power2.out',
               },
-              1.0
+              1.0 + index * 0.12
             );
           }
         });
@@ -395,7 +428,11 @@ export default function TechnologyProof() {
               key={`mobile-${label.title}`}
               className="technology-layer__label-mobile"
             >
-              <span>{label.desc}</span>
+              <span className="technology-layer__label-mobile-num">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <h4 className="technology-layer__label-mobile-title">{label.title}</h4>
+              <p className="technology-layer__label-mobile-desc">{label.desc}</p>
             </div>
           ))}
         </div>

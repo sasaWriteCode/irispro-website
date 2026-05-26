@@ -6,6 +6,7 @@ import IrisLayer from './components/IrisLayer';
 import TechnologyProof from './components/TechnologyProof';
 import SplitMedia from './components/SplitMedia';
 import TestimonialCarousel from './components/TestimonialCarousel';
+import BrandTimeline from './components/BrandTimeline';
 import FinalCTA from './components/FinalCTA';
 import './styles/chapters.css';
 
@@ -21,6 +22,7 @@ export default function App() {
         <TechnologyProof />
         <SplitMedia />
         <TestimonialCarousel />
+        <BrandTimeline />
         <FinalCTA />
       </main>
       <footer className="footer">
