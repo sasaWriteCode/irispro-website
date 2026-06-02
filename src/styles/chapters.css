@@ -901,13 +901,16 @@
     min-height: 100svh;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Left-aligned on mobile to match the screenshot! */
+    justify-content: flex-start;
+    /* Left-aligned on mobile to match the screenshot! */
     box-sizing: border-box;
   }
 
   .split-media__text {
-    text-align: left; /* Left-aligned text like the screenshot! */
-    font-size: clamp(1.8rem, 6.8vw, 2.8rem); /* Massive bold text that fills the screen like the screenshot! */
+    text-align: left;
+    /* Left-aligned text like the screenshot! */
+    font-size: clamp(1.8rem, 6.8vw, 2.8rem);
+    /* Massive bold text that fills the screen like the screenshot! */
     font-weight: 700;
     line-height: 1.15;
     letter-spacing: -0.04em;
@@ -1756,7 +1759,8 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  align-self: start;          /* ← critical: don't stretch to full row height */
+  align-self: start;
+  /* ← critical: don't stretch to full row height */
   background: #0a0a0a;
   display: flex;
   align-items: center;
@@ -1879,13 +1883,11 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    var(--irispro-red, #d20f18) 6%,
-    var(--irispro-red, #d20f18) 92%,
-    transparent 100%
-  );
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      var(--irispro-red, #d20f18) 6%,
+      var(--irispro-red, #d20f18) 92%,
+      transparent 100%);
 }
 
 /* Individual milestone card */
