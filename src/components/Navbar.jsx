@@ -1,27 +1,33 @@
-import { useRef, useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/navbar.css';
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const closeTimer = useRef(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const handleEnter = () => {
-    clearTimeout(closeTimer.current);
-    setOpen(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMobileMenu = () => {
+    setMobileOpen(prev => !prev);
   };
 
-  const handleLeave = () => {
-    closeTimer.current = setTimeout(() => setOpen(false), 120);
+  const handleLinkClick = () => {
+    setMobileOpen(false);
   };
 
   return (
-    <nav
-      className={`navbar${open ? ' open' : ''}`}
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
-      aria-label="Main navigation"
-    >
-      <a href="#" className="navbar__logo">
+    <nav className={`navbar${mobileOpen ? ' navbar--mobile-open' : ''}${scrolled ? ' navbar--scrolled' : ''}`} aria-label="Main navigation">
+      <a href="#" className="navbar__logo" onClick={handleLinkClick}>
         <img
           src={`${import.meta.env.BASE_URL}irispro-logo.png`}
           alt="IrisPro"
@@ -29,36 +35,30 @@ export default function Navbar() {
         />
       </a>
 
-      <ul className="navbar__links">
-        <li><a href="#problem" className="navbar__link">ABOUT</a></li>
-        <li><a href="#timeline" className="navbar__link">HISTORY</a></li>
-        <li><a href="#technology" className="navbar__link">TECHNOLOGY</a></li>
-        <li><a href="#testimonials" className="navbar__link">PROJECTS</a></li>
-        <li><a href="#testimonials" className="navbar__link">TESTIMONIALS</a></li>
-        <li>
-          <a href="#consultation" className="navbar__cta" role="button">
-            ENQUIRE
-          </a>
-        </li>
-      </ul>
-
-      {/*
-        Lid — hangs below the nav via absolute positioning.
-        Because it's INSIDE <nav>, it slides down with the nav on hover.
-        pointer-events: all ensures it's hoverable even when nav is above viewport.
-      */}
-      <div
-        className="nav-lid"
-        onMouseEnter={handleEnter}
-        aria-label="Open navigation"
-        role="button"
-        tabIndex={0}
-        onFocus={handleEnter}
-        onBlur={handleLeave}
+      {/* Hamburger button for mobile */}
+      <button
+        className={`navbar__hamburger${mobileOpen ? ' navbar__hamburger--open' : ''}`}
+        onClick={toggleMobileMenu}
+        aria-label="Toggle navigation menu"
+        aria-expanded={mobileOpen}
       >
         <span />
         <span />
-      </div>
+        <span />
+      </button>
+
+      <ul className={`navbar__links${mobileOpen ? ' navbar__links--open' : ''}`}>
+        <li><a href="#problem" className="navbar__link" onClick={handleLinkClick}>ABOUT</a></li>
+        <li><a href="#timeline" className="navbar__link" onClick={handleLinkClick}>HISTORY</a></li>
+        <li><a href="#technology" className="navbar__link" onClick={handleLinkClick}>TECHNOLOGY</a></li>
+        <li><a href="#testimonials" className="navbar__link" onClick={handleLinkClick}>PROJECTS</a></li>
+        <li><a href="#testimonials" className="navbar__link" onClick={handleLinkClick}>TESTIMONIALS</a></li>
+        <li>
+          <a href="#consultation" className="navbar__cta" role="button" onClick={handleLinkClick}>
+            Get Quote Now
+          </a>
+        </li>
+      </ul>
     </nav>
   );
 }

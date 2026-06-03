@@ -1240,6 +1240,8 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   z-index: 15;
   transition: transform 0.3s var(--ease-out-expo);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .project-modal__hotspot-pill:hover {

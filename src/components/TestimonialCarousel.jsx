@@ -10,7 +10,7 @@ const TESTIMONIALS = [
   {
     img: `${BASE}images/residential-glass.png`,
     alt: 'Premium residential window tinting showcase',
-    title: 'SERIES 01 / HOME PROJECTS',
+    title: 'SERIES 01 / RESIDENTIAL PROJECTS',
     desc: 'Tailored residential heat and UV protection, elevating indoor living comfort.',
     cases: [
       {
@@ -33,14 +33,21 @@ const TESTIMONIALS = [
         challenge: 'Large smart-glass dome causing extreme thermal pockets, making the dining table uncomfortable at midday.',
         solution: 'IrisPro Spectrum-Selective Thermal Film.',
         result: 'Ambient temperature stabilized within 1.5°C variance. Solar heat loading cut by 58%.'
+      },
+      {
+        client: 'Sky-High Penthouse',
+        img: `${BASE}images/residential-glass-2.png`,
+        challenge: 'Extreme heat load at high altitudes causing occupant discomfort and fading of luxury silk tapestries.',
+        solution: 'IrisPro Diamond Series for high-rise residential.',
+        result: '99.9% UV rays blocked. Furnishing degradation eliminated.'
       }
     ]
   },
   {
-    img: `${BASE}images/residential-glass-2.png`,
-    alt: 'Modern residential high-rise developer development',
-    title: 'SERIES 02 / DEVELOPER PROJECTS',
-    desc: 'High-performance solar control films for modern developer developments.',
+    img: `${BASE}images/commercial-building.png`,
+    alt: 'Premium commercial solar window film showcase',
+    title: 'SERIES 02 / COMMERCIAL PROJECTS',
+    desc: 'High-performance solar control films for modern offices, towers, developer developments, hotels, universities, and industrial sites.',
     cases: [
       {
         client: 'Apex Commercial Plaza',
@@ -62,15 +69,42 @@ const TESTIMONIALS = [
         challenge: 'High visual glare and low glass privacy in ground-level office pods, causing screen reflection and privacy concerns.',
         solution: 'IrisPro Dual-Reflective One-Way Privacy Film.',
         result: 'Glare reduced by 85%. Exterior privacy secured without blocking natural light.'
-      }
-    ]
-  },
-  {
-    img: `${BASE}images/commercial-building-panel.png`,
-    alt: 'Industrial factory thermal window film insulation',
-    title: 'SERIES 03 / FACTORY PROJECTS',
-    desc: 'Industrial-grade thermal insulation, maximizing work floor energy efficiency.',
-    cases: [
+      },
+      {
+        client: 'Horizon Financial Tower',
+        img: `${BASE}images/commercial-building-2.png`,
+        challenge: 'Extreme high-altitude solar exposure, causing continuous HVAC operation and massive cooling energy consumption across the southern facade.',
+        solution: 'IrisPro Multi-Layer Tower Shield Series.',
+        result: 'HVAC electrical load dropped by 22%. 99.9% UV protection. Annual building carbon emission reduced by 14 tons.'
+      },
+      {
+        client: 'Signature Glass Deck',
+        img: `${BASE}images/commercial-building.png`,
+        challenge: 'Extreme solar heat in observation spaces, creating high glass touch temperatures and placing high pressure on high-rise air conditioning lines.',
+        solution: 'IrisPro Ultimate Premium Solar Film.',
+        result: 'Glass surface contact heat reduced by 68%. Air conditioning reliability optimized. Pristine architectural transparency maintained.'
+      },
+      {
+        client: 'Grand Imperial Suites',
+        img: `${BASE}images/commercial-building.png`,
+        challenge: 'Premium hotel guests complaining about visual glare off the harbor and UV fading of luxurious interior silk tapestries and custom suite carpets.',
+        solution: 'IrisPro Diamond Series for premium guest suites.',
+        result: '100% UV rays blocked. Furnishing degradation eliminated. Guest suite comfort score elevated by 28%.'
+      },
+      {
+        client: 'Oasis Lobby Frontage',
+        img: `${BASE}images/residential-glass.png`,
+        challenge: 'Severe poolside reflections projecting into the floor-to-ceiling lobby glass reception desk, blinding hotel staff and check-in guests.',
+        solution: 'IrisPro Polarized Anti-Reflection Film.',
+        result: 'Reception desk glare reduced by 80%. Lobby guest satisfaction rating increased by 32%. Employee visual strain resolved.'
+      },
+      {
+        client: 'Ritz Presidential Dining',
+        img: `${BASE}images/residential-glass-2.png`,
+        challenge: 'Extreme solar heat loading the glass mezzanine dining area, causing guests to avoid window seating.',
+        solution: 'IrisPro Luxury Glass Tinting.',
+        result: 'Seat utilization increased by 100%. Mezzanine dining comfort restored.'
+      },
       {
         client: 'Precision Robotics Foundry',
         img: `${BASE}images/commercial-building-panel.png`,
@@ -91,15 +125,7 @@ const TESTIMONIALS = [
         challenge: 'Giant factory overhead skylights letting in extreme radiant heat, overheating warehouses and stored items.',
         solution: 'IrisPro Industrial Exterior Shield.',
         result: 'Roof-level heat ingress cut by 68%. HVAC strain reduced by 20%.'
-      }
-    ]
-  },
-  {
-    img: `${BASE}images/iris-comfort.png`,
-    alt: 'High-end university educational building glass design',
-    title: 'SERIES 04 / UNIVERSITY PROJECTS',
-    desc: 'Cinematic glare reduction for lecture halls and collaborative study spaces.',
-    cases: [
+      },
       {
         client: 'Centennial Lecture Hall',
         img: `${BASE}images/iris-comfort.png`,
@@ -124,67 +150,9 @@ const TESTIMONIALS = [
     ]
   },
   {
-    img: `${BASE}images/commercial-building-2.png`,
-    alt: 'Corporate tower solar control glass cladding',
-    title: 'SERIES 05 / TOWER PROJECTS',
-    desc: 'High-rise envelope insulation, optimizing solar gains under extreme exposure.',
-    cases: [
-      {
-        client: 'Horizon Financial Tower',
-        img: `${BASE}images/commercial-building-2.png`,
-        challenge: 'Extreme high-altitude solar exposure, causing continuous HVAC operation and massive cooling energy consumption across the southern facade.',
-        solution: 'IrisPro Multi-Layer Tower Shield Series.',
-        result: 'HVAC electrical load dropped by 22%. 99.9% UV protection. Annual building carbon emission reduced by 14 tons.'
-      },
-      {
-        client: 'Signature Glass Deck',
-        img: `${BASE}images/commercial-building.png`,
-        challenge: 'Extreme solar heat in observation spaces, creating high glass touch temperatures and placing high pressure on high-rise air conditioning lines.',
-        solution: 'IrisPro Ultimate Premium Solar Film.',
-        result: 'Glass surface contact heat reduced by 68%. Air conditioning reliability optimized. Pristine architectural transparency maintained.'
-      },
-      {
-        client: 'Sky-High Penthouse',
-        img: `${BASE}images/residential-glass-2.png`,
-        challenge: 'Extreme heat load at high altitudes causing occupant discomfort and fading of luxury silk tapestries.',
-        solution: 'IrisPro Diamond Series for high-rise residential.',
-        result: '99.9% UV rays blocked. Furnishing degradation eliminated.'
-      }
-    ]
-  },
-  {
-    img: `${BASE}images/commercial-building.png`,
-    alt: 'Luxurious hotel glass facade sunset view',
-    title: 'SERIES 06 / HOTEL PROJECTS',
-    desc: 'Luxurious guest privacy and comfort with state-of-the-art optical clarity.',
-    cases: [
-      {
-        client: 'Grand Imperial Suites',
-        img: `${BASE}images/commercial-building.png`,
-        challenge: 'Premium hotel guests complaining about visual glare off the harbor and UV fading of luxurious interior silk tapestries and custom suite carpets.',
-        solution: 'IrisPro Diamond Series for premium guest suites.',
-        result: '100% UV rays blocked. Furnishing degradation eliminated. Guest suite comfort score elevated by 28%.'
-      },
-      {
-        client: 'Oasis Lobby Frontage',
-        img: `${BASE}images/residential-glass.png`,
-        challenge: 'Severe poolside reflections projecting into the floor-to-ceiling lobby glass reception desk, blinding hotel staff and check-in guests.',
-        solution: 'IrisPro Polarized Anti-Reflection Film.',
-        result: 'Reception desk glare reduced by 80%. Lobby guest satisfaction rating increased by 32%. Employee visual strain resolved.'
-      },
-      {
-        client: 'Ritz Presidential Dining',
-        img: `${BASE}images/residential-glass-2.png`,
-        challenge: 'Extreme solar heat loading the glass mezzanine dining area, causing guests to avoid window seating.',
-        solution: 'IrisPro Luxury Glass Tinting.',
-        result: 'Seat utilization increased by 100%. Mezzanine dining comfort restored.'
-      }
-    ]
-  },
-  {
     img: `${BASE}images/automotive-tint.png`,
     alt: 'Luxury sports vehicle featuring IRISPRO automotive tinting',
-    title: 'SERIES 07 / AUTOMOTIVE PROJECTS',
+    title: 'SERIES 03 / AUTOMOTIVE PROJECTS',
     desc: 'Elite heat shield tinting, engineered for luxury automotive driving dynamics.',
     cases: [
       {
@@ -227,11 +195,14 @@ export default function TestimonialCarousel() {
   useEffect(() => {
     if (activeProject !== null) {
       document.body.style.overflow = 'hidden';
+      document.body.classList.add('project-modal-active');
     } else {
       document.body.style.overflow = '';
+      document.body.classList.remove('project-modal-active');
     }
     return () => {
       document.body.style.overflow = '';
+      document.body.classList.remove('project-modal-active');
     };
   }, [activeProject]);
 
@@ -379,13 +350,18 @@ export default function TestimonialCarousel() {
                 />
 
                 {/* Floating Hotspot Pill Overlay (matches Nordwand logo pill in screenshot) */}
-                <div className="project-modal__hotspot-pill">
+                <a
+                  href={TESTIMONIALS[activeProject].cases[activeCaseIndex].youtube || 'https://www.youtube.com'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-modal__hotspot-pill"
+                >
                   <span className="project-modal__hotspot-dot"></span>
                   <span className="project-modal__hotspot-text">
-                    {TESTIMONIALS[activeProject].cases[activeCaseIndex].client}
+                    Click to view
                   </span>
                   <span className="project-modal__hotspot-arrow">↗</span>
-                </div>
+                </a>
               </div>
 
               {/* Metric Selection Pills (Challenge, Solution, Result overlay pills) */}
