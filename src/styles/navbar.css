@@ -195,6 +195,251 @@ body.project-modal-active .navbar {
   color: #ffffff;
 }
 
+/* ── Apply Dropdown ── */
+.navbar__dropdown {
+  position: relative;
+}
+
+.navbar__dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+.navbar__dropdown-chevron {
+  transition: transform 0.3s ease;
+  margin-top: 1px;
+}
+
+/* Rotate chevron on hover */
+.navbar__dropdown:hover .navbar__dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+.navbar__dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  min-width: 200px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+  list-style: none;
+  padding: 0.5rem 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 300;
+}
+
+/* Bridge gap between trigger and menu to maintain hover state */
+.navbar__dropdown-menu::after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: transparent;
+}
+
+/* Tooltip arrow */
+.navbar__dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 2px;
+  box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Show dropdown on hover */
+.navbar__dropdown:hover .navbar__dropdown-menu {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: all;
+}
+
+/* Match dropdown items to navbar link font style */
+.navbar__dropdown-item {
+  display: block;
+  padding: 0.85rem 1.4rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(30, 28, 26, 0.65);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar__dropdown-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--irispro-red, #d20f18);
+}
+
+/* ── About Mega Menu ── */
+.navbar__mega-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  min-width: 560px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 2rem 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 300;
+}
+
+.navbar__mega-menu--product {
+  grid-template-columns: 1fr 1fr;
+  min-width: 380px;
+}
+
+/* Bridge gap between trigger and mega-menu */
+.navbar__mega-menu::after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: transparent;
+}
+
+/* Show mega-menu on hover */
+.navbar__dropdown--mega:hover .navbar__mega-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.navbar__mega-col {
+  padding: 0 2rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.navbar__mega-col:last-child {
+  border-right: none;
+}
+
+.navbar__mega-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar__mega-heading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--iris-black, #1e1c1a);
+  margin: 0 0 1rem 0;
+  text-transform: none;
+}
+
+.navbar__mega-link {
+  display: block;
+  padding: 0.5rem 0;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: rgba(30, 28, 26, 0.6);
+  transition: color 0.2s ease;
+  text-transform: none;
+}
+
+.navbar__mega-link:hover {
+  color: var(--irispro-red, #d20f18);
+}
+
+.navbar__mega-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.navbar__mega-social svg {
+  flex-shrink: 0;
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+}
+
+.navbar__mega-social:hover svg {
+  opacity: 1;
+}
+
+/* ── Mobile dropdown adjustments ── */
+@media (max-width: 767px) {
+  .navbar__dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.03);
+    min-width: unset;
+    width: 100%;
+    margin-top: 0.6rem;
+    /* On mobile, always show when parent li is in the open nav */
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .navbar__dropdown-menu::before,
+  .navbar__dropdown-menu::after {
+    display: none;
+  }
+
+  .navbar__mega-menu {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    min-width: unset;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 0.6rem;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.03);
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .navbar__mega-menu::after {
+    display: none;
+  }
+
+  .navbar__mega-col {
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 1rem;
+  }
+
+  .navbar__mega-col:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
 /* ── Desktop ── */
 @media (min-width: 768px) {
   .navbar {

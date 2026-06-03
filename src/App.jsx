@@ -9,6 +9,7 @@ import TestimonialCarousel from './components/TestimonialCarousel';
 import BrandTimeline from './components/BrandTimeline';
 import CustomerReviews from './components/CustomerReviews';
 import StatsCounter from './components/StatsCounter';
+import AwardsSection from './components/AwardsSection';
 import FinalCTA from './components/FinalCTA';
 import './styles/chapters.css';
 
@@ -27,6 +28,7 @@ export default function App() {
         <BrandTimeline />
         <CustomerReviews />
         <StatsCounter />
+        <AwardsSection />
         <FinalCTA />
       </main>
       <footer className="footer">

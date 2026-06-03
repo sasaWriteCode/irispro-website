@@ -187,6 +187,19 @@ export default function TestimonialCarousel() {
   const [activeCaseIndex, setActiveCaseIndex] = useState(0);
   const [activeMetric, setActiveMetric] = useState('challenge'); // challenge | solution | result
 
+  useEffect(() => {
+    const handleOpenProject = (e) => {
+      if (e.detail && typeof e.detail.projectIndex === 'number') {
+        setActiveCaseIndex(0);
+        setActiveMetric('challenge');
+        setActiveProject(e.detail.projectIndex);
+      }
+    };
+
+    window.addEventListener('open-project', handleOpenProject);
+    return () => window.removeEventListener('open-project', handleOpenProject);
+  }, []);
+
   const handleImageLoad = () => {
     ScrollTrigger.refresh();
   };
