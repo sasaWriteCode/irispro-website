@@ -7,6 +7,8 @@ import TechnologyProof from './components/TechnologyProof';
 import SplitMedia from './components/SplitMedia';
 import TestimonialCarousel from './components/TestimonialCarousel';
 import BrandTimeline from './components/BrandTimeline';
+import CustomerReviews from './components/CustomerReviews';
+import StatsCounter from './components/StatsCounter';
 import FinalCTA from './components/FinalCTA';
 import './styles/chapters.css';
 
@@ -23,6 +25,8 @@ export default function App() {
         <SplitMedia />
         <TestimonialCarousel />
         <BrandTimeline />
+        <CustomerReviews />
+        <StatsCounter />
         <FinalCTA />
       </main>
       <footer className="footer">
