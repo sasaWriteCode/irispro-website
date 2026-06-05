@@ -12,6 +12,7 @@ const WORLDS = [
     title: 'Comfort for every drive.',
     desc: 'Premium film for windshields, side windows, and sunroofs. Reduce cabin heat and protect everyone inside.',
     cta: 'Explore Automotive',
+    link: '#/products/automotive'
   },
   {
     img: `${import.meta.env.BASE_URL}images/residential-glass.png`,
@@ -20,6 +21,7 @@ const WORLDS = [
     title: 'Cooler rooms, calmer afternoons.',
     desc: 'Transform your home glass into a barrier against heat and UV without blocking your view or natural light.',
     cta: 'Explore Residential',
+    link: '#/products/residential'
   },
   {
     img: `${import.meta.env.BASE_URL}images/commercial-building.png`,
@@ -28,6 +30,7 @@ const WORLDS = [
     title: 'Better glass performance for modern spaces.',
     desc: 'Reduce cooling costs, improve occupant comfort, and protect interior investments at scale.',
     cta: 'Explore Commercial',
+    link: '#/products/commercial'
   },
 ];
 
@@ -83,7 +86,7 @@ export default function ProductWorlds() {
               <span className="world-card__label">{w.label}</span>
               <h3 className="world-card__title">{w.title}</h3>
               <p className="world-card__desc">{w.desc}</p>
-              <a href="#consultation" className="world-card__cta">
+              <a href={w.link} className="world-card__cta">
                 {w.cta} <span aria-hidden="true">→</span>
               </a>
             </div>

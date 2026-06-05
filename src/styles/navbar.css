@@ -179,20 +179,22 @@ body.project-modal-active .navbar {
 .navbar__cta {
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   background: var(--irispro-red, #d20f18);
   color: #ffffff;
-  padding: 0.75rem 1.6rem;
+  padding: 0.75rem 1.8rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
+  border-radius: 4px; /* Pretty border-radius */
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar__cta:hover {
   background: #b00b12;
   color: #ffffff;
+  transform: translateY(-1px);
 }
 
 /* ── Apply Dropdown ── */

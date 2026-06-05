@@ -63,15 +63,15 @@ export default function Navbar() {
             <div className="navbar__mega-col">
               <h4 className="navbar__mega-heading">Overview</h4>
               <ul>
-                <li><a href="#timeline" className="navbar__mega-link" onClick={handleLinkClick}>History</a></li>
-                <li><a href="#technology" className="navbar__mega-link" onClick={handleLinkClick}>Technology</a></li>
-                <li><a href="#faq" className="navbar__mega-link" onClick={handleLinkClick}>FAQ</a></li>
+                <li><a href="#/history" className="navbar__mega-link" onClick={handleLinkClick}>History</a></li>
+                <li><a href="#/technology" className="navbar__mega-link" onClick={handleLinkClick}>Technology</a></li>
+                <li><a href="#/faq" className="navbar__mega-link" onClick={handleLinkClick}>FAQ</a></li>
               </ul>
             </div>
             <div className="navbar__mega-col">
               <h4 className="navbar__mega-heading">Media</h4>
               <ul>
-                <li><a href="#news" className="navbar__mega-link" onClick={handleLinkClick}>News</a></li>
+                <li><a href="#/news" className="navbar__mega-link" onClick={handleLinkClick}>News</a></li>
               </ul>
             </div>
             <div className="navbar__mega-col">
@@ -113,9 +113,9 @@ export default function Navbar() {
             <div className="navbar__mega-col">
               <h4 className="navbar__mega-heading">Product</h4>
               <ul>
-                <li><a href="#products" className="navbar__mega-link" onClick={handleLinkClick}>Automotive</a></li>
-                <li><a href="#products" className="navbar__mega-link" onClick={handleLinkClick}>Residential</a></li>
-                <li><a href="#products" className="navbar__mega-link" onClick={handleLinkClick}>Commercial</a></li>
+                <li><a href="#/products/automotive" className="navbar__mega-link" onClick={handleLinkClick}>Automotive</a></li>
+                <li><a href="#/products/residential" className="navbar__mega-link" onClick={handleLinkClick}>Residential</a></li>
+                <li><a href="#/products/commercial" className="navbar__mega-link" onClick={handleLinkClick}>Commercial</a></li>
               </ul>
             </div>
             <div className="navbar__mega-col">
@@ -196,8 +196,8 @@ export default function Navbar() {
             </svg>
           </button>
           <ul className="navbar__dropdown-menu">
-            <li><a href="#customer-reviews" className="navbar__dropdown-item" onClick={handleLinkClick}>Google Reviews</a></li>
-            <li><a href="#video-testimonials" className="navbar__dropdown-item" onClick={handleLinkClick}>Video Testimonials</a></li>
+            <li><a href="#/google-reviews" className="navbar__dropdown-item" onClick={handleLinkClick}>Google Reviews</a></li>
+            <li><a href="#/video-testimonials" className="navbar__dropdown-item" onClick={handleLinkClick}>Video Testimonials</a></li>
           </ul>
         </li>
         <li className="navbar__dropdown">
