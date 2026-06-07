@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const REVIEWS_DATA = [
   {
@@ -326,9 +326,97 @@ function RotatingLogoCard({ logos }) {
 }
 
 export default function GoogleReviewsPage() {
+  const viewportRef = useRef(null);
+  const isPausedRef = useRef(false);
+  const animationFrameIdRef = useRef(null);
+  const isTransitioningRef = useRef(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+
+    const animate = () => {
+      if (!isPausedRef.current && !isTransitioningRef.current) {
+        let currentScroll = viewport.scrollLeft;
+        currentScroll += 0.8; // Constant slow scroll speed (pixels per frame)
+
+        const halfWidth = viewport.scrollWidth / 2;
+        if (currentScroll >= halfWidth) {
+          currentScroll = 0; // Jump back seamlessly without visual rewinding
+        }
+        viewport.scrollLeft = currentScroll;
+      }
+      animationFrameIdRef.current = requestAnimationFrame(animate);
+    };
+
+    animationFrameIdRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameIdRef.current) {
+        cancelAnimationFrame(animationFrameIdRef.current);
+      }
+    };
   }, []);
+
+  const handleScroll = (direction) => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+
+    const firstCard = viewport.querySelector('.review-g');
+    if (!firstCard) return;
+
+    const style = window.getComputedStyle(firstCard);
+    const cardWidth = firstCard.offsetWidth;
+    const gap = parseFloat(style.marginRight) || parseFloat(style.marginLeft) || 24;
+    const step = cardWidth + gap;
+
+    isTransitioningRef.current = true;
+
+    let targetScroll = viewport.scrollLeft;
+    const halfWidth = viewport.scrollWidth / 2;
+
+    if (direction === 'prev') {
+      targetScroll -= step;
+      if (targetScroll < 0) {
+        // Instantly jump to corresponding copy position in second set
+        viewport.scrollLeft = halfWidth + viewport.scrollLeft;
+        targetScroll = halfWidth + viewport.scrollLeft - step;
+      }
+    } else {
+      targetScroll += step;
+    }
+
+    viewport.scrollTo({ left: targetScroll, behavior: 'smooth' });
+
+    // Resume continuous scroll after the transition animation settles
+    setTimeout(() => {
+      const finalScroll = viewport.scrollLeft;
+      if (finalScroll >= halfWidth) {
+        viewport.scrollLeft = finalScroll - halfWidth;
+      }
+      isTransitioningRef.current = false;
+    }, 600);
+  };
+
+  const getInitials = (name) => {
+    const parts = name.trim().split(/\s+/);
+    if (parts.length >= 2) {
+      return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+    }
+    return name.substring(0, 2).toUpperCase();
+  };
+
+  const getSeries = (rev) => {
+    if (rev.category === 'automotive') {
+      const automotiveSeries = ['Diamond Series', 'Supreme Series', 'Elite Series', 'Titanium Series', 'Color Stable'];
+      return automotiveSeries[rev.id % automotiveSeries.length];
+    } else {
+      const architecturalSeries = ['Titan X Building', 'Diamond Building', 'RayPro Series', 'Anti Fade 90', 'Vanguard Series'];
+      return architecturalSeries[rev.id % architecturalSeries.length];
+    }
+  };
 
   return (
     <div className="reviews-page">
@@ -342,7 +430,7 @@ export default function GoogleReviewsPage() {
             <br />
             <span className="reviews-hero__title--red">Verified on Google.</span>
           </h1>
-          
+
           {/* Aggregate Rating Box */}
           <div className="reviews-summary-card">
             <div className="reviews-summary-card__left">
@@ -361,38 +449,72 @@ export default function GoogleReviewsPage() {
         </div>
       </section>
 
-      {/* Grid Section */}
-      <section className="reviews-grid-section">
-        <div className="reviews-grid-section__container">
-
-          {/* Expanded Grid */}
-          <div className="reviews-expanded-grid">
-            {REVIEWS_DATA.map((rev) => (
-              <div key={rev.id} className="reviews-grid-card">
-                <div className="reviews-grid-card__header">
-                  <div className="reviews-grid-card__avatar" style={{ background: rev.color }}>
-                    {rev.initial}
+      {/* ============================================
+             WHAT OUR CUSTOMERS SAY — Google Reviews (new)
+        ============================================= */}
+      <section
+        className="reviews-g"
+        id="reviews"
+        onMouseEnter={() => { isPausedRef.current = true; }}
+        onMouseLeave={() => { isPausedRef.current = false; }}
+        onTouchStart={() => { isPausedRef.current = true; }}
+        onTouchEnd={() => { isPausedRef.current = false; }}
+      >
+        <div className="reviews-g__viewport" ref={viewportRef}>
+          <div className="reviews-g__track">
+            {[...REVIEWS_DATA, ...REVIEWS_DATA].map((rev, index) => (
+              <article key={`${rev.id}-${index}`} className="review-g">
+                <div className="review-g__head">
+                  <div className="review-g__avatar" style={{ backgroundColor: rev.color }}>
+                    {getInitials(rev.name)}
                   </div>
-                  <div className="reviews-grid-card__info">
-                    <h3 className="reviews-grid-card__name">{rev.name}</h3>
-                    <span className="reviews-grid-card__time">{rev.time}</span>
+                  <div className="review-g__meta-info">
+                    <div className="review-g__name">{rev.name}</div>
+                    <div className="review-g__when">{rev.time}</div>
                   </div>
-                  <span className="reviews-grid-card__g-icon">
+                  <span className="review-g__g-logo">
                     <GoogleG />
                   </span>
                 </div>
-                
-                <div className="reviews-grid-card__rating-row">
-                  <Stars count={rev.rating} />
-                  <span className={`reviews-grid-card__tag reviews-grid-card__tag--${rev.category}`}>
-                    {rev.category === 'automotive' ? 'Automotive' : 'Architectural'}
-                  </span>
+
+                <div className="review-g__stars-row">
+                  <span className="review-g__stars" aria-label="5 stars">★★★★★</span>
+                  <svg className="review-g__verified-check" viewBox="0 0 24 24" width="14" height="14" fill="#1d9bf0" style={{ marginLeft: '6px', display: 'inline-block', verticalAlign: 'middle' }}>
+                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                  </svg>
                 </div>
 
-                <p className="reviews-grid-card__text">{rev.text}</p>
-              </div>
+                <p className="review-g__body">{rev.text}</p>
+              </article>
             ))}
           </div>
+        </div>
+
+        {/* Navigation Controls below the carousel */}
+        <div className="reviews-g__controls" aria-label="Reviews carousel navigation">
+          <button
+            type="button"
+            id="reviews-prev"
+            className="reviews-g__nav-btn"
+            aria-label="Previous reviews"
+            onClick={() => handleScroll('prev')}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            id="reviews-next"
+            className="reviews-g__nav-btn"
+            aria-label="Next reviews"
+            onClick={() => handleScroll('next')}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
         </div>
       </section>
 

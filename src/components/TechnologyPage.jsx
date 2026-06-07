@@ -455,7 +455,7 @@ export default function TechnologyPage() {
         <div className="tech-video__container">
           <div className="tech-video__header">
             <span className="tech-video__kicker">PERFORMANCE TESTING</span>
-            <h2 className="tech-video__title">Don't <span className="tech-video__title--red">BELIEVE</span> us?</h2>
+            <h2 className="tech-video__title">Don't <span className="tech-video__title--red">BELIEVE </span> us?</h2>
             <p className="tech-video__lead">
               Watch our side-by-side spectrometer verification test, demonstrating 100% UV rejection and 99% HEV blue light blocking in real-time.
             </p>

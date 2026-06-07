@@ -1,0 +1,202 @@
+/* ═══════════════════════════════════════════════════
+   PRODUCTS & SERIES SPECIFICATION STYLES
+   Automotive & Building Tints (Residential/Commercial)
+   ═══════════════════════════════════════════════════ */
+
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-red {
+  color: var(--irispro-red, #d20f18) !important;
+}
+
+/* ==========================================
+   Building Page - Commercial View Style (Light-Red Aesthetic)
+   ========================================== */
+.building-page--commercial {
+  --comm-bg: #fdf8f8;
+  --comm-bg-accent: #fbebeb;
+  --comm-brand-red: #d20f18;
+  --comm-brand-lightred: #f2424b;
+  --comm-text-primary: #1c1c1f;
+  --comm-text-secondary: #5a5a60;
+  --comm-border: #f1dede;
+  
+  background-color: var(--comm-bg) !important;
+  color: var(--comm-text-primary) !important;
+}
+
+/* Base override for titles and labels in commercial view */
+.building-page--commercial h1,
+.building-page--commercial h2,
+.building-page--commercial h3,
+.building-page--commercial h4,
+.building-page--commercial th {
+  color: var(--comm-text-primary) !important;
+}
+
+/* Gradients */
+.building-page--commercial .red-gradient {
+  background: linear-gradient(135deg, var(--comm-brand-red), var(--comm-brand-lightred), var(--comm-brand-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.building-page--commercial .bg-pattern {
+  background-image: radial-gradient(circle at 20% 50%, rgba(210, 15, 24, 0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(242, 66, 75, 0.05) 0%, transparent 40%);
+}
+
+/* Hero Section */
+.building-page--commercial .comm-hero {
+  padding: 8rem 0 4rem 0;
+  background: linear-gradient(180deg, var(--comm-bg-accent) 0%, var(--comm-bg) 100%);
+  position: relative;
+}
+
+.building-page--commercial .comm-hero__breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--comm-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.building-page--commercial .comm-hero__breadcrumbs a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.building-page--commercial .comm-hero__breadcrumbs a:hover
+<truncated 17745 bytes>
+
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-red {
+  color: var(--irispro-red, #d20f18) !important;
+}
+
+/* ==========================================
+   Building Page - Commercial View Style (Light-Red Aesthetic)
+   ========================================== */
+.building-page--commercial {
+  --comm-bg: #fdf8f8;
+  --comm-bg-accent: #fbebeb;
+  --comm-brand-red: #d20f18;
+  --comm-brand-lightred: #f2424b;
+  --comm-text-primary: #1c1c1f;
+  --comm-text-secondary: #5a5a60;
+  --comm-border: #f1dede;
+  
+  background-color: var(--comm-bg) !important;
+  color: var(--comm-text-primary) !important;
+}
+
+/* Base override for titles and labels in commercial view */
+.building-page--commercial h1,
+.building-page--commercial h2,
+.building-page--commercial h3,
+.building-page--commercial h4,
+.building-page--commercial th {
+  color: var(--comm-text-primary) !important;
+}
+
+/* Gradients */
+.building-page--commercial .red-gradient {
+  background: linear-gradient(135deg, var(--comm-brand-red), var(--comm-brand-lightred), var(--comm-brand-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.building-page--commercial .bg-pattern {
+  background-image: radial-gradient(circle at 20% 50%, rgba(210, 15, 24, 0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(242, 66, 75, 0.05) 0%, transparent 40%);
+}
+
+/* Hero Section */
+.building-page--commercial .comm-hero {
+  padding: 8rem 0 4rem 0;
+  background: linear-gradient(180deg, var(--comm-bg-accent) 0%, var(--comm-bg) 100%);
+  position: relative;
+}
+
+.building-page--commercial .comm-hero__breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--comm-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.building-page--commercial .comm-hero__breadcrumbs a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.building-page--commercial .comm-hero__breadcrumbs a:hover
+<truncated 17743 bytes>
+
+  margin-bottom: 1.5rem;
+}
+
+.building-page--commercial .comm-card__vlt-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+  background: linear-gradient(90deg, #111115 0%, #1a1200 30%, #ca8a04 75%, #111115 100%) !important;
+  border-color: rgba(234, 179, 8, 0.3) !important;
+}
+
+.building-page--commercial .comm-vlt-box--flex {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-align: left !important;
+  padding: 0.8rem 1.5rem !important;
+}
+
+.building-page--commercial .comm-vlt-box__text {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+}
+
+  --comm-bg: #fdf8f8;
+  --comm-bg-accent: #fbebeb;
+  --comm-brand-red: #d20f18;
+  --comm-brand-lightred: #f2424b;
+  --comm-text-primary: #1c1c1f;
+  --comm-text-secondary: #5a5a60;
+  --comm-border: #f1dede;
+
+  background-color: var(--comm-bg) !important;
+  color: var(--comm-text-primary) !important;
+  font-family: var(--font-body), sans-serif !important;
+}
+
+/* Base override for titles and labels in commercial view */
+.building-page h1,
+.building-page h2,
+.building-page h3,
+.building-page h4,
+.building-page h5,
+.building-page h6,
+.building-page th,
+.building-page .comm-hero__title,
+.building-page .comm-card__title,
+.building-page .comm-section-header__badge,
+.building-page .comm-hero__badge,
+.building-page .auto-price-quickview__label,
+.building-page .auto-price-quickview__val,
+.building-page .comm-table__product-name {
+  color: var(--comm-text-primary) !important;
+  font-family: 'Montserrat', var(--font-body), sans-serif !important;
+}
