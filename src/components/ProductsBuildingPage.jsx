@@ -194,7 +194,7 @@ export default function ProductsBuildingPage({ initialMode = 'residential' }) {
 
   if (appMode === 'commercial') {
     return (
-      <div className="product-detail-page building-page building-page--commercial bg-pattern">
+      <div className="product-detail-page building-page bg-pattern auto-page">
         {/* Breadcrumbs & Hero */}
         <section className="comm-hero bg-pattern">
           <div className="product-section__container">
@@ -653,7 +653,7 @@ export default function ProductsBuildingPage({ initialMode = 'residential' }) {
 
   // Residential view matching commercial high-fidelity style layout
   return (
-    <div className={`product-detail-page building-page building-page--${appMode} bg-pattern`}>
+    <div className="product-detail-page building-page bg-pattern auto-page">
       {/* Breadcrumbs & Hero */}
       <section className="comm-hero bg-pattern">
         <div className="product-section__container">
