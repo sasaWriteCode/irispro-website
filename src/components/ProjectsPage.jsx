@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import '../styles/projects.css';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -209,34 +210,34 @@ export default function ProjectsPage({ mode = 'residential' }) {
   const activeCase = currentCategory.cases[activeCaseIdx] || currentCategory.cases[0];
 
   return (
-    <div className="product-detail-page projects-page bg-pattern">
-      {/* Cinematic Centered Hero */}
-      <section className="partner-hero">
-        <div className="partner-hero__bg-grid" />
-        <div className="partner-hero__inner">
-          <div className="partner-hero__breadcrumbs">
+    <div className="product-detail-page projects-page bg-pattern auto-page">
+      {/* Hero */}
+      <section className="comm-hero bg-pattern">
+        <div className="product-section__container">
+          <div className="comm-hero__breadcrumbs">
             <a href="#/">Home</a>
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
             <span>Projects</span>
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
             <span className="text-red">{currentCategory.breadcrumbsName}</span>
           </div>
-
-          <div className="partner-hero__badge">
-            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-            </svg>
-            <span>{currentCategory.kicker}</span>
+          <div className="max-w-3xl">
+            <div className="comm-hero__badge">
+              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+              <span>{currentCategory.kicker}</span>
+            </div>
+            <h1 className="comm-hero__title">
+              <span className="red-gradient">{currentCategory.title.split(' ')[0]}</span>{' '}
+              {currentCategory.title.split(' ').slice(1).join(' ')}
+            </h1>
+            <p className="comm-hero__lead">{currentCategory.lead}</p>
           </div>
-
-          <h1 className="partner-hero__title">
-            <span className="red-gradient">{currentCategory.title.split(' ')[0]}</span> {currentCategory.title.split(' ').slice(1).join(' ')}
-          </h1>
-          <p className="partner-hero__lead">{currentCategory.lead}</p>
         </div>
       </section>
 
@@ -244,10 +245,10 @@ export default function ProjectsPage({ mode = 'residential' }) {
       <section className="spotlight-section">
         <div className="product-section__container">
           <div className="comm-section-header">
-            <div className="comm-section-header__badge" style={{ color: '#d20f18', backgroundColor: 'rgba(210,15,24,0.05)', borderColor: 'rgba(210,15,24,0.1)' }}>
+            <div className="comm-section-header__badge comm-section-header__badge--signature">
               Project Spotlight
             </div>
-            <div className="comm-section-header__line" style={{ background: 'linear-gradient(90deg, rgba(210,15,24,0.2) 0%, transparent 100%)' }} />
+            <div className="comm-section-header__line comm-section-header__line--signature" />
             <span className="comm-section-header__text">Featured Case Study</span>
           </div>
 
@@ -305,10 +306,10 @@ export default function ProjectsPage({ mode = 'residential' }) {
       <section className="grid-section">
         <div className="product-section__container">
           <div className="comm-section-header">
-            <div className="comm-section-header__badge" style={{ color: '#d20f18', backgroundColor: 'rgba(210,15,24,0.05)', borderColor: 'rgba(210,15,24,0.1)' }}>
+            <div className="comm-section-header__badge comm-section-header__badge--signature">
               Explore More
             </div>
-            <div className="comm-section-header__line" style={{ background: 'linear-gradient(90deg, rgba(210,15,24,0.2) 0%, transparent 100%)' }} />
+            <div className="comm-section-header__line comm-section-header__line--signature" />
             <span className="comm-section-header__text">All Category Cases</span>
           </div>
 
