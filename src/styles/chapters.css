@@ -5538,9 +5538,6 @@
   overflow: hidden;
 }
 
-.product-hero--auto {
-  background-image: linear-gradient(135deg, rgba(21, 21, 21, 0.95) 0%, rgba(10, 10, 10, 0.8) 40%, rgba(210, 15, 24, 0.5) 100%), url('/irispro-website/images/automotive-tint.png');
-}
 
 .product-hero--resi {
   background-image: linear-gradient(135deg, rgba(21, 21, 21, 0.95) 0%, rgba(10, 10, 10, 0.8) 40%, rgba(210, 15, 24, 0.5) 100%), url('/irispro-website/images/residential-glass.png');

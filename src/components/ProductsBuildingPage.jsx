@@ -201,14 +201,14 @@ export default function ProductsBuildingPage({ initialMode = 'residential' }) {
             <div className="comm-hero__breadcrumbs">
               <a href="#/">Home</a>
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
               <span className="text-red">Commercial Tint</span>
             </div>
             <div className="max-w-3xl">
               <div className="comm-hero__badge">
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
                 <span>Commercial Solutions</span>
               </div>
@@ -518,7 +518,7 @@ export default function ProductsBuildingPage({ initialMode = 'residential' }) {
                 <div className="comm-security-badge">
                   <div className="comm-security-badge__title-row">
                     <svg width="20" height="20" className="text-yellow-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                     </svg>
                     <h4 className="comm-security-badge__title">6.5 mil TPU Security Film - Shatter Resistant</h4>
                   </div>
@@ -660,14 +660,14 @@ export default function ProductsBuildingPage({ initialMode = 'residential' }) {
           <div className="comm-hero__breadcrumbs">
             <a href="#/">Home</a>
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
             <span className="text-red">Residential Tint</span>
           </div>
           <div className="max-w-3xl">
             <div className="comm-hero__badge">
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
               <span>Residential Solutions</span>
             </div>
@@ -724,644 +724,396 @@ export default function ProductsBuildingPage({ initialMode = 'residential' }) {
           </div>
         </div>
       </section>
-
-      {/* Signature Series Section */}
-      <section className="comm-products-section">
-        <div className="product-section__container">
-          <div className="comm-section-header">
-            <div className="comm-section-header__badge comm-section-header__badge--signature">
-              Signature Series
+      {/* ── Advantages Strip ── */}
+      <section className="res-advantages">
+        <div className="res-container">
+          <div className="res-advantages__grid">
+            <div className="res-adv-item">
+              <div className="res-adv-icon res-adv-icon--uv">
+                <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-11.314l.707.707m11.314 11.314l.707.707M12 7a5 5 0 100 10 5 5 0 000-10z" /></svg>
+              </div>
+              <h4 className="res-adv-title">Upholstery Defense</h4>
+              <p className="res-adv-desc">Blocks 100% UV to prevent fading</p>
             </div>
-            <div className="comm-section-header__line comm-section-header__line--signature" />
-            <span className="comm-section-header__text">Premium Residential Grade</span>
+            <div className="res-adv-item">
+              <div className="res-adv-icon res-adv-icon--energy">
+                <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              </div>
+              <h4 className="res-adv-title">Energy Savings</h4>
+              <p className="res-adv-desc">Reduces home aircon power usage</p>
+            </div>
+            <div className="res-adv-item">
+              <div className="res-adv-icon res-adv-icon--shield">
+                <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+              </div>
+              <h4 className="res-adv-title">Shatter Protection</h4>
+              <p className="res-adv-desc">Holds glass together on impact</p>
+            </div>
+            <div className="res-adv-item">
+              <div className="res-adv-icon res-adv-icon--warranty">
+                <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138z" /></svg>
+              </div>
+              <h4 className="res-adv-title">Trusted Warranty</h4>
+              <p className="res-adv-desc">Up to 10 years guarantee</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Signature Series ── */}
+      <section className="res-section">
+        <div className="res-container">
+          <div className="res-series-header">
+            <div className="res-series-badge res-series-badge--signature">Signature Series</div>
+            <div className="res-series-line res-series-line--signature" />
+            <span className="res-series-label">Premium Residential Grade</span>
           </div>
 
-          <div className="comm-products-grid-2">
+          <div className="res-grid-2">
             {/* Titan X */}
-            <div className="comm-card comm-card--signature">
-              <div className="comm-card__img-container">
-                <div className="comm-card__badge-top">FLAGSHIP</div>
-                <img
-                  src={`${import.meta.env.BASE_URL}images/commercial-building.png`}
-                  alt="Titan X"
-                  className="comm-card__img"
-                />
+            <div className="res-card res-card--signature">
+              <div className="res-card__img-wrap">
+                <span className="res-card__top-badge res-card__top-badge--flagship">FLAGSHIP</span>
+                <img src={`${import.meta.env.BASE_URL}images/commercial-building.png`} alt="Titan X" className="res-card__img" />
               </div>
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">Titan X</h3>
-                    <p className="comm-card__subtitle">Multi Layer Silver Sputter</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">3 mil thickness</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">10 Yr Warranty</span>
+                    <h3 className="res-card__title">Titan X</h3>
+                    <p className="res-card__subtitle">Multi Layer Silver Sputter</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">3 mil thickness</span>
+                      <span className="res-tag res-tag--warranty">10 Yr Warranty</span>
                     </div>
                   </div>
+                  <span className="res-card__series-label">Signature</span>
                 </div>
-
-                <div className="comm-card__specs-grid">
-                  <div className="comm-card__spec-block comm-card__spec-block--uvr">
-                    <span className="comm-card__spec-val comm-card__spec-val--uvr">100%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--uvr">
-                      UVR <span className="comm-card__spec-sub">400nm</span>
-                    </span>
-                  </div>
-                  <div className="comm-card__spec-block comm-card__spec-block--blr">
-                    <span className="comm-card__spec-val comm-card__spec-val--blr">99%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--blr">
-                      BLR <span className="comm-card__spec-sub">400-420nm</span>
-                    </span>
-                  </div>
-                  <div className="comm-card__spec-block comm-card__spec-block--irr">
-                    <span className="comm-card__spec-val comm-card__spec-val--irr">&gt;99%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--irr">
-                      IRR <span className="comm-card__spec-sub">1400nm</span>
-                    </span>
+                <div className="res-specs-grid res-specs-grid--3">
+                  <div className="res-spec-badge res-spec-badge--uvr"><span className="res-spec-val">100%</span><span className="res-spec-key">UVR <span className="res-spec-nm">400nm</span></span></div>
+                  <div className="res-spec-badge res-spec-badge--blr"><span className="res-spec-val">99%</span><span className="res-spec-key">BLR <span className="res-spec-nm">400-420nm</span></span></div>
+                  <div className="res-spec-badge res-spec-badge--irr"><span className="res-spec-val">&gt;99%</span><span className="res-spec-key">IRR <span className="res-spec-nm">1400nm</span></span></div>
+                </div>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">Visible Light Transmission</p>
+                  <div className="res-vlt-grid res-vlt-grid--2">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">60%</span><span className="res-vlt-tser">TSER: 69%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">15%</span><span className="res-vlt-tser">TSER: 84%</span></div>
                   </div>
                 </div>
-
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">Visible Light Transmission</p>
-                  <div className="comm-card__vlt-grid comm-card__vlt-grid--2col">
-                    <div className="comm-vlt-box">
-                      <span className="comm-vlt-box__val">60%</span>
-                      <span className="comm-vlt-box__tser">TSER: 69%</span>
-                    </div>
-                    <div className="comm-vlt-box">
-                      <span className="comm-vlt-box__val">15%</span>
-                      <span className="comm-vlt-box__tser">TSER: 84%</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="comm-card__best-for">
-                  <strong>Best for:</strong> Living rooms and large glass windows requiring top-tier heat blocking and maximum clarity.
-                </div>
+                <div className="res-best-for"><strong>Best for:</strong> Living rooms and large glass windows requiring top-tier heat blocking and maximum clarity.</div>
               </div>
             </div>
 
             {/* Diamond */}
-            <div className="comm-card comm-card--signature">
-              <div className="comm-card__img-container">
-                <div className="comm-card__badge-top">PREMIUM</div>
-                <img
-                  src={`${import.meta.env.BASE_URL}images/commercial-building-panel.png`}
-                  alt="Diamond"
-                  className="comm-card__img"
-                />
+            <div className="res-card res-card--signature">
+              <div className="res-card__img-wrap">
+                <span className="res-card__top-badge res-card__top-badge--premium">PREMIUM</span>
+                <img src={`${import.meta.env.BASE_URL}images/commercial-building-panel.png`} alt="Diamond" className="res-card__img" />
               </div>
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">Diamond</h3>
-                    <p className="comm-card__subtitle">Multi Layer Titanium Sputter</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">3 - 3.5 mil</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">10 Yr Warranty</span>
+                    <h3 className="res-card__title">Diamond</h3>
+                    <p className="res-card__subtitle">Multi Layer Titanium Sputter</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">3 - 3.5 mil</span>
+                      <span className="res-tag res-tag--warranty">10 Yr Warranty</span>
                     </div>
                   </div>
+                  <span className="res-card__series-label">Signature</span>
                 </div>
-
-                <div className="comm-card__specs-grid">
-                  <div className="comm-card__spec-block comm-card__spec-block--uvr">
-                    <span className="comm-card__spec-val comm-card__spec-val--uvr">100%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--uvr">
-                      UVR <span className="comm-card__spec-sub">400nm</span>
-                    </span>
-                  </div>
-                  <div className="comm-card__spec-block comm-card__spec-block--blr">
-                    <span className="comm-card__spec-val comm-card__spec-val--blr">99%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--blr">
-                      BLR <span className="comm-card__spec-sub">400-420nm</span>
-                    </span>
-                  </div>
-                  <div className="comm-card__spec-block comm-card__spec-block--irr">
-                    <span className="comm-card__spec-val comm-card__spec-val--irr">98%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--irr">
-                      IRR <span className="comm-card__spec-sub">1400nm</span>
-                    </span>
+                <div className="res-specs-grid res-specs-grid--3">
+                  <div className="res-spec-badge res-spec-badge--uvr"><span className="res-spec-val">100%</span><span className="res-spec-key">UVR <span className="res-spec-nm">400nm</span></span></div>
+                  <div className="res-spec-badge res-spec-badge--blr"><span className="res-spec-val">99%</span><span className="res-spec-key">BLR <span className="res-spec-nm">400-420nm</span></span></div>
+                  <div className="res-spec-badge res-spec-badge--irr"><span className="res-spec-val">98%</span><span className="res-spec-key">IRR <span className="res-spec-nm">1400nm</span></span></div>
+                </div>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">Visible Light Transmission</p>
+                  <div className="res-vlt-grid res-vlt-grid--2">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">60%</span><span className="res-vlt-tser">TSER: 65%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">30%</span><span className="res-vlt-tser">TSER: 78%</span></div>
                   </div>
                 </div>
-
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">Visible Light Transmission</p>
-                  <div className="comm-card__vlt-grid comm-card__vlt-grid--2col">
-                    <div className="comm-vlt-box">
-                      <span className="comm-vlt-box__val">60%</span>
-                      <span className="comm-vlt-box__tser">TSER: 65%</span>
-                    </div>
-                    <div className="comm-vlt-box">
-                      <span className="comm-vlt-box__val">30%</span>
-                      <span className="comm-vlt-box__tser">TSER: 78%</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="comm-card__best-for">
-                  <strong>Best for:</strong> Residences subject to strong morning or afternoon sun, maintaining excellent interior cooling and durability.
-                </div>
+                <div className="res-best-for"><strong>Best for:</strong> Residences subject to strong morning or afternoon sun, maintaining excellent interior cooling and durability.</div>
               </div>
             </div>
 
             {/* RayPro */}
-            <div className="comm-card comm-card--signature">
-              <div className="comm-card__img-container">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/split-media-building.png`}
-                  alt="RayPro"
-                  className="comm-card__img"
-                />
+            <div className="res-card res-card--signature">
+              <div className="res-card__img-wrap">
+                <img src={`${import.meta.env.BASE_URL}images/split-media-building.png`} alt="RayPro" className="res-card__img" />
               </div>
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">RayPro</h3>
-                    <p className="comm-card__subtitle">Nano Titanium Sputter</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">2 - 3.5 mil</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">10 Yr Warranty</span>
+                    <h3 className="res-card__title">RayPro</h3>
+                    <p className="res-card__subtitle">Nano Titanium Sputter</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">2 - 3.5 mil</span>
+                      <span className="res-tag res-tag--warranty">10 Yr Warranty</span>
                     </div>
+                  </div>
+                  <span className="res-card__series-label">Signature</span>
+                </div>
+                <div className="res-specs-grid res-specs-grid--3">
+                  <div className="res-spec-badge res-spec-badge--uvr"><span className="res-spec-val">100%</span><span className="res-spec-key">UVR <span className="res-spec-nm">400nm</span></span></div>
+                  <div className="res-spec-badge res-spec-badge--blr"><span className="res-spec-val">99%</span><span className="res-spec-key">BLR <span className="res-spec-nm">400-420nm</span></span></div>
+                  <div className="res-spec-badge res-spec-badge--irr"><span className="res-spec-val">95%</span><span className="res-spec-key">IRR <span className="res-spec-nm">1400nm</span></span></div>
+                </div>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">Visible Light Transmission</p>
+                  <div className="res-vlt-grid res-vlt-grid--4">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">70%</span><span className="res-vlt-tser">TSER: 57%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">50%</span><span className="res-vlt-tser">TSER: 63%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">30%</span><span className="res-vlt-tser">TSER: 72%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">15%</span><span className="res-vlt-tser">TSER: 78%</span></div>
                   </div>
                 </div>
-
-                <div className="comm-card__specs-grid">
-                  <div className="comm-card__spec-block comm-card__spec-block--uvr">
-                    <span className="comm-card__spec-val comm-card__spec-val--uvr">100%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--uvr">
-                      UVR <span className="comm-card__spec-sub">400nm</span>
-                    </span>
-                  </div>
-                  <div className="comm-card__spec-block comm-card__spec-block--blr">
-                    <span className="comm-card__spec-val comm-card__spec-val--blr">99%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--blr">
-                      BLR <span className="comm-card__spec-sub">400-420nm</span>
-                    </span>
-                  </div>
-                  <div className="comm-card__spec-block comm-card__spec-block--irr">
-                    <span className="comm-card__spec-val comm-card__spec-val--irr">95%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--irr">
-                      IRR <span className="comm-card__spec-sub">1400nm</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">Visible Light Transmission</p>
-                  <div className="comm-card__vlt-grid comm-card__vlt-grid--4col">
-                    <div className="comm-vlt-box">
-                      <span className="comm-vlt-box__val">70%</span>
-                      <span className="comm-vlt-box__tser">TSER: 57%</span>
-                    </div>
-                    <div className="comm-vlt-box">
-                      <span className="comm-vlt-box__val">50%</span>
-                      <span className="comm-vlt-box__tser">TSER: 63%</span>
-                    </div>
-                    <div className="comm-vlt-box">
-                      <span className="comm-vlt-box__val">30%</span>
-                      <span className="comm-vlt-box__tser">TSER: 72%</span>
-                    </div>
-                    <div className="comm-vlt-box">
-                      <span className="comm-vlt-box__val">15%</span>
-                      <span className="comm-vlt-box__tser">TSER: 78%</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="comm-card__best-for">
-                  <strong>Best for:</strong> Versatile light transmission requirements. Provides clear views with great heat rejection.
-                </div>
+                <div className="res-best-for"><strong>Best for:</strong> Versatile light transmission requirements. Provides clear views with great heat rejection.</div>
               </div>
             </div>
 
             {/* Anti Fade 90 */}
-            <div className="comm-card comm-card--signature">
-              <div className="comm-card__img-container">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/sputtered_film_roll.png`}
-                  alt="Anti Fade 90"
-                  className="comm-card__img"
-                />
+            <div className="res-card res-card--signature">
+              <div className="res-card__img-wrap">
+                <img src={`${import.meta.env.BASE_URL}images/sputtered_film_roll.png`} alt="Anti Fade 90" className="res-card__img" />
               </div>
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">Anti Fade 90</h3>
-                    <p className="comm-card__subtitle">Nano Carbon Ceramic</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">2 mil thickness</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">7 Yr Warranty</span>
+                    <h3 className="res-card__title">Anti Fade 90</h3>
+                    <p className="res-card__subtitle">Nano Carbon Ceramic</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">2 mil thickness</span>
+                      <span className="res-tag res-tag--warranty">7 Yr Warranty</span>
                     </div>
+                  </div>
+                  <span className="res-card__series-label">Signature</span>
+                </div>
+                <div className="res-specs-grid res-specs-grid--3">
+                  <div className="res-spec-badge res-spec-badge--uvr"><span className="res-spec-val">100%</span><span className="res-spec-key">UVR <span className="res-spec-nm">400nm</span></span></div>
+                  <div className="res-spec-badge res-spec-badge--blr"><span className="res-spec-val">99%</span><span className="res-spec-key">BLR <span className="res-spec-nm">400-420nm</span></span></div>
+                  <div className="res-spec-badge res-spec-badge--irr"><span className="res-spec-val">90%</span><span className="res-spec-key">IRR <span className="res-spec-nm">1400nm</span></span></div>
+                </div>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">Visible Light Transmission</p>
+                  <div className="res-vlt-grid res-vlt-grid--4">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">70%</span><span className="res-vlt-tser">TSER: 58%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">55%</span><span className="res-vlt-tser">TSER: 60%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">30%</span><span className="res-vlt-tser">TSER: 71%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">15%</span><span className="res-vlt-tser">TSER: 76%</span></div>
                   </div>
                 </div>
-
-                <div className="comm-card__specs-grid">
-                  <div className="comm-card__spec-block comm-card__spec-block--uvr">
-                    <span className="comm-card__spec-val comm-card__spec-val--uvr">100%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--uvr">
-                      UVR <span className="comm-card__spec-sub">400nm</span>
-                    </span>
-                  </div>
-                  <div className="comm-card__spec-block comm-card__spec-block--blr">
-                    <span className="comm-card__spec-val comm-card__spec-val--blr">99%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--blr">
-                      BLR <span className="comm-card__spec-sub">400-420nm</span>
-                    </span>
-                  </div>
-                  <div className="comm-card__spec-block comm-card__spec-block--irr">
-                    <span className="comm-card__spec-val comm-card__spec-val--irr">90%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--irr">
-                      IRR <span className="comm-card__spec-sub">1400nm</span>
-                    </span>
-                  </div>
-                </div>
-
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">Visible Light Transmission</p>
-                  <div className="comm-card__vlt-grid comm-card__vlt-grid--4col">
-                    <div className="comm-vlt-box">
-                      <span className="comm-vlt-box__val">70%</span>
-                      <span className="comm-vlt-box__tser">TSER: 58%</span>
-                    </div>
-                    <div className="comm-vlt-box">
-                      <span className="comm-vlt-box__val">55%</span>
-                      <span className="comm-vlt-box__tser">TSER: 60%</span>
-                    </div>
-                    <div className="comm-vlt-box">
-                      <span className="comm-vlt-box__val">30%</span>
-                      <span className="comm-vlt-box__tser">TSER: 71%</span>
-                    </div>
-                    <div className="comm-vlt-box">
-                      <span className="comm-vlt-box__val">15%</span>
-                      <span className="comm-vlt-box__tser">TSER: 76%</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="comm-card__best-for">
-                  <strong>Best for:</strong> Protecting expensive wooden floors, leather sofas, and wall paintings from heat and sunlight damage.
-                </div>
+                <div className="res-best-for"><strong>Best for:</strong> Protecting expensive wooden floors, leather sofas, and wall paintings from heat and sunlight damage.</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Privacy + Heat Rejection Series Section */}
-      <section className="comm-products-section">
-        <div className="product-section__container">
-          <div className="comm-section-header">
-            <div className="comm-section-header__badge comm-section-header__badge--security">
-              Privacy + Heat Rejection Series
-            </div>
-            <div className="comm-section-header__line comm-section-header__line--security" />
-            <span className="comm-section-header__text">One-Way Privacy & Reflection</span>
+      {/* ── Privacy + Heat Rejection Series ── */}
+      <section className="res-section res-section--alt">
+        <div className="res-container">
+          <div className="res-series-header">
+            <div className="res-series-badge">Privacy + Heat Rejection Series</div>
+            <div className="res-series-line" />
+            <span className="res-series-label">One-Way Privacy &amp; Reflection</span>
           </div>
-
-          <div className="comm-products-grid-2">
+          <div className="res-grid-2">
             {/* UV+420 Silver Black */}
-            <div className="comm-card comm-card--security">
-              <div className="comm-card__img-container">
-                <div className="comm-card__badge-top comm-card__badge-top--security">SIGNATURE</div>
-                <img
-                  src={`${import.meta.env.BASE_URL}images/commercial-building-panel.png`}
-                  alt="UV+420 Silver Black"
-                  className="comm-card__img"
-                />
+            <div className="res-card res-card--privacy">
+              <div className="res-card__img-wrap">
+                <span className="res-card__top-badge res-card__top-badge--signature">SIGNATURE</span>
+                <img src={`${import.meta.env.BASE_URL}images/residential-glass-panel.png`} alt="UV+420 Silver Black" className="res-card__img" />
               </div>
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">UV+420 Silver Black</h3>
-                    <p className="comm-card__subtitle">Aluminium Metalized</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">3 mil thickness</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">5 Yr Warranty</span>
+                    <h3 className="res-card__title">UV+420 Silver Black</h3>
+                    <p className="res-card__subtitle">Aluminium Metalized</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">3 mil thickness</span>
+                      <span className="res-tag res-tag--warranty">5 Yr Warranty</span>
                     </div>
                   </div>
                 </div>
-
-                <div className="comm-card__specs-grid">
-                  <div className="comm-card__spec-block comm-card__spec-block--uvr">
-                    <span className="comm-card__spec-val comm-card__spec-val--uvr">100%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--uvr">
-                      UVR <span className="comm-card__spec-sub">400nm</span>
-                    </span>
-                  </div>
-                  <div className="comm-card__spec-block comm-card__spec-block--blr">
-                    <span className="comm-card__spec-val comm-card__spec-val--blr">99%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--blr">
-                      BLR <span className="comm-card__spec-sub">400-420nm</span>
-                    </span>
-                  </div>
-                  <div className="comm-card__spec-block comm-card__spec-block--irr">
-                    <span className="comm-card__spec-val comm-card__spec-val--irr">95%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--irr">
-                      IRR <span className="comm-card__spec-sub">1400nm</span>
-                    </span>
-                  </div>
+                <div className="res-specs-grid res-specs-grid--3">
+                  <div className="res-spec-badge res-spec-badge--uvr"><span className="res-spec-val">100%</span><span className="res-spec-key">UVR <span className="res-spec-nm">400nm</span></span></div>
+                  <div className="res-spec-badge res-spec-badge--blr"><span className="res-spec-val">99%</span><span className="res-spec-key">BLR <span className="res-spec-nm">400-420nm</span></span></div>
+                  <div className="res-spec-badge res-spec-badge--irr"><span className="res-spec-val">95%</span><span className="res-spec-key">IRR <span className="res-spec-nm">1400nm</span></span></div>
                 </div>
-
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">Visible Light Transmission</p>
-                  <div className="comm-card__vlt-grid comm-card__vlt-grid--1col">
-                    <div className="comm-vlt-box comm-vlt-box--flex">
-                      <span className="comm-vlt-box__text">Maximum Daytime Privacy</span>
-                      <div style={{ textAlign: 'right' }}>
-                        <span className="comm-vlt-box__val">8%</span>
-                        <span className="comm-vlt-box__tser">TSER: 84%</span>
-                      </div>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">Visible Light Transmission</p>
+                  <div className="res-vlt-grid res-vlt-grid--1">
+                    <div className="res-vlt-bar res-vlt-bar--flex">
+                      <span className="res-vlt-text">Maximum Daytime Privacy</span>
+                      <div style={{ textAlign: 'right' }}><span className="res-vlt-val">8%</span><span className="res-vlt-tser">TSER: 84%</span></div>
                     </div>
                   </div>
                 </div>
-
-                <div className="comm-card__best-for comm-card__best-for--yellow">
-                  <strong>Best for:</strong> Ground floor windows, bedrooms, or bathrooms requiring absolute privacy during daylight hours.
-                </div>
+                <div className="res-best-for res-best-for--privacy"><strong>Best for:</strong> Ground floor windows, bedrooms, or bathrooms requiring absolute privacy during daylight hours.</div>
               </div>
             </div>
 
             {/* Silver Black */}
-            <div className="comm-card comm-card--security">
-              <div className="comm-card__img-container">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/commercial-building.png`}
-                  alt="Silver Black"
-                  className="comm-card__img"
-                />
+            <div className="res-card res-card--privacy">
+              <div className="res-card__img-wrap">
+                <img src={`${import.meta.env.BASE_URL}images/residential-glass.png`} alt="Silver Black" className="res-card__img" />
               </div>
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">Silver Black</h3>
-                    <p className="comm-card__subtitle">Aluminium Metalized</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">2 mil thickness</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">5 Yr Warranty</span>
+                    <h3 className="res-card__title">Silver Black</h3>
+                    <p className="res-card__subtitle">Aluminium Metalized</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">2 mil thickness</span>
+                      <span className="res-tag res-tag--warranty">5 Yr Warranty</span>
                     </div>
                   </div>
                 </div>
-
-                <div className="comm-card__specs-grid comm-card__specs-grid--2col">
-                  <div className="comm-card__spec-block comm-card__spec-block--uvr">
-                    <span className="comm-card__spec-val comm-card__spec-val--uvr">99%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--uvr">
-                      UVR <span className="comm-card__spec-sub">380nm</span>
-                    </span>
-                  </div>
-                  <div className="comm-card__spec-block comm-card__spec-block--irr">
-                    <span className="comm-card__spec-val comm-card__spec-val--irr">90%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--irr">
-                      IRR <span className="comm-card__spec-sub">1400nm</span>
-                    </span>
-                  </div>
+                <div className="res-specs-grid res-specs-grid--2">
+                  <div className="res-spec-badge res-spec-badge--uvr"><span className="res-spec-val">99%</span><span className="res-spec-key">UVR <span className="res-spec-nm">380nm</span></span></div>
+                  <div className="res-spec-badge res-spec-badge--irr"><span className="res-spec-val">90%</span><span className="res-spec-key">IRR <span className="res-spec-nm">1400nm</span></span></div>
                 </div>
-
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">Visible Light Transmission</p>
-                  <div className="comm-card__vlt-grid comm-card__vlt-grid--1col">
-                    <div className="comm-vlt-box comm-vlt-box--flex">
-                      <span className="comm-vlt-box__text">Privacy & Glare Control</span>
-                      <div style={{ textAlign: 'right' }}>
-                        <span className="comm-vlt-box__val">15%</span>
-                        <span className="comm-vlt-box__tser">TSER: 76%</span>
-                      </div>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">Visible Light Transmission</p>
+                  <div className="res-vlt-grid res-vlt-grid--1">
+                    <div className="res-vlt-bar res-vlt-bar--flex">
+                      <span className="res-vlt-text">Privacy &amp; Glare Control</span>
+                      <div style={{ textAlign: 'right' }}><span className="res-vlt-val">15%</span><span className="res-vlt-tser">TSER: 76%</span></div>
                     </div>
                   </div>
                 </div>
-
-                <div className="comm-card__best-for comm-card__best-for--yellow">
-                  <strong>Best for:</strong> Standard home windows facing street level, giving daytime privacy with high heat reflectivity.
-                </div>
+                <div className="res-best-for res-best-for--privacy"><strong>Best for:</strong> Standard home windows facing street level, giving daytime privacy with high heat reflectivity.</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Heat Rejection Series Section */}
-      <section className="comm-products-section">
-        <div className="product-section__container">
-          <div className="comm-section-header">
-            <div className="comm-section-header__badge comm-section-header__badge--heat">
-              Heat Rejection Series
-            </div>
-            <div className="comm-section-header__line comm-section-header__line--heat" />
-            <span className="comm-section-header__text">Balanced Solar Defense</span>
+      {/* ── Heat Rejection Series ── */}
+      <section className="res-section">
+        <div className="res-container">
+          <div className="res-series-header res-series-header--heat">
+            <div className="res-series-badge res-series-badge--heat">Heat Rejection Series</div>
+            <div className="res-series-line res-series-line--heat" />
+            <span className="res-series-label">Balanced Solar Defense</span>
           </div>
 
-          {/* Titanium (HR) - Horizontal style */}
-          <div className="comm-card comm-card--heat comm-card--horizontal" style={{ marginBottom: '2.5rem' }}>
-            <div className="comm-card__img-container">
-              <img
-                src={`${import.meta.env.BASE_URL}images/split-media-building.png`}
-                alt="Titanium (HR)"
-                className="comm-card__img"
-              />
+          {/* Titanium HR — horizontal */}
+          <div className="res-card res-card--horizontal res-card--heat">
+            <div className="res-card__img-wrap res-card__img-wrap--horizontal">
+              <img src={`${import.meta.env.BASE_URL}images/residential-glass-2.png`} alt="Titanium HR" className="res-card__img" />
             </div>
-            <div className="comm-card__body">
-              <div className="comm-card__header-row">
+            <div className="res-card__body">
+              <div className="res-card__header">
                 <div>
-                  <h3 className="comm-card__title">Titanium (HR)</h3>
-                  <p className="comm-card__subtitle">Nano Titanium Sputter</p>
-                  <div className="comm-card__meta-row">
-                    <span className="comm-card__tag">2 - 3.5 mil</span>
-                    <span className="comm-card__tag comm-card__tag--warranty">7 Yr Warranty</span>
+                  <h3 className="res-card__title">Titanium (HR)</h3>
+                  <p className="res-card__subtitle">Nano Titanium Sputter</p>
+                  <div className="res-card__tags">
+                    <span className="res-tag">2 - 3.5 mil</span>
+                    <span className="res-tag res-tag--warranty">7 Yr Warranty</span>
                   </div>
                 </div>
+                <span className="res-card__series-label res-card__series-label--heat">Heat Rejection</span>
               </div>
-
-              <div className="comm-card__specs-grid comm-card__specs-grid--2col">
-                <div className="comm-card__spec-block comm-card__spec-block--uvr">
-                  <span className="comm-card__spec-val comm-card__spec-val--uvr">99%</span>
-                  <span className="comm-card__spec-label comm-card__spec-label--uvr">
-                    UVR <span className="comm-card__spec-sub">380nm</span>
-                  </span>
-                </div>
-                <div className="comm-card__spec-block comm-card__spec-block--irr">
-                  <span className="comm-card__spec-val comm-card__spec-val--irr">95%</span>
-                  <span className="comm-card__spec-label comm-card__spec-label--irr">
-                    IRR <span className="comm-card__spec-sub">1400nm</span>
-                  </span>
-                </div>
+              <div className="res-specs-grid res-specs-grid--2">
+                <div className="res-spec-badge res-spec-badge--uvr"><span className="res-spec-val">99%</span><span className="res-spec-key">UVR <span className="res-spec-nm">380nm</span></span></div>
+                <div className="res-spec-badge res-spec-badge--irr"><span className="res-spec-val">95%</span><span className="res-spec-key">IRR <span className="res-spec-nm">1400nm</span></span></div>
               </div>
-
-              <div className="comm-card__vlt-section">
-                <p className="comm-card__vlt-title">Visible Light Transmission</p>
-                <div className="comm-card__vlt-grid comm-card__vlt-grid--4col">
-                  <div className="comm-vlt-box">
-                    <span className="comm-vlt-box__val">70%</span>
-                    <span className="comm-vlt-box__tser">TSER: 55%</span>
-                  </div>
-                  <div className="comm-vlt-box">
-                    <span className="comm-vlt-box__val">50%</span>
-                    <span className="comm-vlt-box__tser">TSER: 60%</span>
-                  </div>
-                  <div className="comm-vlt-box">
-                    <span className="comm-vlt-box__val">35%</span>
-                    <span className="comm-vlt-box__tser">TSER: 69%</span>
-                  </div>
-                  <div className="comm-vlt-box">
-                    <span className="comm-vlt-box__val">15%</span>
-                    <span className="comm-vlt-box__tser">TSER: 75%</span>
-                  </div>
+              <div className="res-vlt-section">
+                <p className="res-vlt-label">Visible Light Transmission</p>
+                <div className="res-vlt-grid res-vlt-grid--4">
+                  <div className="res-vlt-bar"><span className="res-vlt-val">70%</span><span className="res-vlt-tser">TSER: 55%</span></div>
+                  <div className="res-vlt-bar"><span className="res-vlt-val">50%</span><span className="res-vlt-tser">TSER: 60%</span></div>
+                  <div className="res-vlt-bar"><span className="res-vlt-val">35%</span><span className="res-vlt-tser">TSER: 69%</span></div>
+                  <div className="res-vlt-bar"><span className="res-vlt-val">15%</span><span className="res-vlt-tser">TSER: 75%</span></div>
                 </div>
               </div>
-
-              <div className="comm-card__best-for">
-                <strong>Best for:</strong> Large glass partitions, sunrooms, and balcony doors requiring balanced light and heat blocking.
-              </div>
+              <div className="res-best-for"><strong>Best for:</strong> Large glass partitions, sunrooms, and balcony doors requiring balanced light and heat blocking.</div>
             </div>
           </div>
 
-          {/* Grid for CS and CS PRO */}
-          <div className="comm-products-grid-2">
-            {/* Color Stable (CS) */}
-            <div className="comm-card comm-card--heat">
-              <div className="comm-card__img-container">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/sputtered_film_roll.png`}
-                  alt="Color Stable (CS)"
-                  className="comm-card__img"
-                />
+          {/* CS & CS PRO grid */}
+          <div className="res-grid-2" style={{ marginTop: '2rem' }}>
+            {/* Color Stable CS */}
+            <div className="res-card res-card--heat">
+              <div className="res-card__img-wrap">
+                <img src={`${import.meta.env.BASE_URL}images/sputtered_film_roll.png`} alt="Color Stable CS" className="res-card__img" />
               </div>
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">Color Stable (CS)</h3>
-                    <p className="comm-card__subtitle">Nano Carbon Ceramic</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">2 mil thickness</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">5 Yr Warranty</span>
+                    <h3 className="res-card__title">Color Stable (CS)</h3>
+                    <p className="res-card__subtitle">Nano Carbon Ceramic</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">2 mil thickness</span>
+                      <span className="res-tag res-tag--warranty">5 Yr Warranty</span>
                     </div>
                   </div>
+                  <span className="res-card__series-label res-card__series-label--heat">Heat Rejection</span>
                 </div>
-
-                <div className="comm-card__specs-grid comm-card__specs-grid--2col">
-                  <div className="comm-card__spec-block comm-card__spec-block--uvr">
-                    <span className="comm-card__spec-val comm-card__spec-val--uvr">99%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--uvr">
-                      UVR <span className="comm-card__spec-sub">380nm</span>
-                    </span>
-                  </div>
-                  <div className="comm-card__spec-block comm-card__spec-block--irr">
-                    <span className="comm-card__spec-val comm-card__spec-val--irr">90%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--irr">
-                      IRR <span className="comm-card__spec-sub">1400nm</span>
-                    </span>
-                  </div>
+                <div className="res-specs-grid res-specs-grid--2">
+                  <div className="res-spec-badge res-spec-badge--uvr"><span className="res-spec-val">99%</span><span className="res-spec-key">UVR <span className="res-spec-nm">380nm</span></span></div>
+                  <div className="res-spec-badge res-spec-badge--irr"><span className="res-spec-val">90%</span><span className="res-spec-key">IRR <span className="res-spec-nm">1400nm</span></span></div>
                 </div>
-
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">Visible Light Transmission</p>
-                  <div className="comm-card__vlt-grid" style={{ gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.4rem' }}>
-                    <div className="comm-vlt-box" style={{ padding: '0.8rem 0.2rem' }}>
-                      <span className="comm-vlt-box__val" style={{ fontSize: '1.2rem' }}>70%</span>
-                      <span className="comm-vlt-box__tser" style={{ fontSize: '0.65rem' }}>50%</span>
-                    </div>
-                    <div className="comm-vlt-box" style={{ padding: '0.8rem 0.2rem' }}>
-                      <span className="comm-vlt-box__val" style={{ fontSize: '1.2rem' }}>55%</span>
-                      <span className="comm-vlt-box__tser" style={{ fontSize: '0.65rem' }}>58%</span>
-                    </div>
-                    <div className="comm-vlt-box" style={{ padding: '0.8rem 0.2rem' }}>
-                      <span className="comm-vlt-box__val" style={{ fontSize: '1.2rem' }}>30%</span>
-                      <span className="comm-vlt-box__tser" style={{ fontSize: '0.65rem' }}>66%</span>
-                    </div>
-                    <div className="comm-vlt-box" style={{ padding: '0.8rem 0.2rem' }}>
-                      <span className="comm-vlt-box__val" style={{ fontSize: '1.2rem' }}>15%</span>
-                      <span className="comm-vlt-box__tser" style={{ fontSize: '0.65rem' }}>72%</span>
-                    </div>
-                    <div className="comm-vlt-box" style={{ padding: '0.8rem 0.2rem' }}>
-                      <span className="comm-vlt-box__val" style={{ fontSize: '1.2rem' }}>5%</span>
-                      <span className="comm-vlt-box__tser" style={{ fontSize: '0.65rem' }}>78%</span>
-                    </div>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">Visible Light Transmission</p>
+                  <div className="res-vlt-grid res-vlt-grid--5">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">70%</span><span className="res-vlt-tser">50%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">55%</span><span className="res-vlt-tser">58%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">30%</span><span className="res-vlt-tser">66%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">15%</span><span className="res-vlt-tser">72%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">5%</span><span className="res-vlt-tser">78%</span></div>
                   </div>
                 </div>
-
-                <div className="comm-card__best-for">
-                  <strong>Best for:</strong> Smart homes needing zero signal interference, maintaining clean natural aesthetics.
-                </div>
+                <div className="res-best-for"><strong>Best for:</strong> Smart homes needing zero signal interference, maintaining clean natural aesthetics.</div>
               </div>
             </div>
 
             {/* CS PRO */}
-            <div className="comm-card comm-card--heat">
-              <div className="comm-card__img-container">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/commercial-building.png`}
-                  alt="CS PRO"
-                  className="comm-card__img"
-                />
+            <div className="res-card res-card--heat">
+              <div className="res-card__img-wrap">
+                <img src={`${import.meta.env.BASE_URL}images/tinted_film_roll.png`} alt="CS PRO" className="res-card__img" />
               </div>
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">CS PRO</h3>
-                    <p className="comm-card__subtitle">Nano Carbon Ceramic</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">2 mil thickness</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">3 Yr Warranty</span>
+                    <h3 className="res-card__title">CS PRO</h3>
+                    <p className="res-card__subtitle">Nano Carbon Ceramic</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">2 mil thickness</span>
+                      <span className="res-tag res-tag--warranty">3 Yr Warranty</span>
                     </div>
                   </div>
+                  <span className="res-card__series-label res-card__series-label--value">Value</span>
                 </div>
-
-                <div className="comm-card__specs-grid comm-card__specs-grid--2col">
-                  <div className="comm-card__spec-block comm-card__spec-block--uvr">
-                    <span className="comm-card__spec-val comm-card__spec-val--uvr">99%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--uvr">
-                      UVR <span className="comm-card__spec-sub">380nm</span>
-                    </span>
-                  </div>
-                  <div className="comm-card__spec-block comm-card__spec-block--irr">
-                    <span className="comm-card__spec-val comm-card__spec-val--irr">40%</span>
-                    <span className="comm-card__spec-label comm-card__spec-label--irr">
-                      IRR <span className="comm-card__spec-sub">1400nm</span>
-                    </span>
-                  </div>
+                <div className="res-specs-grid res-specs-grid--2">
+                  <div className="res-spec-badge res-spec-badge--uvr"><span className="res-spec-val">99%</span><span className="res-spec-key">UVR <span className="res-spec-nm">380nm</span></span></div>
+                  <div className="res-spec-badge res-spec-badge--irr"><span className="res-spec-val">40%</span><span className="res-spec-key">IRR <span className="res-spec-nm">1400nm</span></span></div>
                 </div>
-
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">Visible Light Transmission</p>
-                  <div className="comm-card__vlt-grid" style={{ gridTemplateColumns: 'repeat(6, 1fr)', gap: '0.25rem' }}>
-                    <div className="comm-vlt-box" style={{ padding: '0.6rem 0.1rem' }}>
-                      <span className="comm-vlt-box__val" style={{ fontSize: '1rem' }}>70%</span>
-                      <span className="comm-vlt-box__tser" style={{ fontSize: '0.6rem' }}>27%</span>
-                    </div>
-                    <div className="comm-vlt-box" style={{ padding: '0.6rem 0.1rem' }}>
-                      <span className="comm-vlt-box__val" style={{ fontSize: '1rem' }}>60%</span>
-                      <span className="comm-vlt-box__tser" style={{ fontSize: '0.6rem' }}>27%</span>
-                    </div>
-                    <div className="comm-vlt-box" style={{ padding: '0.6rem 0.1rem' }}>
-                      <span className="comm-vlt-box__val" style={{ fontSize: '1rem' }}>40%</span>
-                      <span className="comm-vlt-box__tser" style={{ fontSize: '0.6rem' }}>40%</span>
-                    </div>
-                    <div className="comm-vlt-box" style={{ padding: '0.6rem 0.1rem' }}>
-                      <span className="comm-vlt-box__val" style={{ fontSize: '1rem' }}>30%</span>
-                      <span className="comm-vlt-box__tser" style={{ fontSize: '0.6rem' }}>45%</span>
-                    </div>
-                    <div className="comm-vlt-box" style={{ padding: '0.6rem 0.1rem' }}>
-                      <span className="comm-vlt-box__val" style={{ fontSize: '1rem' }}>20%</span>
-                      <span className="comm-vlt-box__tser" style={{ fontSize: '0.6rem' }}>48%</span>
-                    </div>
-                    <div className="comm-vlt-box" style={{ padding: '0.6rem 0.1rem' }}>
-                      <span className="comm-vlt-box__val" style={{ fontSize: '1rem' }}>5%</span>
-                      <span className="comm-vlt-box__tser" style={{ fontSize: '0.6rem' }}>60%</span>
-                    </div>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">Visible Light Transmission</p>
+                  <div className="res-vlt-grid res-vlt-grid--6">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">70%</span><span className="res-vlt-tser">27%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">60%</span><span className="res-vlt-tser">27%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">40%</span><span className="res-vlt-tser">40%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">30%</span><span className="res-vlt-tser">45%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">20%</span><span className="res-vlt-tser">48%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">5%</span><span className="res-vlt-tser">60%</span></div>
                   </div>
                 </div>
-
-                <div className="comm-card__best-for">
-                  <strong>Best for:</strong> Economical solar protection, providing basic heat deflection and excellent UV block.
-                </div>
+                <div className="res-best-for"><strong>Best for:</strong> Economical solar protection, providing basic heat deflection and excellent UV block.</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Comparison Table */}
-      <section className="comm-table-section">
-        <div className="product-section__container">
-          <h2 className="comm-table-section__title">Residential Products Comparison</h2>
+      {/* ── Comparison Table ── */}
+      <section className="res-table-section">
+        <div className="res-container">
+          <h2 className="res-table-title">Residential Products Comparison</h2>
           <div className="comm-table-wrapper">
             <table className="comm-table">
               <thead>
@@ -1375,114 +1127,41 @@ export default function ProductsBuildingPage({ initialMode = 'residential' }) {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="comm-table__product-name">Titan X</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">Multi Layer Silver Sputter</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--uvr">100%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--irr">&gt;99%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">3 mil</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--warranty">10 Yr</td>
-                </tr>
-                <tr>
-                  <td className="comm-table__product-name">Diamond</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">Multi Layer Titanium Sputter</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--uvr">100%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--irr">98%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">3-3.5 mil</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--warranty">10 Yr</td>
-                </tr>
-                <tr>
-                  <td className="comm-table__product-name">RayPro</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">Nano Titanium Sputter</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--uvr">100%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--irr">95%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">2-3.5 mil</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--warranty">10 Yr</td>
-                </tr>
-                <tr>
-                  <td className="comm-table__product-name">Anti Fade 90</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">Nano Carbon Ceramic</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--uvr">100%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--irr">90%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">2 mil</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--warranty">7 Yr</td>
-                </tr>
-                <tr>
-                  <td className="comm-table__product-name">UV+420 Silver Black</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">Aluminium Metalized</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--uvr">100%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--irr">95%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">3 mil</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--warranty">5 Yr</td>
-                </tr>
-                <tr>
-                  <td className="comm-table__product-name">Silver Black</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">Aluminium Metalized</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--uvr">99%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--irr">90%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">2 mil</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--warranty">5 Yr</td>
-                </tr>
-                <tr>
-                  <td className="comm-table__product-name">Titanium (HR)</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">Nano Titanium Sputter</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--uvr">99%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--irr">95%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">2-3.5 mil</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--warranty">7 Yr</td>
-                </tr>
-                <tr>
-                  <td className="comm-table__product-name">Color Stable (CS)</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">Nano Carbon Ceramic</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--uvr">99%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--irr">90%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">2 mil</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--warranty">5 Yr</td>
-                </tr>
-                <tr>
-                  <td className="comm-table__product-name">CS PRO</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">Nano Carbon Ceramic</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--uvr">99%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--irr">40%</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__tech">2 mil</td>
-                  <td style={{ textAlign: 'center' }} className="comm-table__val--warranty">3 Yr</td>
-                </tr>
+                <tr><td className="comm-table__product-name">Titan X</td><td style={{ textAlign: 'center' }} className="comm-table__tech">Multi Layer Silver Sputter</td><td style={{ textAlign: 'center' }} className="comm-table__val--uvr">100%</td><td style={{ textAlign: 'center' }} className="comm-table__val--irr">&gt;99%</td><td style={{ textAlign: 'center' }} className="comm-table__tech">3 mil</td><td style={{ textAlign: 'center' }} className="comm-table__val--warranty">10 Yr</td></tr>
+                <tr><td className="comm-table__product-name">Diamond</td><td style={{ textAlign: 'center' }} className="comm-table__tech">Multi Layer Titanium Sputter</td><td style={{ textAlign: 'center' }} className="comm-table__val--uvr">100%</td><td style={{ textAlign: 'center' }} className="comm-table__val--irr">98%</td><td style={{ textAlign: 'center' }} className="comm-table__tech">3-3.5 mil</td><td style={{ textAlign: 'center' }} className="comm-table__val--warranty">10 Yr</td></tr>
+                <tr><td className="comm-table__product-name">RayPro</td><td style={{ textAlign: 'center' }} className="comm-table__tech">Nano Titanium Sputter</td><td style={{ textAlign: 'center' }} className="comm-table__val--uvr">100%</td><td style={{ textAlign: 'center' }} className="comm-table__val--irr">95%</td><td style={{ textAlign: 'center' }} className="comm-table__tech">2-3.5 mil</td><td style={{ textAlign: 'center' }} className="comm-table__val--warranty">10 Yr</td></tr>
+                <tr><td className="comm-table__product-name">Anti Fade 90</td><td style={{ textAlign: 'center' }} className="comm-table__tech">Nano Carbon Ceramic</td><td style={{ textAlign: 'center' }} className="comm-table__val--uvr">100%</td><td style={{ textAlign: 'center' }} className="comm-table__val--irr">90%</td><td style={{ textAlign: 'center' }} className="comm-table__tech">2 mil</td><td style={{ textAlign: 'center' }} className="comm-table__val--warranty">7 Yr</td></tr>
+                <tr><td className="comm-table__product-name">UV+420 Silver Black</td><td style={{ textAlign: 'center' }} className="comm-table__tech">Aluminium Metalized</td><td style={{ textAlign: 'center' }} className="comm-table__val--uvr">100%</td><td style={{ textAlign: 'center' }} className="comm-table__val--irr">95%</td><td style={{ textAlign: 'center' }} className="comm-table__tech">3 mil</td><td style={{ textAlign: 'center' }} className="comm-table__val--warranty">5 Yr</td></tr>
+                <tr><td className="comm-table__product-name">Silver Black</td><td style={{ textAlign: 'center' }} className="comm-table__tech">Aluminium Metalized</td><td style={{ textAlign: 'center' }} className="comm-table__val--uvr">99%</td><td style={{ textAlign: 'center' }} className="comm-table__val--irr">90%</td><td style={{ textAlign: 'center' }} className="comm-table__tech">2 mil</td><td style={{ textAlign: 'center' }} className="comm-table__val--warranty">5 Yr</td></tr>
+                <tr><td className="comm-table__product-name">Titanium (HR)</td><td style={{ textAlign: 'center' }} className="comm-table__tech">Nano Titanium Sputter</td><td style={{ textAlign: 'center' }} className="comm-table__val--uvr">99%</td><td style={{ textAlign: 'center' }} className="comm-table__val--irr">95%</td><td style={{ textAlign: 'center' }} className="comm-table__tech">2-3.5 mil</td><td style={{ textAlign: 'center' }} className="comm-table__val--warranty">7 Yr</td></tr>
+                <tr><td className="comm-table__product-name">Color Stable (CS)</td><td style={{ textAlign: 'center' }} className="comm-table__tech">Nano Carbon Ceramic</td><td style={{ textAlign: 'center' }} className="comm-table__val--uvr">99%</td><td style={{ textAlign: 'center' }} className="comm-table__val--irr">90%</td><td style={{ textAlign: 'center' }} className="comm-table__tech">2 mil</td><td style={{ textAlign: 'center' }} className="comm-table__val--warranty">5 Yr</td></tr>
+                <tr><td className="comm-table__product-name">CS PRO</td><td style={{ textAlign: 'center' }} className="comm-table__tech">Nano Carbon Ceramic</td><td style={{ textAlign: 'center' }} className="comm-table__val--uvr">99%</td><td style={{ textAlign: 'center' }} className="comm-table__val--irr">40%</td><td style={{ textAlign: 'center' }} className="comm-table__tech">2 mil</td><td style={{ textAlign: 'center' }} className="comm-table__val--warranty">3 Yr</td></tr>
               </tbody>
             </table>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="comm-cta">
-        <div className="comm-cta__container">
-          <h2 className="comm-cta__title">Ready to Protect Your Home?</h2>
-          <p className="comm-cta__desc">
+      {/* ── CTA ── */}
+      <section className="res-cta">
+        <div className="res-container res-cta__inner">
+          <h2 className="res-cta__title">Ready to Protect Your Home?</h2>
+          <p className="res-cta__desc">
             Get a free consultation and quote for your residential window tinting needs. Our experts will help you choose the perfect film for your home.
           </p>
-          <div className="comm-cta__buttons">
-            <button
-              type="button"
-              className="comm-cta__btn comm-cta__btn--secondary"
-              onClick={() => handleModeChange('commercial')}
-            >
+          <div className="res-cta__buttons">
+            <button type="button" className="res-cta__btn res-cta__btn--secondary" onClick={() => handleModeChange('commercial')}>
               View Commercial
-              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </button>
-            <a
-              href="#/products/automotive"
-              className="comm-cta__btn comm-cta__btn--primary"
-            >
+            <a href="#/products/automotive" className="res-cta__btn res-cta__btn--primary">
               View Automotive
-              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
           </div>
         </div>
       </section>
+
     </div>
   );
 }
