@@ -1,0 +1,444 @@
+/* ═══════════════════════════════════════════════════
+   PARTNERSHIP PAGES — Dealership & Franchise
+   Auto-page IrisPro brand theme (light #faf9f6)
+   ═══════════════════════════════════════════════════ */
+
+/* ==========================================
+   Partnership Page Base
+   ========================================== */
+.partnership-page {
+  --partner-brand-red:      #d20f18;
+  --partner-brand-lightred: #f2424b;
+  --partner-text-primary:   #0f172a;
+  --partner-text-secondary: #64748b;
+  --partner-border:         rgba(0, 0, 0, 0.07);
+
+  background-color: #faf9f6 !important;
+  color: var(--partner-text-primary) !important;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  padding-bottom: 2rem;
+}
+
+.partnership-page h1,
+.partnership-page h2,
+.partnership-page h3,
+.partnership-page h4,
+.partnership-page h5,
+.partnership-page h6 {
+  color: var(--partner-text-primary) !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* ==========================================
+   Benefits Section
+   ========================================== */
+.partnership-page .benefits-section {
+  padding: 5rem 0;
+}
+
+.partnership-page .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.partnership-page .benefit-card {
+  background: #ffffff;
+  border: 1px solid var(--partner-border);
+  border-radius: 1rem;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.partnership-page .benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(210, 15, 24, 0.06);
+  border-color: rgba(210, 15, 24, 0.12);
+}
+
+.partnership-page .benefit-card__icon-wrapper {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  background: rgba(210, 15, 24, 0.06);
+  color: var(--partner-brand-red);
+  border: 1px solid rgba(210, 15, 24, 0.1);
+}
+
+.partnership-page .benefit-card__title {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: var(--partner-text-primary) !important;
+  margin: 0 0 0.6rem;
+  line-height: 1.3;
+}
+
+.partnership-page .benefit-card__desc {
+  font-size: 0.875rem;
+  color: var(--partner-text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ==========================================
+   Steps Section
+   ========================================== */
+.partnership-page .steps-section {
+  padding: 0 0 5rem;
+}
+
+.partnership-page .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.partnership-page .step-card {
+  background: #ffffff;
+  border: 1px solid var(--partner-border);
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.partnership-page .step-card:hover {
+  box-shadow: 0 8px 24px rgba(210, 15, 24, 0.05);
+  border-color: rgba(210, 15, 24, 0.1);
+}
+
+.partnership-page .step-card__num {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(210, 15, 24, 0.12);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.partnership-page .step-card__title {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: var(--partner-text-primary) !important;
+  margin: 0 0 0.5rem;
+}
+
+.partnership-page .step-card__desc {
+  font-size: 0.85rem;
+  color: var(--partner-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================
+   Inquiry Form Section
+   ========================================== */
+.partnership-page .form-section {
+  padding: 0 0 5rem;
+}
+
+.partnership-page .partnership-form-card {
+  background: #ffffff;
+  border: 1px solid var(--partner-border);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.partnership-page .partnership-form-card__title {
+  font-size: 1.75rem !important;
+  font-weight: 800 !important;
+  color: var(--partner-text-primary) !important;
+  margin: 0 0 0.5rem;
+}
+
+.partnership-page .partnership-form-card__subtitle {
+  font-size: 0.9rem;
+  color: var(--partner-text-secondary);
+  line-height: 1.6;
+  margin: 0 0 2rem;
+}
+
+.partnership-page .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.partnership-page .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.partnership-page .form-row .form-group {
+  margin-bottom: 0;
+}
+
+.partnership-page .form-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--partner-text-primary);
+  letter-spacing: 0.02em;
+}
+
+.partnership-page .form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 0.6rem;
+  background: #fafafa;
+  color: var(--partner-text-primary);
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  appearance: auto;
+}
+
+.partnership-page .form-input:focus {
+  border-color: var(--partner-brand-red);
+  box-shadow: 0 0 0 3px rgba(210, 15, 24, 0.08);
+  background: #ffffff;
+}
+
+.partnership-page .form-input[error='true'] {
+  border-color: rgba(210, 15, 24, 0.5);
+}
+
+.partnership-page .form-error-msg {
+  font-size: 0.75rem;
+  color: var(--partner-brand-red);
+  font-weight: 500;
+}
+
+.partnership-page .form-submit-btn {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, var(--partner-brand-red), var(--partner-brand-lightred));
+  color: #ffffff !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(210, 15, 24, 0.2);
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.partnership-page .form-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(210, 15, 24, 0.32);
+}
+
+.partnership-page .form-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Form Success State */
+.partnership-page .form-success-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  gap: 1rem;
+}
+
+.partnership-page .form-success-view__icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--partner-brand-red), var(--partner-brand-lightred));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(210, 15, 24, 0.25);
+  margin-bottom: 0.5rem;
+}
+
+.partnership-page .form-success-view__title {
+  font-size: 1.75rem !important;
+  font-weight: 800 !important;
+  color: var(--partner-text-primary) !important;
+  margin: 0;
+}
+
+.partnership-page .form-success-view__desc {
+  font-size: 0.95rem;
+  color: var(--partner-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 540px;
+}
+
+/* ==========================================
+   FAQ Section
+   ========================================== */
+.partnership-page .faq-section {
+  padding: 0 0 5rem;
+}
+
+.partnership-page .faq-accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.partnership-page .faq-item {
+  background: #ffffff;
+  border: 1px solid var(--partner-border);
+  border-radius: 0.875rem;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.partnership-page .faq-item:hover:not(.is-open) {
+  border-color: rgba(210, 15, 24, 0.12);
+}
+
+.partnership-page .faq-item.is-open {
+  border-color: rgba(210, 15, 24, 0.22);
+  box-shadow: 0 6px 24px rgba(210, 15, 24, 0.04);
+}
+
+.partnership-page .faq-trigger {
+  width: 100%;
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  gap: 1rem;
+}
+
+.partnership-page .faq-question {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--partner-text-primary);
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.partnership-page .faq-trigger:hover .faq-question,
+.partnership-page .faq-item.is-open .faq-question {
+  color: var(--partner-brand-red);
+}
+
+.partnership-page .faq-chevron {
+  flex-shrink: 0;
+  color: var(--partner-text-secondary);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.partnership-page .faq-item.is-open .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--partner-brand-red);
+}
+
+.partnership-page .faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.partnership-page .faq-item.is-open .faq-content {
+  max-height: 400px;
+}
+
+.partnership-page .faq-answer {
+  padding: 0 1.5rem 1.4rem;
+  font-size: 0.9rem;
+  color: var(--partner-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .partnership-page .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Portrait tablet */
+@media (max-width: 767px) {
+  .partnership-page .benefits-section {
+    padding: 3.5rem 0;
+  }
+
+  .partnership-page .steps-section {
+    padding: 0 0 3.5rem;
+  }
+
+  .partnership-page .form-section {
+    padding: 0 0 3.5rem;
+  }
+
+  .partnership-page .faq-section {
+    padding: 0 0 3.5rem;
+  }
+
+  .partnership-page .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .partnership-page .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .partnership-page .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .partnership-page .partnership-form-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .partnership-page .partnership-form-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .partnership-page .partnership-form-card__title {
+    font-size: 1.4rem !important;
+  }
+}

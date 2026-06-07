@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import '../styles/partnership.css';
 
 export default function DealershipPage() {
   useEffect(() => {
@@ -166,38 +167,39 @@ export default function DealershipPage() {
   ];
 
   return (
-    <div className="product-detail-page partnership-page bg-pattern" id="dealership-view">
+    <div className="product-detail-page partnership-page bg-pattern auto-page" id="dealership-view">
       {/* Hero Section */}
-      <section className="partner-hero">
-        <div className="partner-hero__bg-grid" />
-        <div className="partner-hero__inner">
-          <div className="partner-hero__breadcrumbs">
+      <section className="comm-hero bg-pattern">
+        <div className="product-section__container">
+          <div className="comm-hero__breadcrumbs">
             <a href="#/">Home</a>
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
             </svg>
             <span className="text-red">Dealer Program</span>
           </div>
-          <div className="partner-hero__badge">
-            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
-            <span>Authorized Dealer Program</span>
+          <div className="max-w-3xl">
+            <div className="comm-hero__badge">
+              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              <span>Authorized Dealer Program</span>
+            </div>
+            <h1 className="comm-hero__title">
+              Become an <span className="red-gradient">Authorized Dealer</span>
+            </h1>
+            <p className="comm-hero__lead">
+              Distribute double-patented solar film technology. Upgrade your shop's product catalog with zero franchise fees, low starting MOQ, sales support, and digital warranty portal access.
+            </p>
+            <button
+              className="navbar__cta"
+              onClick={scrollToForm}
+              style={{ marginTop: '2rem', display: 'inline-flex', padding: '0.85rem 1.75rem' }}
+              id="hero-apply-btn"
+            >
+              Partner as a Dealer
+            </button>
           </div>
-          <h1 className="partner-hero__title">
-            Become an <span className="red-gradient">Authorized Dealer</span>
-          </h1>
-          <p className="partner-hero__lead">
-            Distribute double-patented solar film technology. Upgrade your shop's product catalog with zero franchise fees, low starting MOQ, sales support, and digital warranty portal access.
-          </p>
-          <button 
-            className="navbar__cta" 
-            onClick={scrollToForm}
-            style={{ marginTop: '2rem', display: 'inline-flex', padding: '0.85rem 1.75rem' }}
-            id="hero-apply-btn"
-          >
-            Partner as a Dealer
-          </button>
         </div>
       </section>
 
@@ -205,10 +207,10 @@ export default function DealershipPage() {
       <section className="benefits-section">
         <div className="product-section__container">
           <div className="comm-section-header">
-            <div className="comm-section-header__badge" style={{ color: '#d20f18', backgroundColor: 'rgba(210,15,24,0.05)', borderColor: 'rgba(210,15,24,0.1)' }}>
+            <div className="comm-section-header__badge comm-section-header__badge--signature">
               Dealer Advantages
             </div>
-            <div className="comm-section-header__line" style={{ background: 'linear-gradient(90deg, rgba(210,15,24,0.2) 0%, transparent 100%)' }} />
+            <div className="comm-section-header__line comm-section-header__line--signature" />
             <span className="comm-section-header__text">Dealer Partnership Program</span>
           </div>
 
@@ -228,10 +230,10 @@ export default function DealershipPage() {
       <section className="steps-section">
         <div className="product-section__container">
           <div className="comm-section-header">
-            <div className="comm-section-header__badge" style={{ color: '#d20f18', backgroundColor: 'rgba(210,15,24,0.05)', borderColor: 'rgba(210,15,24,0.1)' }}>
+            <div className="comm-section-header__badge comm-section-header__badge--signature">
               Partner Checklist
             </div>
-            <div className="comm-section-header__line" style={{ background: 'linear-gradient(90deg, rgba(210,15,24,0.2) 0%, transparent 100%)' }} />
+            <div className="comm-section-header__line comm-section-header__line--signature" />
             <span className="comm-section-header__text">How to Become an Authorized Dealer</span>
           </div>
 
@@ -444,10 +446,10 @@ export default function DealershipPage() {
       <section className="faq-section">
         <div className="product-section__container">
           <div className="comm-section-header">
-            <div className="comm-section-header__badge" style={{ color: '#d20f18', backgroundColor: 'rgba(210,15,24,0.05)', borderColor: 'rgba(210,15,24,0.1)' }}>
+            <div className="comm-section-header__badge comm-section-header__badge--signature">
               Got Questions?
             </div>
-            <div className="comm-section-header__line" style={{ background: 'linear-gradient(90deg, rgba(210,15,24,0.2) 0%, transparent 100%)' }} />
+            <div className="comm-section-header__line comm-section-header__line--signature" />
             <span className="comm-section-header__text">Dealer FAQ</span>
           </div>
 
