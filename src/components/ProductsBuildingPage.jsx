@@ -724,41 +724,6 @@ export default function ProductsBuildingPage({ initialMode = 'residential' }) {
           </div>
         </div>
       </section>
-      {/* ── Advantages Strip ── */}
-      <section className="res-advantages">
-        <div className="res-container">
-          <div className="res-advantages__grid">
-            <div className="res-adv-item">
-              <div className="res-adv-icon res-adv-icon--uv">
-                <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-11.314l.707.707m11.314 11.314l.707.707M12 7a5 5 0 100 10 5 5 0 000-10z" /></svg>
-              </div>
-              <h4 className="res-adv-title">Upholstery Defense</h4>
-              <p className="res-adv-desc">Blocks 100% UV to prevent fading</p>
-            </div>
-            <div className="res-adv-item">
-              <div className="res-adv-icon res-adv-icon--energy">
-                <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-              </div>
-              <h4 className="res-adv-title">Energy Savings</h4>
-              <p className="res-adv-desc">Reduces home aircon power usage</p>
-            </div>
-            <div className="res-adv-item">
-              <div className="res-adv-icon res-adv-icon--shield">
-                <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-              </div>
-              <h4 className="res-adv-title">Shatter Protection</h4>
-              <p className="res-adv-desc">Holds glass together on impact</p>
-            </div>
-            <div className="res-adv-item">
-              <div className="res-adv-icon res-adv-icon--warranty">
-                <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138z" /></svg>
-              </div>
-              <h4 className="res-adv-title">Trusted Warranty</h4>
-              <p className="res-adv-desc">Up to 10 years guarantee</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── Signature Series ── */}
       <section className="res-section">
