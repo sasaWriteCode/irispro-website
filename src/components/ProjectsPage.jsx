@@ -3,7 +3,7 @@ import '../styles/projects.css';
 
 const BASE = import.meta.env.BASE_URL;
 
-const PROJECTS_DATA = {
+export const PROJECTS_DATA = {
   residential: {
     breadcrumbsName: 'Residential Projects',
     kicker: 'Residential Portfolios',
@@ -11,36 +11,116 @@ const PROJECTS_DATA = {
     lead: 'Observe how IrisPro\'s double-patented window films protect luxury estates, private apartments, and modern penthouses against harsh solar rays.',
     cases: [
       {
-        client: 'Sunset Horizon Villa',
+        client: 'GEM Residences Diamond 30 Window Film',
         img: `${BASE}images/residential-glass.png`,
-        challenge: 'Intense solar heat loading the western-facing floor-to-ceiling living room panels, leading to fading of teak wood floors and high AC energy bills.',
-        solution: 'IrisPro Diamond Series for premium luxury residential glass facades.',
-        result: 'Solar heat gain reduced by 62%. Wood fading eliminated. Monthly HVAC energy expenses decreased by 18%.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        challenge: 'The residence experienced strong heat from window views, making the living area warmer and less comfortable during sunny periods.',
+        solution: 'IrisPro Diamond 30 was installed to reduce window heat while maintaining a comfortable residential viewing experience.',
+        result: 'Reduced heat exposure from large windows and improved daily comfort inside the residence.',
+        videoUrl: 'https://www.youtube.com/watch?v=dpeKmab-oVg'
       },
       {
-        client: 'Waterfront Penthouse',
+        client: 'Bukit Damansara RayPro 35 Home Installation',
         img: `${BASE}images/residential-glass-2.png`,
-        challenge: 'Extreme midday solar glare reflecting off the ocean surface into master bedrooms, causing visual discomfort and early morning sleep disruption.',
-        solution: 'IrisPro Apex 70 high-optical-clarity window film.',
-        result: 'Visual glare reduced by 75%. Absolute daytime privacy secured. Natural colors preserved.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        challenge: 'The home was exposed to daily sunlight and heat entering through residential glass areas, affecting indoor comfort.',
+        solution: 'IrisPro RayPro 35 was installed as a residential window film solution to manage heat and sunlight exposure.',
+        result: 'A cooler and more comfortable home environment with reduced harsh sunlight entering the living space.',
+        videoUrl: 'https://www.youtube.com/watch?v=GXH-RDJ4Gh8'
       },
       {
-        client: 'Eco-Modern Smart Home',
+        client: 'Ara Damansara RayPro 35 Home Tinting',
         img: `${BASE}images/iris-comfort.png`,
-        challenge: 'Large smart-glass dome causing extreme thermal pockets, making the dining table uncomfortable at midday.',
-        solution: 'IrisPro Spectrum-Selective Thermal Film.',
-        result: 'Ambient temperature stabilized within 1.5°C variance. Solar heat loading cut by 58%.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        challenge: 'The home experienced harsh sunlight exposure, creating glare and discomfort in the living environment.',
+        solution: 'IrisPro RayPro 35 was applied to reduce harsh sunlight and improve the comfort of the residential space.',
+        result: 'Reduced glare, improved indoor comfort, and a more pleasant living environment for the homeowner.',
+        videoUrl: 'https://www.youtube.com/watch?v=IgIXzFooOsE'
       },
       {
-        client: 'Sky-High Penthouse',
+        client: 'TTDI Bungalow Diamond 30 Installation',
+        img: `${BASE}images/residential-glass.png`,
+        challenge: 'The bungalow experienced strong heat entering through glass areas, causing the indoor space to feel hot and uncomfortable.',
+        solution: 'IrisPro Diamond 30 was installed to reduce solar heat exposure and improve the home’s comfort level.',
+        result: 'Improved thermal comfort and reduced heat entering the residential living space.',
+        videoUrl: 'https://www.youtube.com/shorts/IFbfNVLluCI'
+      },
+      {
+        client: 'Damansara Silver Black Privacy Film Installation',
         img: `${BASE}images/residential-glass-2.png`,
-        challenge: 'Extreme heat load at high altitudes causing occupant discomfort and fading of luxury silk tapestries.',
-        solution: 'IrisPro Diamond Series for high-rise residential.',
-        result: '99.9% UV rays blocked. Furnishing degradation eliminated.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        challenge: 'The residence needed better privacy while also reducing harsh sunlight entering the home.',
+        solution: 'IrisPro Silver Black privacy tint was installed to provide visual privacy and improve sunlight control.',
+        result: 'Enhanced home privacy, improved comfort, and a more luxurious living experience.',
+        videoUrl: 'https://www.youtube.com/shorts/4B0zLnfFihY'
+      },
+      {
+        client: 'Diamond 60 Condo Tinting Guide',
+        img: `${BASE}images/iris-comfort.png`,
+        challenge: 'Some condominiums may reject highly reflective tint due to building management rules or façade appearance concerns.',
+        solution: 'IrisPro Diamond 60 was introduced as a condo-friendly window film option designed to balance comfort, visibility, and building appearance requirements.',
+        result: 'A more suitable residential tinting solution for condominium owners who need heat reduction without creating management approval issues.',
+        videoUrl: 'https://www.youtube.com/watch?v=gfQlMDEkDuE'
+      },
+      {
+        client: 'TTDI Home Heat Control Installation',
+        img: `${BASE}images/residential-glass.png`,
+        challenge: 'The home experienced heat entering through window connection points and exposed glass areas.',
+        solution: 'IrisPro residential building film was used to reduce heat transfer and improve window comfort performance.',
+        result: 'Improved heat control and better indoor comfort for the residential space.',
+        videoUrl: ''
+      },
+      {
+        client: 'Diamond 30 Residential Tint Review',
+        img: `${BASE}images/residential-glass-2.png`,
+        challenge: 'Homeowners needed a window film solution that could reduce heat while keeping the home bright, comfortable, and visually pleasant.',
+        solution: 'IrisPro Diamond 30 was used as a residential tinting solution to manage heat and sunlight exposure.',
+        result: 'Improved home comfort, reduced sunlight intensity, and stronger protection for the living environment.',
+        videoUrl: ''
+      },
+      {
+        client: 'Waltz Residences, W City',
+        img: `${BASE}images/iris-comfort.png`,
+        challenge: 'High-rise residential units can receive strong sunlight through large glass windows, increasing indoor heat and glare.',
+        solution: 'IrisPro residential window film was applied to manage solar heat while preserving a comfortable home view.',
+        result: 'Improved living comfort and reduced harsh sunlight inside the residence.',
+        videoUrl: ''
+      },
+      {
+        client: 'The Park Sky Residence, Bukit Jalil',
+        img: `${BASE}images/residential-glass.png`,
+        challenge: 'The residence required heat and glare control for large window areas exposed to daily sunlight.',
+        solution: 'IrisPro residential building film was used to reduce solar heat and improve indoor comfort.',
+        result: 'A more comfortable home environment with reduced sunlight intensity.',
+        videoUrl: ''
+      },
+      {
+        client: 'Atria Sofo Suites, Petaling Jaya',
+        img: `${BASE}images/residential-glass-2.png`,
+        challenge: 'Compact residential or SOFO spaces can become uncomfortable when exposed to strong sunlight through glass panels.',
+        solution: 'IrisPro window film was installed to manage heat, glare, and UV exposure.',
+        result: 'Improved indoor comfort and better protection for the living or working space.',
+        videoUrl: ''
+      },
+      {
+        client: 'Country Heights Bungalow',
+        img: `${BASE}images/iris-comfort.png`,
+        challenge: 'Large landed homes often have wide glass areas that allow significant sunlight and heat into the interior.',
+        solution: 'IrisPro residential window film was applied to reduce heat and improve comfort without major renovation.',
+        result: 'A cooler, more comfortable home environment with improved sunlight control.',
+        videoUrl: ''
+      },
+      {
+        client: 'Lakefront Residences, Cyberjaya',
+        img: `${BASE}images/residential-glass.png`,
+        challenge: 'Residential units with open views can experience strong sunlight, heat build-up, and glare during the day.',
+        solution: 'IrisPro residential film was installed to improve heat rejection and manage sunlight exposure.',
+        result: 'Improved indoor comfort while maintaining the residential view.',
+        videoUrl: ''
+      },
+      {
+        client: 'Pavilion Hilltop, Mont Kiara',
+        img: `${BASE}images/residential-glass-2.png`,
+        challenge: 'Premium high-rise residences require a tinting solution that improves comfort while maintaining a clean and elegant appearance.',
+        solution: 'IrisPro residential window film was used to reduce heat and glare while preserving the premium look of the space.',
+        result: 'Enhanced living comfort and better sunlight control for the residence.',
+        videoUrl: ''
       }
     ]
   },
@@ -51,116 +131,108 @@ const PROJECTS_DATA = {
     lead: 'Explore how IrisPro\'s multi-layer nanotechnology and atomic sputter films secure cooling savings for high-rise offices, hotels, and industrial labs.',
     cases: [
       {
-        client: 'Apex Commercial Plaza',
+        client: 'Menara OCBC Window Film Upgrade',
         img: `${BASE}images/commercial-building.png`,
-        challenge: 'Continuous high solar radiation loading the multi-story developer glass curtain walls, leading to uneven temperature zones and employee discomfort.',
-        solution: 'IrisPro Commercial Architectural Series (Apex 70).',
-        result: 'Balanced temperature zones achieved. Solar heat rejection elevated by 55%. Thermal comfort score up 30%.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        challenge: 'Office spaces exposed to strong KL sunlight experienced heat build-up and glare through large glass panels, affecting indoor comfort during working hours.',
+        solution: 'IrisPro commercial architectural window film was installed to reduce solar heat and glare while maintaining a clear and professional office environment.',
+        result: 'Improved indoor comfort, reduced glare exposure, and a more comfortable working environment for occupants.',
+        videoUrl: 'https://www.youtube.com/shorts/cn3yzO8wro8'
       },
       {
-        client: 'Skyline Atrium Complex',
+        client: 'IKEA MyTOWN Cheras Glass Film Installation',
         img: `${BASE}images/commercial-building-2.png`,
-        challenge: 'Expansive central glass atrium creating a greenhouse heating effect, placing massive thermal cooling pressure on lobby reception areas.',
-        solution: 'IrisPro Multi-Layer Nano-Ceramic Atrium Film.',
-        result: 'Atrium cooling expenses reduced by 25%. Radiant heat index lowered by 12°C. Optimized check-in experience.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        challenge: 'High glass panels and large façade areas created a challenging installation environment with strong sunlight exposure across the building surface.',
+        solution: 'IrisPro performed a commercial building film installation for high glass areas, using professional installation methods suitable for elevated glass panels.',
+        result: 'The project demonstrated IrisPro’s capability to handle large-scale and high-position commercial glass installations while improving heat and sunlight control.',
+        videoUrl: 'https://www.youtube.com/shorts/9Vd4fDrTlTE'
       },
       {
-        client: 'Metropolitan Office Park',
+        client: 'Islamic Arts Museum Malaysia UV Protection Project',
         img: `${BASE}images/commercial-building-panel.png`,
-        challenge: 'High visual glare and low glass privacy in ground-level office pods, causing screen reflection and privacy concerns.',
-        solution: 'IrisPro Dual-Reflective One-Way Privacy Film.',
-        result: 'Glare reduced by 85%. Exterior privacy secured without blocking natural light.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        challenge: 'Museum interiors and displayed items may be exposed to harmful UV rays and strong sunlight entering through glass, creating a risk of fading and long-term material damage.',
+        solution: 'IrisPro UV protection building film was applied to reduce UV exposure while preserving natural light and visibility within the museum environment.',
+        result: 'Enhanced protection for interiors, displays, and visitors by reducing harmful UV exposure inside the building.',
+        videoUrl: 'https://www.youtube.com/shorts/R3n5oe8Sj0w'
       },
       {
-        client: 'Horizon Financial Tower',
+        client: 'Islamic Arts Museum Malaysia Building Film Upgrade',
+        img: `${BASE}images/iris-comfort.png`,
+        challenge: 'A cultural and museum environment required protection from sunlight exposure without compromising the visual quality and visitor experience of the space.',
+        solution: 'IrisPro building window film was used to improve UV protection and manage sunlight entering through the glass.',
+        result: 'Improved interior protection and a more comfortable visitor environment, while supporting long-term care for museum spaces.',
+        videoUrl: 'https://m.youtube.com/shorts/W9KOK-Mp9D8'
+      },
+      {
+        client: 'SBM Offshore Malaysia Office Film Upgrade',
+        img: `${BASE}images/commercial-building.png`,
+        challenge: 'Office areas exposed to continuous sunlight experienced higher heat gain, creating discomfort and increasing reliance on air-conditioning.',
+        solution: 'IrisPro AntiFade 3590 was installed as an office window film solution to reduce heat exposure and improve indoor comfort.',
+        result: 'Reduced heat transfer through the glass and improved comfort for office occupants, supporting a more energy-conscious workplace environment.',
+        videoUrl: 'https://m.youtube.com/shorts/GdBxXQw7zdU'
+      },
+      {
+        client: 'KL Sentral ESG Office Window Film Upgrade',
         img: `${BASE}images/commercial-building-2.png`,
-        challenge: 'Extreme high-altitude solar exposure, causing continuous HVAC operation and massive cooling energy consumption across the southern facade.',
-        solution: 'IrisPro Multi-Layer Tower Shield Series.',
-        result: 'HVAC electrical load dropped by 22%. 99.9% UV protection. Annual building carbon emission reduced by 14 tons.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        challenge: 'The office required a practical way to manage solar heat gain and cooling demand while supporting energy efficiency and ESG-related building improvement goals.',
+        solution: 'IrisPro building window film was applied as a passive cooling solution to reduce heat entering through existing glass.',
+        result: 'Improved indoor comfort, reduced cooling load potential, and stronger positioning for energy-efficiency and ESG building performance.',
+        videoUrl: 'https://m.youtube.com/shorts/Jbal3AVN4DM'
       },
       {
-        client: 'Signature Glass Deck',
-        img: `${BASE}images/commercial-building.png`,
-        challenge: 'Extreme solar heat in observation spaces, creating high glass touch temperatures and placing high pressure on high-rise air conditioning lines.',
-        solution: 'IrisPro Ultimate Premium Solar Film.',
-        result: 'Glass surface contact heat reduced by 68%. Air conditioning reliability optimized. Pristine architectural transparency maintained.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-      },
-      {
-        client: 'Grand Imperial Suites',
-        img: `${BASE}images/commercial-building.png`,
-        challenge: 'Premium hotel guests complaining about visual glare off the harbor and UV fading of luxurious interior silk tapestries and custom suite carpets.',
-        solution: 'IrisPro Diamond Series for premium guest suites.',
-        result: '100% UV rays blocked. Furnishing degradation eliminated. Guest suite comfort score elevated by 28%.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-      },
-      {
-        client: 'Oasis Lobby Frontage',
-        img: `${BASE}images/residential-glass.png`,
-        challenge: 'Severe poolside reflections projecting into the floor-to-ceiling lobby glass reception desk, blinding hotel staff and check-in guests.',
-        solution: 'IrisPro Polarized Anti-Reflection Film.',
-        result: 'Reception desk glare reduced by 80%. Lobby guest satisfaction rating increased by 32%. Employee visual strain resolved.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-      },
-      {
-        client: 'Ritz Presidential Dining',
-        img: `${BASE}images/residential-glass-2.png`,
-        challenge: 'Extreme solar heat loading the glass mezzanine dining area, causing guests to avoid window seating.',
-        solution: 'IrisPro Luxury Glass Tinting.',
-        result: 'Seat utilization increased by 100%. Mezzanine dining comfort restored.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-      },
-      {
-        client: 'Precision Robotics Foundry',
+        client: 'Kawan Place Subang Jaya Office Window Film',
         img: `${BASE}images/commercial-building-panel.png`,
-        challenge: 'Severe overheating on active assembly floors, lowering operator productivity and causing electronic assembly sensors to drift from ambient temperature.',
-        solution: 'IrisPro Heavy-Duty Industrial Shield Series.',
-        result: 'Assembly floor ambient temperature reduced by 4.5°C. Electronic sensor stability optimized. Shift comfort ratings up 35%.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        challenge: 'The office environment was affected by heat, brightness, and limited privacy, making the workspace less comfortable for daily operations.',
+        solution: 'IrisPro Silver Black UV Film was installed to reduce heat, manage brightness, and improve privacy for the office space.',
+        result: 'A more comfortable, private, and visually controlled office environment with reduced sunlight disturbance.',
+        videoUrl: 'https://www.youtube.com/watch?v=FgcMIFARY7s'
       },
       {
-        client: 'Bio-Cleanroom Laboratory',
+        client: 'REAL International School Heat & UV Film Installation',
         img: `${BASE}images/iris-comfort.png`,
-        challenge: 'Skylight glass panel solar exposure causing ultraviolet breakdown of chemical compounds and micro-thermal variations in sensitive testing environments.',
-        solution: 'IrisPro UV-Max Cleanroom Protective Film.',
-        result: '100% Ultraviolet spectrum blocked. Thermal variation eliminated. Product laboratory output increased by 8%.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        challenge: 'Learning areas exposed to sunlight can become hot and uncomfortable, affecting students, teachers, and staff during school hours.',
+        solution: 'IrisPro Silver Black Heat + UV Protection Film was applied to help reduce heat and UV exposure inside the school environment.',
+        result: 'Improved indoor comfort for learning spaces and added UV protection for students, staff, and interior fittings.',
+        videoUrl: ''
       },
       {
-        client: 'Logistics Skylight',
+        client: 'Berjaya Times Square Hotel Window Film Project',
+        img: `${BASE}images/commercial-building.png`,
+        challenge: 'Hotel spaces with wide glass exposure can experience heat build-up, glare, and higher cooling demand, affecting guest comfort.',
+        solution: 'IrisPro commercial building film was used to manage solar heat and improve indoor comfort within the hospitality environment.',
+        result: 'Enhanced guest comfort, reduced harsh sunlight exposure, and better interior protection for hotel spaces.',
+        videoUrl: ''
+      },
+      {
+        client: 'Federal Hotel Kuala Lumpur Window Film Project',
         img: `${BASE}images/commercial-building-2.png`,
-        challenge: 'Giant factory overhead skylights letting in extreme radiant heat, overheating warehouses and stored items.',
-        solution: 'IrisPro Industrial Exterior Shield.',
-        result: 'Roof-level heat ingress cut by 68%. HVAC strain reduced by 20%.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        challenge: 'Hospitality spaces required better heat and sunlight control to maintain a comfortable indoor environment for guests.',
+        solution: 'IrisPro building window film was installed to reduce solar heat and improve indoor comfort.',
+        result: 'Improved comfort for hotel occupants and better protection for interior finishes exposed to sunlight.',
+        videoUrl: ''
       },
       {
-        client: 'Centennial Lecture Hall',
+        client: 'Subang Jaya Medical Central',
+        img: `${BASE}images/commercial-building-panel.png`,
+        challenge: 'Healthcare environments require comfortable indoor spaces while reducing heat and glare for patients, visitors, and staff.',
+        solution: 'IrisPro commercial building film was used to manage solar heat and UV exposure across glass areas.',
+        result: 'Improved comfort for occupants and better protection for interior spaces exposed to sunlight.',
+        videoUrl: ''
+      },
+      {
+        client: 'Faber Castell Subang Jaya',
         img: `${BASE}images/iris-comfort.png`,
-        challenge: 'Intense solar glare blinding high-definition projection screens, creating visual fatigue for students and rendering teaching materials illegible.',
-        solution: 'IrisPro Anti-Glare High-Definition Series.',
-        result: 'Screen reading contrast elevated by 40%. Direct glare reduced by 85%. Student focus score significantly improved.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        challenge: 'Commercial interiors exposed to sunlight may experience heat build-up, glare, and fading of interior materials.',
+        solution: 'IrisPro building window film was applied to reduce heat and protect interiors from sunlight exposure.',
+        result: 'Improved workplace comfort and better long-term protection for interior finishes.',
+        videoUrl: ''
       },
       {
-        client: 'Academic Dome Library',
-        img: `${BASE}images/residential-glass-2.png`,
-        challenge: 'Direct solar dome exposure creating intense midday hot pockets, rendering the top study mezzanine unusable during prime research hours.',
-        solution: 'IrisPro Spectrum-Selective Thermal Film.',
-        result: 'Midday study area utilization increased by 100%. Mezzanine temperature lowered by 6°C. Overall HVAC load reduced by 15%.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-      },
-      {
-        client: 'Science Lab Mezzanine',
-        img: `${BASE}images/residential-glass.png`,
-        challenge: 'Severe thermal variation through large west-facing research lab windows, affecting highly sensitive weighing balances.',
-        solution: 'IrisPro Multi-Layer Thermal Stabilizer Film.',
-        result: 'Glass thermal transmission reduced by 50%. Micro-balance calibrations stabilized.',
-        videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        client: 'The Summit USJ',
+        img: `${BASE}images/commercial-building.png`,
+        challenge: 'Large commercial spaces with glass exposure can face heat gain and occupant discomfort during peak sunlight hours.',
+        solution: 'IrisPro commercial film was installed to improve solar control and interior comfort.',
+        result: 'Reduced sunlight impact and improved indoor comfort for the commercial environment.',
+        videoUrl: ''
       }
     ]
   },

@@ -23,6 +23,7 @@ import VideoTestimonialsPage from './components/VideoTestimonialsPage';
 import FranchisePage from './components/FranchisePage';
 import DealershipPage from './components/DealershipPage';
 import ProjectsPage from './components/ProjectsPage';
+import EsgSolutionPage from './components/EsgSolutionPage';
 import './styles/chapters.css'; // triggers build reload for history
 
 export default function App() {
@@ -42,6 +43,7 @@ export default function App() {
   const isNews = currentRoute.startsWith('#/news');
   const isAutomotive = currentRoute.startsWith('#/products/automotive');
   const isBuilding = currentRoute.startsWith('#/products/building');
+  const isEsgSolution = currentRoute.startsWith('#/product/building-film/esg-solution');
   const buildingMode = currentRoute.endsWith('/commercial') ? 'commercial' : 'residential';
   const isGoogleReviews = currentRoute.startsWith('#/google-reviews');
   const isVideoTestimonials = currentRoute.startsWith('#/video-testimonials');
@@ -61,6 +63,7 @@ export default function App() {
     isNews ||
     isAutomotive ||
     isBuilding ||
+    isEsgSolution ||
     isGoogleReviews ||
     isVideoTestimonials ||
     isFranchise ||
@@ -98,6 +101,7 @@ export default function App() {
       {isNews && <NewsPage />}
       {isAutomotive && <ProductsAutomotivePage />}
       {isBuilding && <ProductsBuildingPage key={buildingMode} initialMode={buildingMode} />}
+      {isEsgSolution && <EsgSolutionPage />}
       {isGoogleReviews && <GoogleReviewsPage />}
       {isVideoTestimonials && <VideoTestimonialsPage />}
       {isFranchise && <FranchisePage />}

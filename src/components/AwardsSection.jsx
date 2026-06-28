@@ -11,6 +11,11 @@ import logo08 from '../assets/awards/certification_logo_08.svg';
 import logo09 from '../assets/awards/certification_logo_09.svg';
 import logo10 from '../assets/awards/certification_logo_10.svg';
 
+import certAsiaAutomotive from '../assets/awards/certification/AsiaAutomotiveAward2025.jpg';
+import certSirim from '../assets/awards/certification/Sirim-IrisPro.jpg';
+import certArchdex from '../assets/awards/certification/archdex.jpg';
+import certMtpn from '../assets/awards/certification/mtpn.jpg';
+
 export default function AwardsSection() {
   const sectionRef = useRef(null);
   const weRef = useRef(null);
@@ -20,19 +25,24 @@ export default function AwardsSection() {
 
   const AWARDS = [
     {
-      year: 'ARCHIDEX',
-      title: 'Star Award Winner',
+      img: certArchdex,
+      alt: 'ARCHIDEX Award',
       detail: 'Recognized at the International Architecture Exhibition for innovation in solar optical film technology.',
     },
     {
-      year: 'SIRIM QAS',
-      title: 'SIRIM Certified Quality',
+      img: certSirim,
+      alt: 'SIRIM Certified Quality',
       detail: 'Fully certified by SIRIM Malaysia for rigorous performance, durability, and safety standards.',
     },
     {
-      year: 'SGS GLOBAL',
-      title: 'SGS Certified Performance',
-      detail: 'Verified for 99% UV radiation protection and up to 90% infrared heat rejection.',
+      img: certMtpn,
+      alt: 'MTPN Consumer Protection Award',
+      detail: 'Recognized by the National Consumer Action Council (MTPN) for outstanding business ethics, consumer protection, and service quality.',
+    },
+    {
+      img: certAsiaAutomotive,
+      alt: 'Asia Automotive Award 2025',
+      detail: 'Awarded at the Asia Automotive Awards 2025 for elite automotive window tinting performance and safety standards.',
     },
   ];
 
@@ -204,8 +214,9 @@ export default function AwardsSection() {
         <div className="awards__grid" ref={gridRef}>
           {AWARDS.map((a, i) => (
             <div key={i} className="awards__card">
-              <span className="awards__card-kicker">{a.year}</span>
-              <h3 className="awards__card-title">{a.title}</h3>
+              <div className="awards__card-img-box">
+                <img src={a.img} alt={a.alt} className="awards__card-cert-img" />
+              </div>
               <p className="awards__card-detail">{a.detail}</p>
             </div>
           ))}

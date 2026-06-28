@@ -135,6 +135,7 @@ export default function Navbar() {
                   <ul className="navbar__sub-menu">
                     <li><a href="#/products/building/residential" className="navbar__sub-link" onClick={handleLinkClick}>Residential</a></li>
                     <li><a href="#/products/building/commercial" className="navbar__sub-link" onClick={handleLinkClick}>Commercial</a></li>
+                    <li><a href="#/product/building-film/esg-solution" className="navbar__sub-link" onClick={handleLinkClick}>ESG Solution</a></li>
                   </ul>
                 </li>
               </ul>
