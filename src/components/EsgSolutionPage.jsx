@@ -276,7 +276,7 @@ export default function EsgSolutionPage() {
           <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Premium Commercial Building" className="esg-hero__bg-img" />
           <div className="esg-hero__overlay"></div>
         </div>
-        
+
         <div className="esg-hero__content">
           <div className="esg-hero__eyebrow">BUILDING FILM / ESG SOLUTION</div>
           <h1 className="esg-hero__heading">Passive Cooling Technology for Sustainable Buildings</h1>
@@ -321,9 +321,11 @@ export default function EsgSolutionPage() {
         <div className="esg-container">
           <div className="esg-problem__grid">
             <div className="esg-problem__text">
-              <h2 className="esg-section__heading">The Challenge: Glass Buildings Are Energy Liabilities</h2>
+              <h2 className="esg-section__heading">The Challenge: Glass Façades Improve Design.
+                They Also Increase Cooling Demand.
+              </h2>
               <p className="esg-section__paragraph">
-                Modern commercial buildings rely heavily on glass for natural light and aesthetics. However, untreated glass allows excessive solar heat to penetrate, forcing HVAC systems to work overtime. This leads to high carbon emissions, skyrocketing energy costs, and poor indoor thermal comfort — directly negatively impacting the Environmental and Social pillars of ESG.
+                Modern commercial buildings rely on extensive glazing to maximise daylight and architectural appeal. However, untreated glass allows significant solar heat to penetrate the building envelope, forcing HVAC systems to work overtime. This leads to high carbon emissions, skyrocketing energy costs, and poor indoor thermal comfort — directly negatively impacting the Environmental and Social pillars of ESG.
               </p>
             </div>
             <div className="esg-problem__stats">
@@ -365,7 +367,7 @@ export default function EsgSolutionPage() {
                 </div>
               </div>
             </div>
-            
+
             <div className="esg-solution__visual">
               <div className="esg-glass-diagram">
                 {/* Outermost rays */}
@@ -374,7 +376,7 @@ export default function EsgSolutionPage() {
                   <div className="esg-diagram__line esg-diagram__line--red"></div>
                   <div className="esg-diagram__arrow esg-diagram__arrow--reflected"></div>
                 </div>
-                
+
                 <div className="esg-diagram__ray esg-diagram__ray--uv">
                   <span className="esg-diagram__ray-label">100% UV Rays</span>
                   <div className="esg-diagram__line esg-diagram__line--purple"></div>
@@ -384,7 +386,7 @@ export default function EsgSolutionPage() {
                 {/* Glass representation */}
                 <div className="esg-glass-pane">
                   <span className="esg-glass-pane__label">Existing Glass</span>
-                  
+
                   {/* Film coating representation */}
                   <div className="esg-film-layer">
                     <span className="esg-film-layer__label">IrisPro Film</span>
@@ -415,7 +417,7 @@ export default function EsgSolutionPage() {
                 <li><strong>Sustainable Retrofit:</strong> Upgrade existing glass without the high carbon cost of replacing the entire façade.</li>
               </ul>
             </div>
-            
+
             <div className="esg-pillar-card esg-pillar-card--s">
               <div className="esg-pillar-card__icon">S</div>
               <h3 className="esg-pillar-card__title">Social Responsibility</h3>
@@ -441,7 +443,7 @@ export default function EsgSolutionPage() {
       {/* 5. Performance Proof */}
       <section className="esg-section esg-performance">
         <div className="esg-container">
-          <h2 className="esg-section__heading esg-text-center">Performance Proof</h2>
+          <h2 className="esg-section__heading esg-text-center">Proven Performance</h2>
           <div className="esg-performance__grid">
             <div className="esg-perf-card">
               <div className="esg-perf-card__circle">100%</div>

@@ -393,7 +393,11 @@ export default function TechnologyProof() {
         <div className="technology-layer__content-side">
           <p className="technology-layer__title-kicker">IRISPRO Technology</p>
           <p className="technology-layer__caption">
-            4000 Days. Endless testing. Years of optimization. Keep improving. <br />After all, <strong style={{ color: '#151515', fontWeight: 800 }}>products follow function</strong>. And ultimately, you get an art that sets only the <span style={{ color: 'var(--irispro-red)', fontWeight: 900 }}>highest standards</span>.
+            4000 Days. <br />No Shortcuts. <br />No Compromise.
+            <br />
+            Engineered with <strong style={{ color: '#151515', fontWeight: 800 }}>precision</strong>.
+            Designed with purpose.<br />
+            Built to set the  <span style={{ color: 'var(--irispro-red)', fontWeight: 900 }}>benchmark</span>.
           </p>
         </div>
 

@@ -80,41 +80,45 @@ export default function ProductsAutomotivePage() {
             <span className="comm-section-header__text">Budget-Friendly Options</span>
           </div>
 
-          <div className="comm-products-grid-3">
+          <div className="res-grid-2">
             {/* CS PRO */}
-            <div className="comm-card card-hover">
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+            <div className="res-card res-card--signature">
+              <div className="res-card__img-wrap">
+                <img src={`${import.meta.env.BASE_URL}images/tinted_film_roll.png`} alt="CS PRO" className="res-card__img" />
+              </div>
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">CS PRO</h3>
-                    <p className="comm-card__subtitle">Nano Carbon Ceramic</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">2 mil</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">3 Yr Warranty</span>
+                    <h3 className="res-card__title">CS PRO</h3>
+                    <p className="res-card__subtitle">Nano Carbon Ceramic</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">2 mil thickness</span>
+                      <span className="res-tag res-tag--warranty">3 Yr Warranty</span>
                     </div>
                   </div>
+                  <span className="res-card__series-label res-card__series-label--value">Value</span>
                 </div>
 
-                <div className="comm-card__specs-grid">
-                  <div className="comm-card__spec-block spec-block--uvr">
-                    <span className="comm-card__spec-val">99%</span>
-                    <span className="comm-card__spec-label">UVR</span>
+                <div className="res-specs-grid res-specs-grid--2">
+                  <div className="res-spec-badge res-spec-badge--uvr">
+                    <span className="res-spec-val">99%</span>
+                    <span className="res-spec-key">UVR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--irr">
-                    <span className="comm-card__spec-val">40%</span>
-                    <span className="comm-card__spec-label">IRR</span>
+                  <div className="res-spec-badge res-spec-badge--irr">
+                    <span className="res-spec-val">40%</span>
+                    <span className="res-spec-key">IRR</span>
                   </div>
                 </div>
 
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">VLT Options</p>
-                  <div className="comm-card__vlt-flex">
-                    <span className="vlt-bar">70%</span>
-                    <span className="vlt-bar">60%</span>
-                    <span className="vlt-bar">40%</span>
-                    <span className="vlt-bar">30%</span>
-                    <span className="vlt-bar">20%</span>
-                    <span className="vlt-bar">5%</span>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">VLT Options</p>
+                  <div className="res-vlt-grid res-vlt-grid--6">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">70%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">60%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">40%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">30%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">20%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">5%</span></div>
                   </div>
                   <p className="comm-card__vlt-tser">TSER: 27% - 60%</p>
                 </div>
@@ -140,38 +144,42 @@ export default function ProductsAutomotivePage() {
             </div>
 
             {/* Color Stable 80 */}
-            <div className="comm-card card-hover">
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+            <div className="res-card res-card--signature">
+              <div className="res-card__img-wrap">
+                <img src={`${import.meta.env.BASE_URL}images/iris-comfort.png`} alt="Color Stable 80" className="res-card__img" />
+              </div>
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">Color Stable 80</h3>
-                    <p className="comm-card__subtitle">Nano Carbon Ceramic</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">2 mil</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">5 Yr Warranty</span>
+                    <h3 className="res-card__title">Color Stable 80</h3>
+                    <p className="res-card__subtitle">Nano Carbon Ceramic</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">2 mil thickness</span>
+                      <span className="res-tag res-tag--warranty">5 Yr Warranty</span>
                     </div>
                   </div>
+                  <span className="res-card__series-label res-card__series-label--value">Value</span>
                 </div>
 
-                <div className="comm-card__specs-grid">
-                  <div className="comm-card__spec-block spec-block--uvr">
-                    <span className="comm-card__spec-val">99%</span>
-                    <span className="comm-card__spec-label">UVR</span>
+                <div className="res-specs-grid res-specs-grid--2">
+                  <div className="res-spec-badge res-spec-badge--uvr">
+                    <span className="res-spec-val">99%</span>
+                    <span className="res-spec-key">UVR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--irr">
-                    <span className="comm-card__spec-val">80%</span>
-                    <span className="comm-card__spec-label">IRR</span>
+                  <div className="res-spec-badge res-spec-badge--irr">
+                    <span className="res-spec-val">80%</span>
+                    <span className="res-spec-key">IRR</span>
                   </div>
                 </div>
 
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">VLT Options</p>
-                  <div className="comm-card__vlt-flex">
-                    <span className="vlt-bar">70%</span>
-                    <span className="vlt-bar">55%</span>
-                    <span className="vlt-bar">30%</span>
-                    <span className="vlt-bar">15%</span>
-                    <span className="vlt-bar">5%</span>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">VLT Options</p>
+                  <div className="res-vlt-grid res-vlt-grid--5">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">70%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">55%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">30%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">15%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">5%</span></div>
                   </div>
                   <p className="comm-card__vlt-tser">TSER: 50% - 80%</p>
                 </div>
@@ -197,39 +205,43 @@ export default function ProductsAutomotivePage() {
             </div>
 
             {/* Color Stable 90 */}
-            <div className="comm-card card-hover">
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+            <div className="res-card res-card--signature">
+              <div className="res-card__img-wrap">
+                <span className="res-card__top-badge" style={{ background: 'rgba(249,115,22,0.1)', border: '1px solid rgba(249,115,22,0.25)', color: '#f97316' }}>POPULAR</span>
+                <img src={`${import.meta.env.BASE_URL}images/family-car.png`} alt="Color Stable 90" className="res-card__img" />
+              </div>
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">Color Stable 90</h3>
-                    <p className="comm-card__subtitle">Nano Carbon Ceramic</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">2 mil</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">5 Yr Warranty</span>
+                    <h3 className="res-card__title">Color Stable 90</h3>
+                    <p className="res-card__subtitle">Nano Carbon Ceramic</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">2 mil thickness</span>
+                      <span className="res-tag res-tag--warranty">5 Yr Warranty</span>
                     </div>
                   </div>
-                  <span className="comm-card__badge-popular">POPULAR</span>
+                  <span className="res-card__series-label res-card__series-label--value">Value</span>
                 </div>
 
-                <div className="comm-card__specs-grid">
-                  <div className="comm-card__spec-block spec-block--uvr">
-                    <span className="comm-card__spec-val">99%</span>
-                    <span className="comm-card__spec-label">UVR</span>
+                <div className="res-specs-grid res-specs-grid--2">
+                  <div className="res-spec-badge res-spec-badge--uvr">
+                    <span className="res-spec-val">99%</span>
+                    <span className="res-spec-key">UVR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--irr">
-                    <span className="comm-card__spec-val">90%</span>
-                    <span className="comm-card__spec-label">IRR</span>
+                  <div className="res-spec-badge res-spec-badge--irr">
+                    <span className="res-spec-val">90%</span>
+                    <span className="res-spec-key">IRR</span>
                   </div>
                 </div>
 
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">VLT Options</p>
-                  <div className="comm-card__vlt-flex">
-                    <span className="vlt-bar">70%</span>
-                    <span className="vlt-bar">55%</span>
-                    <span className="vlt-bar">30%</span>
-                    <span className="vlt-bar">15%</span>
-                    <span className="vlt-bar">5%</span>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">VLT Options</p>
+                  <div className="res-vlt-grid res-vlt-grid--5">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">70%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">55%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">30%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">15%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">5%</span></div>
                   </div>
                   <p className="comm-card__vlt-tser">TSER: 50% - 80%</p>
                 </div>
@@ -268,39 +280,43 @@ export default function ProductsAutomotivePage() {
             <span className="comm-section-header__text">Enhanced Protection</span>
           </div>
 
-          <div className="comm-products-grid-2">
+          <div className="res-grid-2">
             {/* Titanium */}
-            <div className="comm-card card-hover">
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+            <div className="res-card res-card--signature">
+              <div className="res-card__img-wrap">
+                <img src={`${import.meta.env.BASE_URL}images/sputtered_film_roll.png`} alt="Titanium" className="res-card__img" />
+              </div>
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">Titanium</h3>
-                    <p className="comm-card__subtitle">Nano Titanium Sputter</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">2 - 3.5 mil</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">7 Yr Warranty</span>
+                    <h3 className="res-card__title">Titanium</h3>
+                    <p className="res-card__subtitle">Nano Titanium Sputter</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">2 - 3.5 mil</span>
+                      <span className="res-tag res-tag--warranty">7 Yr Warranty</span>
                     </div>
                   </div>
+                  <span className="res-card__series-label res-card__series-label--heat">Performance</span>
                 </div>
 
-                <div className="comm-card__specs-grid">
-                  <div className="comm-card__spec-block spec-block--uvr">
-                    <span className="comm-card__spec-val">99%</span>
-                    <span className="comm-card__spec-label">UVR</span>
+                <div className="res-specs-grid res-specs-grid--2">
+                  <div className="res-spec-badge res-spec-badge--uvr">
+                    <span className="res-spec-val">99%</span>
+                    <span className="res-spec-key">UVR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--irr">
-                    <span className="comm-card__spec-val">95%</span>
-                    <span className="comm-card__spec-label">IRR</span>
+                  <div className="res-spec-badge res-spec-badge--irr">
+                    <span className="res-spec-val">95%</span>
+                    <span className="res-spec-key">IRR</span>
                   </div>
                 </div>
 
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">VLT Options</p>
-                  <div className="comm-card__vlt-flex">
-                    <span className="vlt-bar">70%</span>
-                    <span className="vlt-bar">50%</span>
-                    <span className="vlt-bar">35%</span>
-                    <span className="vlt-bar">15%</span>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">VLT Options</p>
+                  <div className="res-vlt-grid res-vlt-grid--4">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">70%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">50%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">35%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">15%</span></div>
                   </div>
                   <p className="comm-card__vlt-tser">TSER: 55% - 76%</p>
                 </div>
@@ -326,43 +342,47 @@ export default function ProductsAutomotivePage() {
             </div>
 
             {/* UVPRO 90 */}
-            <div className="comm-card card-hover signature-glow">
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+            <div className="res-card res-card--signature">
+              <div className="res-card__img-wrap">
+                <span className="res-card__top-badge res-card__top-badge--signature">SIGNATURE</span>
+                <img src={`${import.meta.env.BASE_URL}images/hot-car-exterior.png`} alt="UVPRO 90" className="res-card__img" />
+              </div>
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">UVPRO 90</h3>
-                    <p className="comm-card__subtitle">Nano Carbon Ceramic</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">2 mil</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">7 Yr Warranty</span>
+                    <h3 className="res-card__title">UVPRO 90</h3>
+                    <p className="res-card__subtitle">Nano Carbon Ceramic</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">2 mil thickness</span>
+                      <span className="res-tag res-tag--warranty">7 Yr Warranty</span>
                     </div>
                   </div>
-                  <span className="comm-card__badge-signature">Signature</span>
+                  <span className="res-card__series-label">Signature</span>
                 </div>
 
-                <div className="comm-card__specs-grid comm-card__specs-grid--3col">
-                  <div className="comm-card__spec-block spec-block--uvr">
-                    <span className="comm-card__spec-val">100%</span>
-                    <span className="comm-card__spec-label">UVR</span>
+                <div className="res-specs-grid res-specs-grid--3">
+                  <div className="res-spec-badge res-spec-badge--uvr">
+                    <span className="res-spec-val">100%</span>
+                    <span className="res-spec-key">UVR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--blr">
-                    <span className="comm-card__spec-val">99%</span>
-                    <span className="comm-card__spec-label">BLR</span>
+                  <div className="res-spec-badge res-spec-badge--blr">
+                    <span className="res-spec-val">99%</span>
+                    <span className="res-spec-key">BLR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--irr">
-                    <span className="comm-card__spec-val">90%</span>
-                    <span className="comm-card__spec-label">IRR</span>
+                  <div className="res-spec-badge res-spec-badge--irr">
+                    <span className="res-spec-val">90%</span>
+                    <span className="res-spec-key">IRR</span>
                   </div>
                 </div>
 
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">VLT Options</p>
-                  <div className="comm-card__vlt-flex">
-                    <span className="vlt-bar">70%</span>
-                    <span className="vlt-bar">55%</span>
-                    <span className="vlt-bar">30%</span>
-                    <span className="vlt-bar">15%</span>
-                    <span className="vlt-bar">5%</span>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">VLT Options</p>
+                  <div className="res-vlt-grid res-vlt-grid--5">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">70%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">55%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">30%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">15%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">5%</span></div>
                   </div>
                   <p className="comm-card__vlt-tser">TSER: 58% - 81%</p>
                 </div>
@@ -401,45 +421,49 @@ export default function ProductsAutomotivePage() {
             <span className="comm-section-header__text">Maximum Protection</span>
           </div>
 
-          <div className="comm-products-grid-2">
+          <div className="res-grid-2">
             {/* Elite */}
-            <div className="comm-card card-hover signature-glow">
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+            <div className="res-card res-card--signature">
+              <div className="res-card__img-wrap">
+                <span className="res-card__top-badge res-card__top-badge--signature">SIGNATURE</span>
+                <img src={`${import.meta.env.BASE_URL}images/automotive-tint.png`} alt="Elite" className="res-card__img" />
+              </div>
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">Elite</h3>
-                    <p className="comm-card__subtitle">Nano Titanium Sputter</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">2 - 3.5 mil</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">10 Yr Warranty</span>
+                    <h3 className="res-card__title">Elite</h3>
+                    <p className="res-card__subtitle">Nano Titanium Sputter</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">2 - 3.5 mil</span>
+                      <span className="res-tag res-tag--warranty">10 Yr Warranty</span>
                     </div>
                   </div>
-                  <span className="comm-card__badge-signature">Signature</span>
+                  <span className="res-card__series-label">Signature</span>
                 </div>
 
-                <div className="comm-card__specs-grid comm-card__specs-grid--3col">
-                  <div className="comm-card__spec-block spec-block--uvr">
-                    <span className="comm-card__spec-val">100%</span>
-                    <span className="comm-card__spec-label">UVR</span>
+                <div className="res-specs-grid res-specs-grid--3">
+                  <div className="res-spec-badge res-spec-badge--uvr">
+                    <span className="res-spec-val">100%</span>
+                    <span className="res-spec-key">UVR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--blr">
-                    <span className="comm-card__spec-val">99%</span>
-                    <span className="comm-card__spec-label">BLR</span>
+                  <div className="res-spec-badge res-spec-badge--blr">
+                    <span className="res-spec-val">99%</span>
+                    <span className="res-spec-key">BLR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--irr">
-                    <span className="comm-card__spec-val">95%</span>
-                    <span className="comm-card__spec-label">IRR</span>
+                  <div className="res-spec-badge res-spec-badge--irr">
+                    <span className="res-spec-val">95%</span>
+                    <span className="res-spec-key">IRR</span>
                   </div>
                 </div>
 
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">VLT Options</p>
-                  <div className="comm-card__vlt-flex">
-                    <span className="vlt-bar">70%</span>
-                    <span className="vlt-bar">55%</span>
-                    <span className="vlt-bar">35%</span>
-                    <span className="vlt-bar">15%</span>
-                    <span className="vlt-bar">5%</span>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">VLT Options</p>
+                  <div className="res-vlt-grid res-vlt-grid--5">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">70%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">55%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">35%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">15%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">5%</span></div>
                   </div>
                   <p className="comm-card__vlt-tser">TSER: 57% - 85%</p>
                 </div>
@@ -465,40 +489,44 @@ export default function ProductsAutomotivePage() {
             </div>
 
             {/* Diamond */}
-            <div className="comm-card card-hover signature-glow">
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+            <div className="res-card res-card--signature">
+              <div className="res-card__img-wrap">
+                <span className="res-card__top-badge res-card__top-badge--signature">SIGNATURE</span>
+                <img src={`${import.meta.env.BASE_URL}images/family-car.png`} alt="Diamond" className="res-card__img" />
+              </div>
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">Diamond</h3>
-                    <p className="comm-card__subtitle">Multi Layer Titanium Sputter</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">3 - 3.5 mil</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">10 Yr Warranty</span>
+                    <h3 className="res-card__title">Diamond</h3>
+                    <p className="res-card__subtitle">Multi Layer Titanium Sputter</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">3 - 3.5 mil</span>
+                      <span className="res-tag res-tag--warranty">10 Yr Warranty</span>
                     </div>
                   </div>
-                  <span className="comm-card__badge-signature">Signature</span>
+                  <span className="res-card__series-label">Signature</span>
                 </div>
 
-                <div className="comm-card__specs-grid comm-card__specs-grid--3col">
-                  <div className="comm-card__spec-block spec-block--uvr">
-                    <span className="comm-card__spec-val">100%</span>
-                    <span className="comm-card__spec-label">UVR</span>
+                <div className="res-specs-grid res-specs-grid--3">
+                  <div className="res-spec-badge res-spec-badge--uvr">
+                    <span className="res-spec-val">100%</span>
+                    <span className="res-spec-key">UVR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--blr">
-                    <span className="comm-card__spec-val">99%</span>
-                    <span className="comm-card__spec-label">BLR</span>
+                  <div className="res-spec-badge res-spec-badge--blr">
+                    <span className="res-spec-val">99%</span>
+                    <span className="res-spec-key">BLR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--irr">
-                    <span className="comm-card__spec-val">98%</span>
-                    <span className="comm-card__spec-label">IRR</span>
+                  <div className="res-spec-badge res-spec-badge--irr">
+                    <span className="res-spec-val">98%</span>
+                    <span className="res-spec-key">IRR</span>
                   </div>
                 </div>
 
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">VLT Options</p>
-                  <div className="comm-card__vlt-flex">
-                    <span className="vlt-bar">60%</span>
-                    <span className="vlt-bar">30%</span>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">VLT Options</p>
+                  <div className="res-vlt-grid res-vlt-grid--2">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">60%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">30%</span></div>
                   </div>
                   <p className="comm-card__vlt-tser">TSER: 65% - 78%</p>
                 </div>
@@ -536,42 +564,46 @@ export default function ProductsAutomotivePage() {
             <div className="comm-section-header__line comm-section-header__line--flagship" />
           </div>
 
-          <div className="comm-products-grid-2">
+          <div className="res-grid-2">
             {/* Diamond X */}
-            <div className="comm-card comm-card--flagship card-hover">
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+            <div className="res-card res-card--signature">
+              <div className="res-card__img-wrap">
+                <span className="res-card__top-badge res-card__top-badge--flagship">FLAGSHIP</span>
+                <img src={`${import.meta.env.BASE_URL}images/hot-car-exterior.png`} alt="Diamond X" className="res-card__img" />
+              </div>
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">Diamond X</h3>
-                    <p className="comm-card__subtitle">Multi Layer Silver Sputter</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">4 - 6 mil</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">10 Yr Warranty</span>
+                    <h3 className="res-card__title">Diamond X</h3>
+                    <p className="res-card__subtitle">Multi Layer Silver Sputter</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">4 - 6 mil</span>
+                      <span className="res-tag res-tag--warranty">10 Yr Warranty</span>
                     </div>
                   </div>
-                  <span className="comm-card__badge-tag comm-card__badge-tag--flagship">FLAGSHIP</span>
+                  <span className="res-card__series-label">Signature</span>
                 </div>
 
-                <div className="comm-card__specs-grid comm-card__specs-grid--3col">
-                  <div className="comm-card__spec-block spec-block--uvr">
-                    <span className="comm-card__spec-val">100%</span>
-                    <span className="comm-card__spec-label">UVR</span>
+                <div className="res-specs-grid res-specs-grid--3">
+                  <div className="res-spec-badge res-spec-badge--uvr">
+                    <span className="res-spec-val">100%</span>
+                    <span className="res-spec-key">UVR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--blr">
-                    <span className="comm-card__spec-val">99%</span>
-                    <span className="comm-card__spec-label">BLR</span>
+                  <div className="res-spec-badge res-spec-badge--blr">
+                    <span className="res-spec-val">99%</span>
+                    <span className="res-spec-key">BLR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--irr">
-                    <span className="comm-card__spec-val">98%</span>
-                    <span className="comm-card__spec-label">IRR</span>
+                  <div className="res-spec-badge res-spec-badge--irr">
+                    <span className="res-spec-val">98%</span>
+                    <span className="res-spec-key">IRR</span>
                   </div>
                 </div>
 
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">VLT Options</p>
-                  <div className="comm-card__vlt-flex">
-                    <span className="vlt-bar">60%</span>
-                    <span className="vlt-bar">15%</span>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">VLT Options</p>
+                  <div className="res-vlt-grid res-vlt-grid--2">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">60%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">15%</span></div>
                   </div>
                   <p className="comm-card__vlt-tser">TSER: 66% - 82%</p>
                 </div>
@@ -597,40 +629,44 @@ export default function ProductsAutomotivePage() {
             </div>
 
             {/* Titan X */}
-            <div className="comm-card comm-card--flagship card-hover">
-              <div className="comm-card__body">
-                <div className="comm-card__header-row">
+            <div className="res-card res-card--signature">
+              <div className="res-card__img-wrap">
+                <span className="res-card__top-badge" style={{ background: 'rgba(147,51,234,0.1)', border: '1px solid rgba(147,51,234,0.25)', color: '#a855f7' }}>ULTIMATE</span>
+                <img src={`${import.meta.env.BASE_URL}images/hero-family-car.png`} alt="Titan X" className="res-card__img" />
+              </div>
+              <div className="res-card__body">
+                <div className="res-card__header">
                   <div>
-                    <h3 className="comm-card__title">Titan X</h3>
-                    <p className="comm-card__subtitle">Multi Layer Silver Sputter</p>
-                    <div className="comm-card__meta-row">
-                      <span className="comm-card__tag">3 mil</span>
-                      <span className="comm-card__tag comm-card__tag--warranty">10 Yr Warranty</span>
+                    <h3 className="res-card__title">Titan X</h3>
+                    <p className="res-card__subtitle">Multi Layer Silver Sputter</p>
+                    <div className="res-card__tags">
+                      <span className="res-tag">3 mil thickness</span>
+                      <span className="res-tag res-tag--warranty">10 Yr Warranty</span>
                     </div>
                   </div>
-                  <span className="comm-card__badge-tag comm-card__badge-tag--ultimate">ULTIMATE</span>
+                  <span className="res-card__series-label">Signature</span>
                 </div>
 
-                <div className="comm-card__specs-grid comm-card__specs-grid--3col">
-                  <div className="comm-card__spec-block spec-block--uvr">
-                    <span className="comm-card__spec-val">100%</span>
-                    <span className="comm-card__spec-label">UVR</span>
+                <div className="res-specs-grid res-specs-grid--3">
+                  <div className="res-spec-badge res-spec-badge--uvr">
+                    <span className="res-spec-val">100%</span>
+                    <span className="res-spec-key">UVR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--blr">
-                    <span className="comm-card__spec-val">99%</span>
-                    <span className="comm-card__spec-label">BLR</span>
+                  <div className="res-spec-badge res-spec-badge--blr">
+                    <span className="res-spec-val">99%</span>
+                    <span className="res-spec-key">BLR</span>
                   </div>
-                  <div className="comm-card__spec-block spec-block--irr">
-                    <span className="comm-card__spec-val">&gt;99%</span>
-                    <span className="comm-card__spec-label">IRR</span>
+                  <div className="res-spec-badge res-spec-badge--irr">
+                    <span className="res-spec-val">&gt;99%</span>
+                    <span className="res-spec-key">IRR</span>
                   </div>
                 </div>
 
-                <div className="comm-card__vlt-section">
-                  <p className="comm-card__vlt-title">VLT Options</p>
-                  <div className="comm-card__vlt-flex">
-                    <span className="vlt-bar">60%</span>
-                    <span className="vlt-bar">15%</span>
+                <div className="res-vlt-section">
+                  <p className="res-vlt-label">VLT Options</p>
+                  <div className="res-vlt-grid res-vlt-grid--2">
+                    <div className="res-vlt-bar"><span className="res-vlt-val">60%</span></div>
+                    <div className="res-vlt-bar"><span className="res-vlt-val">15%</span></div>
                   </div>
                   <p className="comm-card__vlt-tser">TSER: 69% - 84%</p>
                 </div>

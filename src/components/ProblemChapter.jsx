@@ -15,7 +15,7 @@ const PARAGRAPHS = [
     type: 'hero',
   },
   {
-    text: 'Made for people. Built for protection.',
+    text: 'Made for Asia\'s Best. Built to Protect Against Asia\'s Weather.',
     type: 'body',
   },
 ];
@@ -102,9 +102,8 @@ export default function ProblemChapter() {
             {PARAGRAPHS.map((para, pIdx) => (
               <p
                 key={pIdx}
-                className={`problem__paragraph ${
-                  para.type === 'hero' ? 'problem__paragraph--hero' : ''
-                }`}
+                className={`problem__paragraph ${para.type === 'hero' ? 'problem__paragraph--hero' : ''
+                  }`}
               >
                 {para.text}
               </p>
