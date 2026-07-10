@@ -37,68 +37,38 @@ const FILM_LAYERS = [
     src: `${BASE}images/technology/layer6.png`,
     alt: 'IRISPRO Heat Rejection Material layer',
   },
-  {
-    id: 'layer-7',
-    src: `${BASE}images/technology/layer7.png`,
-    alt: 'IRISPRO Multi Layer Sputtering heat reflect layer',
-  },
-  {
-    id: 'layer-8',
-    src: `${BASE}images/technology/layer8.png`,
-    alt: 'IRISPRO Adhesive with Anti-Aging and UV Absorbant material',
-  },
-  {
-    id: 'layer-9',
-    src: `${BASE}images/technology/layer8.png`,
-    alt: 'IRISPRO Premium Quality Release Liner',
-  },
 ];
 
 const TECH_LABELS = [
   {
-    title: 'Hard Coating',
-    desc: 'UV & Anti-Aging Protection',
+    title: 'Anti-Aging Material',
+    desc: 'Protects film from oxidation and environmental aging',
     className: 'technology-layer__label--1',
   },
   {
-    title: 'Anti-Aging',
-    desc: 'Oxidation Resistance',
+    title: 'UV+420 Patented Material',
+    desc: 'Blocks harmful UV up to 420nm',
     className: 'technology-layer__label--2',
   },
   {
-    title: 'UV & Blue Light',
-    desc: 'Patented Filtering Material',
+    title: 'Chip Dye Color Layer',
+    desc: 'Stable color & superior appearance',
     className: 'technology-layer__label--3',
   },
   {
-    title: 'Chip Dye Color',
-    desc: 'Deep Color Stability',
+    title: 'Infrared Heat Rejection Material',
+    desc: 'Rejection of IR heat for cooler cabin',
     className: 'technology-layer__label--4',
   },
   {
-    title: 'Heat Rejection',
-    desc: 'Thermal Shield Material',
+    title: 'UV+420 Patented Material',
+    desc: 'Enhanced UV protection',
     className: 'technology-layer__label--5',
   },
   {
-    title: 'UV & Blue Light',
-    desc: 'Patented Filter Layer',
+    title: 'Anti-Aging Material',
+    desc: 'Long term durability',
     className: 'technology-layer__label--6',
-  },
-  {
-    title: 'Multi Layer Sputter',
-    desc: 'Enhanced Heat Reflection',
-    className: 'technology-layer__label--7',
-  },
-  {
-    title: 'UV Absorbant Adhesive',
-    desc: 'Anti-Aging Bonding Layer',
-    className: 'technology-layer__label--8',
-  },
-  {
-    title: 'Release Liner',
-    desc: 'Premium Quality Backing',
-    className: 'technology-layer__label--9',
   },
 ];
 
